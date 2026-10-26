@@ -139,8 +139,11 @@ export function FounderStorySection() {
               variants={itemVariants}
               className="lg:col-span-7 flex flex-col space-y-5 text-[#3A4556] text-[14.5px] sm:text-[15.5px] leading-[1.75] text-left"
             >
-              <p className="first-letter:text-4xl first-letter:font-serif-heading first-letter:font-bold first-letter:text-[#E94B1C] first-letter:float-left first-letter:mr-2 first-letter:leading-none">
-                Dr. Surya Prakash Chowdary has 15 years of experience in patient care and holds an MBBS and an MD from Manipal Academy of Higher Education. Having cared for approximately one lakh patients, he believes in a holistic approach to healthcare that considers modern lifestyles, individual needs, and the concerns of every patient.
+              <p>
+                <span className="text-xl sm:text-2xl font-serif-heading font-black text-[#E94B1C] mr-1 inline align-baseline">
+                  Dr.
+                </span>{" "}
+                Surya Prakash Chowdary has 15 years of experience in patient care and holds an MBBS and an MD from Manipal Academy of Higher Education. Having cared for approximately one lakh patients, he believes in a holistic approach to healthcare that considers modern lifestyles, individual needs, and the concerns of every patient.
               </p>
 
               <p>
