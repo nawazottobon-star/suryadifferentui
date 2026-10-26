@@ -64,7 +64,7 @@ export function HomeHero() {
   const [activeTab, setActiveTab] = useState(VISION_TABS[0]);
   const [isPaused, setIsPaused] = useState(false);
 
-  /* Auto-rotate through the 3 tabs automatically every 4.5 seconds */
+  /* Auto-rotate through the 3 tabs automatically every 8 seconds (giving visitors plenty of time to read) */
   useEffect(() => {
     if (isPaused) return;
     const interval = setInterval(() => {
@@ -73,7 +73,7 @@ export function HomeHero() {
         const nextIdx = (currentIdx + 1) % VISION_TABS.length;
         return VISION_TABS[nextIdx];
       });
-    }, 4500);
+    }, 8000);
     return () => clearInterval(interval);
   }, [isPaused]);
 
@@ -94,58 +94,69 @@ export function HomeHero() {
       className="relative w-full min-h-[94vh] lg:min-h-screen flex flex-col justify-between overflow-hidden bg-[#FFF9F3] text-slate-800"
     >
       {/* ═══════════════════════════════════════════════════════════════════════
-          FULL-SECTION BACKGROUND VIDEO (PLAYS CONTINUOUSLY BEHIND CONTENT)
+          RIGHT-SIDE VISUAL AREA (HOSPITAL VIDEO)
+          Occupies the right half of the hero section, anchored to the right edge.
+          Does not extend over or interfere with the left-side content.
          ═══════════════════════════════════════════════════════════════════════ */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
-        <video
-          ref={videoRef}
-          className="hero-background-video absolute inset-0 w-full h-full object-cover object-[70%_center] lg:object-contain lg:object-right lg:w-auto lg:h-full lg:max-w-none lg:right-0 lg:left-auto lg:top-0 select-none"
-          style={{
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 6%, rgba(0,0,0,0.85) 14%, black 22%, black 100%)",
-            maskImage:
-              "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 6%, rgba(0,0,0,0.85) 14%, black 22%, black 100%)",
-          }}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          aria-hidden="true"
-          tabIndex={-1}
-          poster="/images/surya-hospital-building-hero.jpg"
-        >
-          <source src="/videos/gemini_generated_video_95b1a674.mp4" type="video/mp4" />
-        </video>
+      <div
+        className="hidden lg:block absolute top-0 right-0 bottom-0 w-1/2 xl:w-[50%] 2xl:w-[52%] overflow-hidden select-none pointer-events-none z-0"
+        aria-hidden="true"
+      >
+        <div className="relative w-full h-full">
+          <video
+            ref={videoRef}
+            className="w-full h-full object-cover object-[48%_center] select-none"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            aria-hidden="true"
+            tabIndex={-1}
+            poster="/images/surya-hospital-building-hero.jpg"
+          >
+            <source src="/videos/gemini_generated_video_95b1a674.mp4" type="video/mp4" />
+          </video>
 
-        {/* ── LOCALIZED PROTECTIVE GRADIENT OVERLAY ── */}
-        {/* Clean, warm cream text zone protecting the headline and cards, smoothly transitioning to 0% at 74% */}
-        <div
-          className="hero-video-overlay absolute inset-0 pointer-events-none hidden lg:block"
-          style={{
-            background:
-              "linear-gradient(90deg, rgba(255, 248, 241, 0.98) 0%, rgba(255, 248, 241, 0.96) 24%, rgba(255, 248, 241, 0.88) 36%, rgba(255, 248, 241, 0.58) 46%, rgba(255, 248, 241, 0.20) 56%, rgba(255, 248, 241, 0.03) 66%, rgba(255, 248, 241, 0) 74%)",
-          }}
-        />
+          {/* ── Soft cream gradient boundary between left content and right video ── */}
+          <div
+            className="absolute inset-y-0 left-0 w-32 xl:w-48 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(to right, #FFF9F3 0%, rgba(255, 249, 243, 0.95) 20%, rgba(255, 249, 243, 0.55) 55%, rgba(255, 249, 243, 0.12) 80%, transparent 100%)",
+            }}
+          />
 
-        {/* Mobile / Tablet localized overlay (directional gradient to preserve building contrast) */}
-        <div
-          className="absolute inset-0 pointer-events-none lg:hidden"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(255, 248, 241, 0.95) 0%, rgba(255, 248, 241, 0.90) 55%, rgba(255, 248, 241, 0.35) 80%, transparent 100%)",
-          }}
-        />
+          {/* ── Soft bottom seam gradient blending with trust strip ── */}
+          <div
+            className="absolute inset-x-0 bottom-0 h-32 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(to top, #FFF9F3 0%, rgba(255, 249, 243, 0.85) 40%, transparent 100%)",
+            }}
+          />
+
+          {/* ── Soft top seam gradient beneath navbar ── */}
+          <div
+            className="absolute inset-x-0 top-0 h-24 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(to bottom, #FFF9F3 0%, rgba(255, 249, 243, 0.5) 40%, transparent 100%)",
+            }}
+          />
+        </div>
       </div>
 
       {/* ═══════════════════════════════════════════════════════════════════════
           HERO CONTENT (FOREGROUND LAYER: z-10)
+          Clear two-column structure: Left column holds all content, Right column
+          holds the video area. Left content is 100% untouched.
          ═══════════════════════════════════════════════════════════════════════ */}
-      <div className="relative z-10 w-full max-w-[1420px] mx-auto px-4 sm:px-6 lg:px-10 pt-24 sm:pt-28 lg:pt-24 pb-20 lg:pb-28 flex-1 flex items-center">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 lg:pt-24 pb-20 lg:pb-28 flex-1 flex items-center">
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-          {/* ── LEFT COLUMN: EDITORIAL FOUNDER MESSAGE & CTAs (6-7 Cols) ── */}
-          <div className="lg:col-span-7 xl:col-span-6 flex flex-col items-start text-left space-y-6 max-w-xl lg:max-w-[560px] xl:max-w-[620px]">
+          {/* ── LEFT COLUMN: EDITORIAL FOUNDER MESSAGE & CTAs (6 Cols on Desktop) ── */}
+          <div className="lg:col-span-6 xl:col-span-6 flex flex-col items-start text-left space-y-6 max-w-xl lg:max-w-[560px] xl:max-w-[620px]">
 
             {/* 1. Small Trust Indicators / Vision Tabs */}
             <div
@@ -208,7 +219,11 @@ export function HomeHero() {
             </div>
 
             {/* 4. Founder's Message Card */}
-            <div className="w-full max-w-xl p-4 sm:p-5 rounded-2xl bg-white/95 backdrop-blur-md border border-[#E9D8CE] shadow-[0_10px_30px_-5px_rgba(233,75,28,0.1)] relative overflow-hidden transition-all hover:shadow-[0_14px_38px_-5px_rgba(233,75,28,0.15)] group">
+            <div
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+              className="w-full max-w-xl p-4 sm:p-5 rounded-2xl bg-white/95 backdrop-blur-md border border-[#E9D8CE] shadow-[0_10px_30px_-5px_rgba(233,75,28,0.1)] relative overflow-hidden transition-all hover:shadow-[0_14px_38px_-5px_rgba(233,75,28,0.15)] group"
+            >
               {/* Subtle ECG Heartbeat Pulse Line */}
               <div className="absolute top-0 inset-x-0 h-1 bg-[#FFF0E6] overflow-hidden">
                 <motion.div
@@ -298,9 +313,35 @@ export function HomeHero() {
 
           </div>
 
-          {/* ── RIGHT COLUMN: OPEN VIEWPORT FOR HOSPITAL BUILDING ── */}
-          {/* Keeps the right side completely spacious and unobstructed so the hospital building in the background video is crisp and visible */}
-          <div className="lg:col-span-5 xl:col-span-5 relative hidden lg:block min-h-[380px] pointer-events-none select-none" />
+          {/* ── MOBILE / TABLET DEDICATED VIDEO CONTAINER (BELOW CONTENT, NEVER OBSCURING TEXT) ── */}
+          <div className="lg:hidden w-full mt-2 sm:mt-4">
+            <div className="relative w-full h-[260px] sm:h-[340px] rounded-2xl overflow-hidden border border-[#E9D8CE] shadow-[0_8px_24px_rgba(40,20,10,0.06)] bg-[#FFF0E6]">
+              <video
+                className="w-full h-full object-cover object-[48%_center] select-none"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                poster="/images/surya-hospital-building-hero.jpg"
+              >
+                <source src="/videos/gemini_generated_video_95b1a674.mp4" type="video/mp4" />
+              </video>
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background:
+                    "linear-gradient(to top, rgba(20, 35, 60, 0.4) 0%, transparent 40%)",
+                }}
+              />
+              <div className="absolute bottom-3 left-3 text-white text-xs font-bold px-2.5 py-1 rounded-full bg-[#14233C]/75 backdrop-blur-sm border border-white/20">
+                Surya Hospital Main Campus
+              </div>
+            </div>
+          </div>
+
+          {/* ── RIGHT COLUMN: OPEN VIEWPORT FOR HOSPITAL BUILDING (Desktop) ── */}
+          <div className="lg:col-span-6 xl:col-span-6 relative hidden lg:block min-h-[420px] pointer-events-none select-none" />
 
         </div>
       </div>

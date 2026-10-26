@@ -17,7 +17,6 @@ import {
   PhoneCall,
   CheckCircle2,
   User,
-  Sparkles,
   ArrowRight,
 } from "lucide-react";
 import { HOSPITAL_INFO } from "../constants/hospitalData";
@@ -408,23 +407,8 @@ export function DoctorsPage() {
 
       <section className="py-14 md:py-20 bg-[#FFF9F3] border-b border-[#F0E2D9]">
         <Container>
-          {/* Direct Doctors Header & Sleek Department Filter Pills */}
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-8">
-            <div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF0E6] text-[#E94B1C] text-[11px] font-extrabold uppercase tracking-wider border border-[#FADCCB] mb-2">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Verified Medical Specialists</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-black text-[#14233C] tracking-tight">
-                Our Doctors & Specialists ({filteredDoctors.length})
-              </h2>
-              <p className="text-xs sm:text-sm text-[#756860] mt-1">
-                Explore our experienced medical team below. Click any doctor to view their complete credentials, clinical focus, and visiting hours.
-              </p>
-            </div>
-
-            {/* Clean, minimalist department filter pills */}
-            <div className="flex items-center gap-2 overflow-x-auto pb-2 lg:pb-0 scrollbar-none">
+          {/* Clean, minimalist department filter pills */}
+          <div className="flex items-center gap-2 overflow-x-auto sm:flex-wrap pb-2 sm:pb-0 mb-8 scrollbar-none">
               {departments.map((dept) => {
                 const isSelected = selectedDepartment === dept;
                 const count =
@@ -459,7 +443,6 @@ export function DoctorsPage() {
                 );
               })}
             </div>
-          </div>
 
           {/* Doctors Grid with Framer-Motion AnimatePresence - Compact Minimal Cards */}
           {filteredDoctors.length > 0 ? (
