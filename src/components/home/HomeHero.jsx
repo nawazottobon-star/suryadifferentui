@@ -61,7 +61,21 @@ export function HomeHero() {
   const { openModal } = useAppointmentModal();
   const videoRef = useRef(null);
   const [activeTab, setActiveTab] = useState(VISION_TABS[0]);
+  const [isPaused, setIsPaused] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
+
+  /* Auto-rotate through the 3 tabs automatically every 10 seconds */
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(() => {
+      setActiveTab((prev) => {
+        const currentIdx = VISION_TABS.findIndex((t) => t.id === prev.id);
+        const nextIdx = (currentIdx + 1) % VISION_TABS.length;
+        return VISION_TABS[nextIdx];
+      });
+    }, 10000);
+    return () => clearInterval(interval);
+  }, [isPaused]);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -156,7 +170,11 @@ export function HomeHero() {
           <div className="lg:col-span-6 xl:col-span-6 flex flex-col items-start text-left space-y-6 max-w-xl lg:max-w-[560px] xl:max-w-[620px]">
 
             {/* 1. Small Trust Indicators / Vision Tabs */}
-            <div className="inline-flex p-1 rounded-full bg-white/95 backdrop-blur-md border border-[#E9D8CE] shadow-sm gap-1">
+            <div
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+              className="inline-flex p-1 rounded-full bg-white/95 backdrop-blur-md border border-[#E9D8CE] shadow-sm gap-1"
+            >
               {VISION_TABS.map((tab) => {
                 const IconComponent = tab.icon;
                 const isSelected = activeTab.id === tab.id;
@@ -212,7 +230,11 @@ export function HomeHero() {
             </div>
 
             {/* 4. Founder's Message Card */}
-            <div className="w-full max-w-xl p-4 sm:p-5 rounded-2xl bg-white/95 backdrop-blur-md border border-[#E9D8CE] shadow-[0_10px_30px_-5px_rgba(233,75,28,0.1)] relative overflow-hidden transition-all hover:shadow-[0_14px_38px_-5px_rgba(233,75,28,0.15)] group">
+            <div
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+              className="w-full max-w-xl p-4 sm:p-5 rounded-2xl bg-white/95 backdrop-blur-md border border-[#E9D8CE] shadow-[0_10px_30px_-5px_rgba(233,75,28,0.1)] relative overflow-hidden transition-all hover:shadow-[0_14px_38px_-5px_rgba(233,75,28,0.15)] group"
+            >
               {/* Subtle ECG Heartbeat Pulse Line */}
               <div className="absolute top-0 inset-x-0 h-1 bg-[#FFF0E6] overflow-hidden">
                 <motion.div
