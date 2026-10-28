@@ -434,18 +434,43 @@
     animation: shineSweep 0.8s ease-out;
   }
 
-  /* ── INSURANCE LOGO INFINITE SCROLL ── */
-  @keyframes insuranceScroll {
+  /* ── INSURANCE LOGO INFINITE SCROLL — DUAL ROW ── */
+  @keyframes insuranceScrollLeft {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    100% { transform: translateX(-33.333%); }
   }
 
+  @keyframes insuranceScrollRight {
+    0% { transform: translateX(-33.333%); }
+    100% { transform: translateX(0); }
+  }
+
+  /* Legacy single-row (kept for backward compat) */
   .animate-insurance-scroll {
-    animation: insuranceScroll 30s linear infinite;
+    animation: insuranceScrollLeft 30s linear infinite;
   }
 
   .animate-insurance-scroll:hover {
     animation-play-state: paused;
+  }
+
+  /* Row A: scrolls left at normal speed */
+  .animate-insurance-scroll-a {
+    animation: insuranceScrollLeft 40s linear infinite;
+  }
+
+  /* Row B: scrolls right at slightly different speed for stagger effect */
+  .animate-insurance-scroll-b {
+    animation: insuranceScrollRight 48s linear infinite;
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-insurance-scroll,
+    .animate-insurance-scroll-a,
+    .animate-insurance-scroll-b {
+      animation: none;
+    }
   }
 
   /* ── HEARTBEAT PULSE ── */

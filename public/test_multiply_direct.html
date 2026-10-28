@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background: radial-gradient(ellipse at 75% 50%, #E8D9C3 0%, #F2E8DA 35%, #F8F1E8 65%, #FFF9F3 100%);
+      margin: 0;
+      padding: 60px;
+      font-family: sans-serif;
+      min-height: 100vh;
+    }
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    .left-text {
+      flex: 1;
+    }
+    .right-video {
+      flex: 1.4;
+      display: flex;
+      justify-content: center;
+    }
+    .video-wrapper-1 {
+      width: 580px;
+      overflow: hidden;
+    }
+    .video-wrapper-1 video {
+      width: 100%;
+      display: block;
+      mix-blend-mode: multiply;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero-container">
+    <div class="left-text">
+      <h1 style="font-size: 44px; color: #14233C;">Advanced Care, <span style="color: #E94B1C;">Grounded in Deep Compassion.</span></h1>
+    </div>
+    <div class="right-video">
+      <div class="video-wrapper-1">
+        <video src="/videos/gemini_generated_video_507408e0.mp4" autoplay loop muted playsinline></video>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

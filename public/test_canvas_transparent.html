@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background: radial-gradient(ellipse 95% 85% at 75% 45%, #EADBCA 0%, #F1E6D8 28%, #F7EFE6 58%, #FDFBF8 100%);
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: sans-serif;
+    }
+    .wrapper {
+      position: relative;
+      width: 580px;
+      aspect-ratio: 4/3;
+    }
+    canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h2>Canvas Transparent 3D Hospital View</h2>
+  <div class="wrapper">
+    <canvas id="canvas" width="640" height="480"></canvas>
+  </div>
+  <video id="video" src="/videos/surya_building_sketch_3d.mp4" autoplay muted loop playsinline style="display:none;"></video>
+
+  <script>
+    const v = document.getElementById('video');
+    const c = document.getElementById('canvas');
+    const ctx = c.getContext('2d', { willReadFrequently: true });
+
+    function render() {
+      if (v.readyState >= 2) {
+        ctx.drawImage(v, 0, 0, c.width, c.height);
+        const imgData = ctx.getImageData(0, 0, c.width, c.height);
+        const d = imgData.data;
+        const len = d.length;
+        for (let i = 0; i < len; i += 4) {
+          const r = d[i];
+          const g = d[i + 1];
+          const b = d[i + 2];
+          const min = r < g ? (r < b ? r : b) : (g < b ? g : b);
+          if (min > 236) {
+            const a = (250 - min) / 14;
+            d[i + 3] = a <= 0 ? 0 : (a >= 1 ? 255 : (a * 255) | 0);
+          }
+        }
+        ctx.putImageData(imgData, 0, 0);
+      }
+      if ('requestVideoFrameCallback' in v) {
+        v.requestVideoFrameCallback(render);
+      } else {
+        requestAnimationFrame(render);
+      }
+    }
+
+    v.addEventListener('play', () => {
+      render();
+    });
+    if (!v.paused) render();
+  </script>
+</body>
+</html>

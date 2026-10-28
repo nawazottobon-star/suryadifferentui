@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background: radial-gradient(ellipse 95% 85% at 75% 45%, #EADBCA 0%, #F1E6D8 28%, #F7EFE6 58%, #FDFBF8 100%);
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      gap: 20px;
+      font-family: sans-serif;
+    }
+    .box {
+      border: 2px dashed red;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h3>Raw Video (mix-blend-mode: multiply)</h3>
+    <div class="box">
+      <video id="v1" src="/videos/surya_building_sketch_3d.mp4" autoplay muted loop playsinline style="mix-blend-mode: multiply; width: 400px; display: block;"></video>
+    </div>
+  </div>
+
+  <div>
+    <h3>Canvas (mix-blend-mode: multiply)</h3>
+    <div class="box">
+      <canvas id="c1" width="480" height="360" style="mix-blend-mode: multiply; width: 400px; display: block;"></canvas>
+    </div>
+  </div>
+
+  <script>
+    const v = document.getElementById('v1');
+    const c = document.getElementById('c1');
+    const ctx = c.getContext('2d');
+
+    function draw() {
+      if (!v.paused && !v.ended) {
+        ctx.drawImage(v, 0, 0, c.width, c.height);
+      }
+      requestAnimationFrame(draw);
+    }
+    v.addEventListener('play', () => {
+      draw();
+    });
+  </script>
+</body>
+</html>

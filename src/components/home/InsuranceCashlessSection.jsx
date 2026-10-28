@@ -2,22 +2,25 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { HOSPITAL_INFO } from "../../constants/hospitalData";
 import { AnimateIn } from "../ui/AnimateIn";
-import { ShieldCheck, Sparkles, ArrowRight } from "lucide-react";
+import { ShieldCheck, ArrowRight } from "lucide-react";
 
 export function InsuranceCashlessSection() {
   const partners = HOSPITAL_INFO.insurancePartners;
-  const displayPartners = partners.slice(0, 12);
+
+  // Split into two rows for a staggered premium marquee
+  const rowA = partners.filter((_, i) => i % 2 === 0);   // even-indexed: 12 partners
+  const rowB = partners.filter((_, i) => i % 2 !== 0);   // odd-indexed: 12 partners
 
   return (
-    <section id="insurance" className="py-16 sm:py-22 bg-gradient-to-b from-[#FFF5EC] to-[#FFF0E6] text-[#262626] relative overflow-hidden">
-      {/* Ambient */}
+    <section id="insurance" className="py-10 sm:py-14 bg-gradient-to-b from-[#FFF5EC] to-[#FFF0E6] text-[#262626] relative overflow-hidden">
+      {/* Ambient glows */}
       <div className="absolute top-10 right-20 w-[400px] h-[400px] rounded-full bg-[#E94B1C]/[0.03] blur-[100px] pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-[300px] h-[300px] rounded-full bg-[#FF8A3D]/[0.03] blur-[80px] pointer-events-none" />
 
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
           <AnimateIn animation="fade-up">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#FFF0E6] to-[#FFE8D6] text-[#E94B1C] text-[11px] font-extrabold uppercase tracking-[0.14em] mb-4 border border-[#FADCCB]/80 shadow-[0_2px_8px_rgba(233,75,28,0.06)]">
               <ShieldCheck className="w-3.5 h-3.5" />
@@ -41,35 +44,31 @@ export function InsuranceCashlessSection() {
           </AnimateIn>
         </div>
 
-        {/* Infinite Scrolling Logo Marquee */}
+        {/* ── Premium Staggered Dual-Row Marquee ── */}
         <AnimateIn animation="fade-up" delay={200}>
-          <div className="relative py-8 overflow-hidden">
-            {/* Fade edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-[#FFF5EC] to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-[#FFF5EC] to-transparent z-10 pointer-events-none" />
+          <div className="relative py-4 overflow-hidden space-y-4">
+            {/* Edge fade masks */}
+            <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-r from-[#FFF5EC] to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-l from-[#FFF5EC] to-transparent z-10 pointer-events-none" />
 
-            <div className="flex animate-insurance-scroll">
-              {/* Render partners twice for seamless loop */}
-              {[...displayPartners, ...displayPartners].map((partner, idx) => (
-                <div
-                  key={`${partner.id}-${idx}`}
-                  className="shrink-0 px-6 sm:px-10 flex items-center justify-center"
-                  title={partner.name}
-                >
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    className="max-h-10 sm:max-h-14 w-auto max-w-[120px] sm:max-w-[160px] object-contain grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-400"
-                    loading="lazy"
-                  />
-                </div>
+            {/* Row A — scrolls left */}
+            <div className="flex animate-insurance-scroll-a">
+              {[...rowA, ...rowA, ...rowA].map((partner, idx) => (
+                <LogoPill key={`a-${partner.id}-${idx}`} partner={partner} />
+              ))}
+            </div>
+
+            {/* Row B — scrolls right (reverse) */}
+            <div className="flex animate-insurance-scroll-b">
+              {[...rowB, ...rowB, ...rowB].map((partner, idx) => (
+                <LogoPill key={`b-${partner.id}-${idx}`} partner={partner} />
               ))}
             </div>
           </div>
         </AnimateIn>
 
         {/* View All Button */}
-        <AnimateIn animation="fade-up" delay={250}>
+        <AnimateIn animation="fade-up" delay={280}>
           <div className="mt-8 sm:mt-10 text-center">
             <Link
               to="/insurance-partners"
@@ -82,7 +81,7 @@ export function InsuranceCashlessSection() {
         </AnimateIn>
 
         {/* Help Note */}
-        <AnimateIn animation="fade-up" delay={300}>
+        <AnimateIn animation="fade-up" delay={340}>
           <div className="mt-10 sm:mt-12 max-w-2xl mx-auto p-5 sm:p-6 rounded-2xl bg-white/90 backdrop-blur-sm border border-[#EFE5DC] flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left shadow-sm hover:shadow-md transition-shadow">
             <div className="flex items-center gap-3">
               <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#FFF0E6] to-[#FFE3D0] text-[#E94B1C] flex items-center justify-center shrink-0 border border-[#FADCCB]/60 shadow-xs">
@@ -103,6 +102,24 @@ export function InsuranceCashlessSection() {
         </AnimateIn>
       </div>
     </section>
+  );
+}
+
+/** Individual logo pill with glassmorphic card + 3D tilt hover */
+function LogoPill({ partner }) {
+  return (
+    <div
+      className="shrink-0 mx-3 w-[160px] h-[78px] sm:w-[190px] sm:h-[88px] flex items-center justify-center px-5 py-3 rounded-2xl bg-white/90 border border-white/80 shadow-[0_2px_14px_rgba(0,0,0,0.05)] hover:shadow-[0_6px_24px_rgba(233,75,28,0.12)] hover:border-[#E94B1C]/20 hover:-translate-y-1 hover:scale-[1.04] transition-all duration-300 ease-out cursor-default group"
+      title={partner.name}
+    >
+      <img
+        src={partner.logo}
+        alt={partner.name}
+        className="max-h-9 sm:max-h-11 w-auto max-w-[120px] sm:max-w-[140px] object-contain grayscale group-hover:grayscale-0 opacity-55 group-hover:opacity-100 transition-all duration-350"
+        loading="lazy"
+        draggable={false}
+      />
+    </div>
   );
 }
 

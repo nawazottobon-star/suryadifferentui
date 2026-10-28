@@ -12,7 +12,6 @@ import {
   ChevronDown,
   User,
   HeartPulse,
-  Sparkles,
   Stethoscope,
 } from "lucide-react";
 import { getSpecialityBySlug, APPROVED_SPECIALITIES } from "../constants/specialitiesData";
@@ -83,8 +82,8 @@ export function SpecialityDetailPage() {
       <div className="sticky top-20 sm:top-24 z-30 w-full py-2.5 bg-white/95 backdrop-blur-md border-b border-[#E9D8CE] shadow-2xs">
         <Container>
           <div className="flex items-center justify-between gap-3 overflow-x-auto scrollbar-none py-0.5">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-[#756860] shrink-0 hidden sm:inline-flex items-center gap-1">
-              <Sparkles className="w-3.5 h-3.5 text-[#E94B1C]" /> Quick Jump:
+            <span className="text-[11px] font-bold uppercase tracking-wider text-[#756860] shrink-0 hidden sm:inline-flex items-center">
+              Quick Jump:
             </span>
             <div className="flex items-center gap-2">
               {quickJumpLinks.map((item) => (

@@ -50,7 +50,7 @@ export function FacilitiesCinematic() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full py-20 sm:py-28 bg-[#082E37] text-white overflow-hidden"
+      className="relative w-full py-12 sm:py-16 md:py-20 bg-[#082E37] text-white overflow-hidden"
     >
       {/* Background Cinematic Image */}
       <div className="absolute inset-0 z-0 overflow-hidden">

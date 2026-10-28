@@ -4,16 +4,15 @@
 
 /* CONTAINER & POSITIONING */
 .hero-trust-strip-bar {
-  position: absolute;
-  bottom: 1.5rem; /* Positioned cleanly over bottom seam */
-  left: 0;
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
   z-index: 20;
   padding: 0 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
   background: transparent;
-  pointer-events: none; /* Allows clicks to pass through empty margins */
 }
 
 /* CONTINUOUS AMBIENT BREATHING FLOAT */

@@ -74,7 +74,7 @@ export function AppointmentModal({ isOpen, onClose, defaultDepartment = "" }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[#0a121e]/75 backdrop-blur-md animate-in fade-in duration-200"
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-4 bg-[#0a121e]/80 backdrop-blur-md animate-in fade-in duration-200"
       onClick={onClose}
     >
       <div
@@ -239,14 +239,24 @@ export function AppointmentModal({ isOpen, onClose, defaultDepartment = "" }) {
                     className="w-full px-3.5 py-3 text-xs sm:text-sm rounded-xl border border-[#E9D8CE] bg-[#FFFDFC] text-[#14233C] focus:border-[#E94B1C] focus:ring-2 focus:ring-[#E94B1C]/20 outline-none transition font-medium"
                   >
                     <option value="General Medicine (Physician)">General Medicine (Physician)</option>
-                    <option value="General & Laparoscopic Surgery">General &amp; Laparoscopic Surgery</option>
-                    <option value="Orthopedics & Joint Replacement">Orthopedics &amp; Joint Care</option>
                     <option value="Cardiology">Cardiology</option>
-                    <option value="Nephrology & Dialysis">Nephrology &amp; Dialysis</option>
-                    <option value="Pulmonology & Chest Medicine">Pulmonology &amp; Chest</option>
                     <option value="Gastroenterology">Gastroenterology</option>
-                    <option value="E.N.T.">E.N.T.</option>
+                    <option value="Nephrology">Nephrology</option>
+                    <option value="Nephrology & Dialysis">Nephrology &amp; Dialysis</option>
+                    <option value="Orthopedic">Orthopedics &amp; Spine</option>
+                    <option value="Orthopedics & Joint Replacement">Orthopedics &amp; Joint Care</option>
+                    <option value="E.N.T.">E.N.T. (Ear, Nose, Throat)</option>
+                    <option value="Pulmonology">Pulmonology &amp; Chest</option>
+                    <option value="Pulmonology & Chest Medicine">Pulmonology &amp; Chest Medicine</option>
+                    <option value="Neurology">Neurology</option>
+                    <option value="Medical Oncology">Medical Oncology</option>
+                    <option value="Oncology">Medical Oncology</option>
+                    <option value="Psychiatry">Psychiatry</option>
                     <option value="Urology">Urology</option>
+                    <option value="General Surgery">General &amp; Laparoscopic Surgery</option>
+                    <option value="General & Laparoscopic Surgery">General &amp; Laparoscopic Surgery</option>
+                    <option value="Anesthesia & Intensivist">Anesthesia &amp; Critical Care</option>
+                    <option value="Anesthesia & Critical Care">Anesthesia &amp; Critical Care</option>
                     <option value="Diagnostic Lab & Imaging">Diagnostics &amp; Lab</option>
                     <option value="Physiotherapy & Rehab">Physiotherapy &amp; Rehab</option>
                     <option value="24/7 Casualty & Emergency">24/7 Emergency Care</option>

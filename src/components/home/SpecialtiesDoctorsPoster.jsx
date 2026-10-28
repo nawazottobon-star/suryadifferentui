@@ -1,260 +1,279 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import {
-  Calendar,
   Phone,
-  HeartPulse,
-  Activity,
-  Droplets,
-  Ear,
-  Bone,
-  Wind,
-  Stethoscope,
-  Ribbon,
-  Brain,
-  Scan,
-  Scissors,
-  BrainCircuit,
   ArrowRight,
-  Sparkles,
 } from "lucide-react";
 import { HOSPITAL_INFO } from "../../constants/hospitalData";
-import { AnimateIn } from "../ui/AnimateIn";
 import { useAppointmentModal } from "../../context/AppointmentModalContext";
 
-const SLUG_MAP = {
-  "CARDIOLOGY": "/specialities/cardiology",
-  "GASTROENTEROLOGY": "/specialities/gastroenterology",
-  "NEPHROLOGY": "/specialities/nephrology",
-  "E.N.T.": "/specialities/ent",
-  "ORTHOPEDIC": "/specialities/orthopedics-spine",
-  "PULMONOLOGY": "/specialities/pulmonology",
-  "ANESTHESIA & INTENSIVIST": "/specialities/anesthesia-critical-care",
-  "ONCOLOGY": "/specialities/medical-oncology",
-  "NEUROLOGY": "/specialities/neurology",
-  "UROLOGY": "/specialities/urology",
-  "GENERAL SURGERY": "/specialities/general-laparoscopic-surgery",
-  "PSYCHIATRY": "/specialities/psychiatry",
-};
+// Department tabs configuration
+const TABS = [
+  { id: "All", label: "All Specialists", count: 21 },
+  { id: "Cardiology", label: "Cardiology", count: 2 },
+  { id: "Gastroenterology", label: "Gastroenterology", count: 1 },
+  { id: "Nephrology", label: "Nephrology", count: 2 },
+  { id: "Orthopedic", label: "Orthopedic & Spine", count: 3 },
+  { id: "E.N.T.", label: "E.N.T.", count: 2 },
+  { id: "Pulmonology", label: "Pulmonology", count: 2 },
+  { id: "Neurology", label: "Neurology", count: 1 },
+  { id: "Urology", label: "Urology", count: 2 },
+  { id: "General Surgery", label: "General Surgery", count: 2 },
+  { id: "Oncology", label: "Oncology", count: 1 },
+  { id: "Psychiatry", label: "Psychiatry", count: 1 },
+  { id: "Anesthesia & Intensivist", label: "Critical Care", count: 1 },
+  { id: "Internal Medicine", label: "General Medicine", count: 1 },
+];
 
 export function SpecialtiesDoctorsPoster() {
   const { openModal } = useAppointmentModal();
-  const departmentsData = [
-    { specialty: "CARDIOLOGY", icon: HeartPulse, doctors: [
-      { name: "Dr. K. Vamsi Krishna", qualifications: "MD, DM (OSM)" },
-      { name: "Dr. K. Spandana", qualifications: "MD, DM" },
-    ]},
-    { specialty: "GASTROENTEROLOGY", icon: Activity, doctors: [
-      { name: "Dr. S.T. Rajaneesh Reddy", qualifications: "DM Gastro" },
-    ]},
-    { specialty: "NEPHROLOGY", icon: Droplets, doctors: [
-      { name: "Dr. M.V.K. Hareesh", qualifications: "DM Nephro" },
-      { name: "Dr. V. Badarinath Reddy", qualifications: "MD, DNB" },
-    ]},
-    { specialty: "E.N.T.", icon: Ear, doctors: [
-      { name: "Dr. P. Lakshmi Narasimha Rao", qualifications: "MS (E.N.T)" },
-      { name: "Dr. Krishna Sai", qualifications: "DNB (E.N.T)" },
-    ]},
-    { specialty: "ORTHOPEDIC", icon: Bone, doctors: [
-      { name: "Dr. M. Diwakar", qualifications: "MS Ortho & Spine" },
-      { name: "Dr. Shanthi Swaroop", qualifications: "MS Ortho" },
-      { name: "Dr. Raghavendra Raju", qualifications: "MS Ortho" },
-    ]},
-    { specialty: "PULMONOLOGY", icon: Wind, doctors: [
-      { name: "Dr. Sudhindra", qualifications: "MD TB & RD" },
-      { name: "Dr. K. Muralidhar Reddy", qualifications: "DNB" },
-    ]},
-    { specialty: "ANESTHESIA & INTENSIVIST", icon: Stethoscope, doctors: [
-      { name: "Dr. V. Gowtham", qualifications: "MD" },
-    ]},
-    { specialty: "ONCOLOGY", icon: Ribbon, doctors: [
-      { name: "Dr. Vishnupriya", qualifications: "DM Oncology" },
-    ]},
-    { specialty: "NEUROLOGY", icon: Brain, doctors: [
-      { name: "Dr. Thirupati Kedar", qualifications: "DM Neuro" },
-    ]},
-    { specialty: "UROLOGY", icon: Scan, doctors: [
-      { name: "Dr. Y. Harinath Reddy", qualifications: "MS, MCH (Urology)" },
-      { name: "Dr. B. Rajashekar", qualifications: "MS, MCH (Urology)" },
-    ]},
-    { specialty: "GENERAL SURGERY", icon: Scissors, doctors: [
-      { name: "Dr. Sai Swaroop", qualifications: "MS General Surgery" },
-      { name: "Dr. Sushanth", qualifications: "MS General Surgery" },
-    ]},
-    { specialty: "PSYCHIATRY", icon: BrainCircuit, doctors: [
-      { name: "Dr. V. Sashanka", qualifications: "MD Psychiatry" },
-    ]},
-  ];
+  const [activeTab, setActiveTab] = useState("All");
+
+  // Filter doctors based on active tab
+  const filteredDoctors = useMemo(() => {
+    if (activeTab === "All") {
+      return HOSPITAL_INFO.doctors;
+    }
+    return HOSPITAL_INFO.doctors.filter(
+      (doc) => doc.department.toLowerCase() === activeTab.toLowerCase()
+    );
+  }, [activeTab]);
+
+  // For seamless infinite auto-scroll, duplicate list when showing "All" or more than 3 doctors
+  const displayDoctors = useMemo(() => {
+    if (activeTab === "All" || filteredDoctors.length >= 4) {
+      return [...filteredDoctors, ...filteredDoctors];
+    }
+    return filteredDoctors;
+  }, [filteredDoctors, activeTab]);
+
+  const handleBookOpd = (e, deptName) => {
+    e.preventDefault();
+    e.stopPropagation();
+    openModal(deptName);
+  };
 
   return (
     <section
       id="doctors-specialists"
-      className="relative py-16 sm:py-24 bg-gradient-to-b from-[#FFF9F3] to-[#FFF5EC] text-[#262626] overflow-hidden"
+      className="relative py-8 sm:py-10 bg-gradient-to-b from-[#FFF9F3] via-[#FFF5ED] to-[#FFF9F3] text-[#262626] overflow-hidden"
     >
-      {/* Decorative ambient */}
-      <div className="absolute top-20 -right-20 w-[400px] h-[400px] rounded-full bg-[#E94B1C]/[0.03] blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-20 -left-20 w-[350px] h-[350px] rounded-full bg-[#FF8A3D]/[0.03] blur-[80px] pointer-events-none" />
+      {/* Dynamic Keyframes for smooth Right-to-Left Infinite Loop */}
+      <style>{`
+        @keyframes doctorMarquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .animate-doctor-loop {
+          display: flex;
+          width: max-content;
+          animation: doctorMarquee 95s linear infinite;
+        }
+        .animate-doctor-loop:hover {
+          animation-play-state: paused !important;
+        }
+      `}</style>
 
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* Ambient background glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[220px] bg-gradient-to-b from-[#E94B1C]/[0.035] to-transparent blur-3xl pointer-events-none" />
 
-        {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <AnimateIn animation="fade-up">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#FFF0E6] to-[#FFE8D6] text-[#E94B1C] text-[11px] font-extrabold uppercase tracking-[0.14em] mb-4 border border-[#FADCCB]/80 shadow-[0_2px_8px_rgba(233,75,28,0.06)]">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>OUR EXPERTISE</span>
+      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 relative z-10">
+
+        {/* 1. Compact Header Block (Takes minimal vertical space) */}
+        <div className="text-center max-w-2xl mx-auto mb-4 sm:mb-5">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#FFF0E6] text-[#E94B1C] text-[10px] font-extrabold uppercase tracking-wider mb-2 border border-[#FADCCB]">
+            <span>Expert Medical Team</span>
+          </div>
+
+          <h2 className="text-2xl sm:text-3xl font-serif-heading font-bold text-[#14233C] tracking-tight leading-tight">
+            Meet Our Doctors &{" "}
+            <span className="bg-gradient-to-r from-[#E94B1C] to-[#F26A21] bg-clip-text text-transparent">
+              Specialists
+            </span>
+          </h2>
+
+          <p className="mt-1 text-xs sm:text-[13px] text-[#666] font-medium leading-relaxed max-w-lg mx-auto">
+            Experienced specialists across 12 approved departments. Continuous directory.
+          </p>
+        </div>
+
+        {/* 2. Compact Department Filter Tabs */}
+        <div className="relative mb-5">
+          <div
+            className="flex items-center gap-1.5 overflow-x-auto pb-1 pt-0.5 px-1 scrollbar-none justify-start md:justify-center"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            {TABS.map((tab) => {
+              const isActive = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  type="button"
+                  className={`px-3 py-1.5 rounded-full text-[11px] font-bold whitespace-nowrap transition-all duration-200 shrink-0 cursor-pointer ${
+                    isActive
+                      ? "bg-gradient-to-r from-[#E94B1C] to-[#C63D1B] text-white shadow-xs"
+                      : "text-[#555] bg-white/90 hover:bg-white hover:text-[#14233C] border border-[#EFE5DC]"
+                  }`}
+                >
+                  <span>{tab.label}</span>
+                  <span
+                    className={`ml-1 text-[9.5px] px-1.5 py-0.2 rounded-full font-semibold ${
+                      isActive
+                        ? "bg-white/20 text-white"
+                        : "bg-[#FFF0E6] text-[#C63D1B]"
+                    }`}
+                  >
+                    {tab.count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* 3. Auto-Scroll Loop Carousel Container (Shortened Card Height) */}
+        <div
+          className="relative overflow-x-auto scrollbar-none py-1"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
+          {activeTab === "All" ? (
+            /* Continuous Infinite Right-to-Left Marquee Track */
+            <div className="animate-doctor-loop">
+              {displayDoctors.map((doctor, idx) => (
+                <DoctorCard
+                  key={`${doctor.id || doctor.name}-${idx}`}
+                  doctor={doctor}
+                  onBookOpd={(e) => handleBookOpd(e, doctor.department)}
+                />
+              ))}
             </div>
-          </AnimateIn>
-
-          <AnimateIn animation="fade-up" delay={80}>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif-heading font-bold text-[#14233C] tracking-tight leading-tight">
-              Meet Our Doctors &{" "}
-              <span className="bg-gradient-to-r from-[#E94B1C] to-[#F26A21] bg-clip-text text-transparent">
-                Specialists
-              </span>
-            </h2>
-          </AnimateIn>
-
-          <AnimateIn animation="fade-up" delay={150}>
-            <p className="mt-3 text-sm sm:text-base text-[#4A5568] font-medium leading-relaxed max-w-xl mx-auto">
-              Our experienced medical team provides expert care across key specialities.
-            </p>
-          </AnimateIn>
+          ) : (
+            /* Filtered Cards Grid or Row */
+            <div className="flex items-center gap-4 flex-wrap justify-center py-1">
+              {filteredDoctors.map((doctor) => (
+                <DoctorCard
+                  key={doctor.id || doctor.name}
+                  doctor={doctor}
+                  onBookOpd={(e) => handleBookOpd(e, doctor.department)}
+                />
+              ))}
+            </div>
+          )}
         </div>
 
-        {/* 4 Featured Specialty Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 max-w-6xl mx-auto">
-          {departmentsData.slice(0, 4).map((dept, idx) => (
-            <AnimateIn
-              key={dept.specialty}
-              animation="fade-up"
-              delay={Math.min(idx * 60, 200)}
-              className="w-full flex"
+
+        {/* 5. Minimalist Bottom Strip: Quick Emergency Help & Directory Link */}
+        <div className="mt-4 pt-3 border-t border-[#F0E4DA] flex flex-col sm:flex-row items-center justify-between gap-2.5 text-xs">
+          <div className="flex items-center gap-2 text-[#666]">
+            <Phone className="w-3.5 h-3.5 text-[#E94B1C]" />
+            <span>24/7 OPD & Emergency Desk:</span>
+            <a
+              href={`tel:${HOSPITAL_INFO.phoneRaw}`}
+              className="font-bold text-[#C63D1B] hover:underline"
             >
-              <div className="bg-white rounded-2xl p-5 sm:p-6 border border-[#EFE5DC] shadow-sm hover:shadow-xl hover:border-[#E94B1C]/40 transition-all duration-400 flex flex-col justify-between h-full w-full group magnetic-card card-shine-effect">
+              {HOSPITAL_INFO.phone}
+            </a>
+          </div>
 
-                {/* Specialty Header */}
-                <div className="mb-4">
-                  <div className="flex items-center justify-center gap-2">
-                    <span className="h-[2px] min-w-[8px] flex-1 bg-gradient-to-r from-transparent to-[#E94B1C]/30 group-hover:to-[#E94B1C] transition-colors rounded-full" />
-                    <div className="flex items-center gap-1.5 shrink-0 px-1">
-                      {dept.icon && (
-                        <dept.icon
-                          className="w-4 h-4 text-[#E94B1C] shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
-                          strokeWidth={2.2}
-                          aria-hidden="true"
-                        />
-                      )}
-                      <h3 className="text-[11px] sm:text-xs font-black uppercase tracking-wider text-[#C63D1B] text-center leading-none">
-                        {dept.specialty}
-                      </h3>
-                    </div>
-                    <span className="h-[2px] min-w-[8px] flex-1 bg-gradient-to-l from-transparent to-[#E94B1C]/30 group-hover:to-[#E94B1C] transition-colors rounded-full" />
-                  </div>
-                </div>
-
-                {/* Doctor Listings */}
-                <div className="space-y-3 text-center flex-1 flex flex-col justify-center py-2">
-                  {dept.doctors.map((doctor, dIdx) => {
-                    const initials = doctor.name
-                      .replace(/^Dr\.\s*/i, "")
-                      .split(" ")
-                      .map((n) => n[0])
-                      .filter(Boolean)
-                      .slice(0, 2)
-                      .join("");
-
-                    return (
-                      <div
-                        key={doctor.name}
-                        className={`flex items-center gap-3 text-left ${
-                          dIdx > 0 ? "pt-2.5 border-t border-[#F0E2D9]" : ""
-                        }`}
-                      >
-                        <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#FFF0E6] to-[#FFE3D0] text-[#E94B1C] font-bold text-xs flex items-center justify-center shrink-0 border border-[#FADCCB] group-hover:scale-105 transition-transform shadow-xs">
-                          {initials || "MD"}
-                        </div>
-                        <div className="min-w-0 flex-1">
-                          <h4 className="text-[13.5px] sm:text-[14.5px] font-bold text-[#262626] leading-snug truncate">
-                            {doctor.name}
-                          </h4>
-                          <p className="text-[10px] sm:text-[11px] text-[#756860] font-semibold tracking-wide truncate">
-                            {doctor.qualifications}
-                          </p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {/* Actions */}
-                <div className="mt-4 pt-3 border-t border-[#F0E2D9] flex items-center justify-between text-xs">
-                  <button
-                    type="button"
-                    onClick={() => openModal(dept.specialty)}
-                    className="group/link font-bold text-[#C63D1B] hover:text-[#A83218] inline-flex items-center gap-1.5 transition-colors text-[11px] sm:text-xs cursor-pointer bg-transparent border-0 p-0"
-                  >
-                    <Calendar className="w-3.5 h-3.5 text-[#E94B1C]" />
-                    <span>Book OPD</span>
-                  </button>
-                  <Link
-                    to={SLUG_MAP[dept.specialty] || "/doctors"}
-                    className="font-semibold text-[#756860] hover:text-[#E94B1C] transition-colors text-[11px] sm:text-xs inline-flex items-center gap-1"
-                  >
-                    <span>View Page</span>
-                    <ArrowRight className="w-3 h-3" />
-                  </Link>
-                </div>
-              </div>
-            </AnimateIn>
-          ))}
-        </div>
-
-        {/* Explore CTA */}
-        <AnimateIn animation="fade-up" delay={250}>
-          <div className="mt-12 sm:mt-14 text-center">
+          <div className="flex items-center gap-3">
             <Link
               to="/doctors"
-              className="group inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-[#E94B1C] to-[#C63D1B] hover:from-[#C63D1B] hover:to-[#A83218] transition-all shadow-[0_6px_20px_rgba(233,75,28,0.3)] hover:shadow-[0_8px_28px_rgba(233,75,28,0.4)] hover:scale-[1.02] active:scale-[0.98]"
+              className="font-bold text-[#14233C] hover:text-[#E94B1C] transition-colors inline-flex items-center gap-1"
             >
-              <span>Explore All 12 Specialities</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <span>View Full Directory (21 Doctors)</span>
+              <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
-        </AnimateIn>
-
-        {/* Help Banner */}
-        <AnimateIn animation="fade-up" delay={200}>
-          <div className="mt-12 sm:mt-14 text-center max-w-2xl mx-auto p-5 sm:p-6 rounded-2xl bg-white/90 backdrop-blur-sm border border-[#EFE5DC] shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="text-left space-y-0.5">
-              <p className="text-sm font-bold text-[#14233C]">
-                Need assistance selecting the right specialist?
-              </p>
-              <p className="text-xs text-[#756860]">
-                Our hospital front desk coordinators are available 24/7.
-              </p>
-            </div>
-            <div className="flex items-center gap-2.5 shrink-0">
-              <a
-                href={`tel:${HOSPITAL_INFO.phoneRaw}`}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-[#E94B1C] to-[#C63D1B] hover:from-[#C63D1B] hover:to-[#A83218] transition-all shadow-sm"
-              >
-                <Phone className="w-3.5 h-3.5" />
-                <span>Call {HOSPITAL_INFO.phone}</span>
-              </a>
-              <button
-                type="button"
-                onClick={() => openModal()}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold text-[#C63D1B] bg-[#FFF0E6] hover:bg-[#FFE4D3] border border-[#E9D8CE] transition-colors cursor-pointer"
-              >
-                <span>Book Visit</span>
-              </button>
-            </div>
-          </div>
-        </AnimateIn>
+        </div>
 
       </div>
     </section>
+  );
+}
+
+// Compact, Ultra-Premium Doctor Card without sloppy icons
+function DoctorCard({ doctor, onBookOpd }) {
+  const initials = doctor.name
+    .replace(/^Dr\.\s*/i, "")
+    .split(" ")
+    .map((n) => n[0])
+    .filter(Boolean)
+    .slice(0, 2)
+    .join("");
+
+  // Clean, single-line focus text
+  const primaryFocus = doctor.specialties && doctor.specialties.length > 0
+    ? doctor.specialties[0]
+    : doctor.experience || "Comprehensive Specialist Care";
+
+  // Clean, formatted short timing string
+  const timingShort = doctor.opdTimings
+    ? doctor.opdTimings.split("&")[0].trim()
+    : "Mon – Sat OPD Available";
+
+  return (
+    <div className="w-[305px] sm:w-[325px] h-[235px] shrink-0 mx-2 bg-white rounded-2xl p-4 border border-[#EFE5DC] shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_24px_rgba(233,75,28,0.12)] hover:border-[#E94B1C]/40 transition-all duration-300 flex flex-col justify-between group">
+      
+      {/* Top Header: Department & Subtle OPD Tag (NO messy icons) */}
+      <div className="flex items-center justify-between pb-2 border-b border-[#F7EFE8]">
+        <span className="text-[10px] font-black uppercase tracking-wider text-[#C63D1B]">
+          {doctor.department}
+        </span>
+        <span className="text-[9.5px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60">
+          OPD Active
+        </span>
+      </div>
+
+      {/* Middle: Doctor Initials + Clean Typography */}
+      <div className="flex items-start gap-3 my-1">
+        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#FFF0E6] to-[#FFE3D0] text-[#E94B1C] font-black text-sm flex items-center justify-center border border-[#FADCCB] shrink-0 shadow-2xs group-hover:scale-105 transition-transform">
+          {initials || "DR"}
+        </div>
+        <div className="min-w-0 flex-1">
+          <h3 className="text-[14px] font-bold text-[#14233C] group-hover:text-[#E94B1C] transition-colors leading-tight truncate">
+            {doctor.name}
+          </h3>
+          <p className="text-[10.5px] font-bold text-[#C63D1B] leading-tight mt-0.5 truncate">
+            {doctor.qualifications}
+          </p>
+          <p className="text-[10px] text-[#666] font-medium leading-tight mt-0.5 truncate">
+            {doctor.designation}
+          </p>
+        </div>
+      </div>
+
+      {/* Focus Area Pill */}
+      <div className="bg-[#FAF5F0] rounded-lg px-2.5 py-1 border border-[#EFE5DC]">
+        <p className="text-[10.5px] text-[#4A5568] font-medium truncate">
+          {primaryFocus}
+        </p>
+      </div>
+
+      {/* OPD Schedule Line (Clean, no messy clock icon) */}
+      <div className="flex items-center justify-between text-[10px] text-[#777] px-0.5">
+        <span className="font-semibold text-[#888] uppercase tracking-wide text-[9px]">
+          Schedule
+        </span>
+        <span className="font-bold text-[#14233C] truncate max-w-[210px]">
+          {timingShort}
+        </span>
+      </div>
+
+      {/* Clean Full-Width Button: Book OPD (Directly Opens Appointment Modal) */}
+      <button
+        type="button"
+        onClick={onBookOpd}
+        className="w-full py-2 px-3 rounded-xl text-[11px] font-bold text-white bg-gradient-to-r from-[#E94B1C] to-[#C63D1B] hover:from-[#C63D1B] hover:to-[#A83218] transition-all shadow-2xs hover:shadow-xs cursor-pointer text-center active:scale-98"
+      >
+        Book OPD Consultation
+      </button>
+
+    </div>
   );
 }
 

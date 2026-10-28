@@ -1,28 +1,31 @@
-import React from "react";
+import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Award, Heart, Sparkles, ChevronRight, Calendar } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useRef } from "react";
+import { useAppointmentModal } from "../../context/AppointmentModalContext";
 
 /**
  * FounderStorySection Component
- * Dedicated section immediately below the Hero: "The Vision Behind Our Care"
- * Features authentic founder portrait, complete narrative, and 3 story milestones.
+ * - Removed sloppy logo pills as requested.
+ * - Restored the authentic curved pedestal plinth with full 3D depth effect (matching Image 3).
+ * - "OUR PHILOSOPHY" and "THE JOURNEY" are live editable HTML text, seamlessly blended with NO boxy cards.
+ * - Action CTAs at bottom.
  */
 export function FounderStorySection() {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.15 });
+  const isInView = useInView(sectionRef, { once: true, amount: 0.1 });
+  const { openModal } = useAppointmentModal();
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1, delayChildren: 0.1 },
+      transition: { staggerChildren: 0.1, delayChildren: 0.05 },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 25 },
+    hidden: { opacity: 0, y: 16 },
     visible: {
       opacity: 1,
       y: 0,
@@ -30,171 +33,178 @@ export function FounderStorySection() {
     },
   };
 
-  const milestones = [
-    {
-      num: "01",
-      title: "15+ Years",
-      desc: "Of patient-care experience across general medicine and dedicated clinical practice.",
-      icon: <Award className="w-4 h-4" />,
-    },
-    {
-      num: "02",
-      title: "Patient First",
-      desc: "A holistic approach grounded in empathy, individual needs, and compassionate listening.",
-      icon: <Heart className="w-4 h-4" />,
-    },
-    {
-      num: "03",
-      title: "Est. 2024",
-      desc: "The establishment of Surya Hospital at Sai Nagar, Anantapur.",
-      icon: <Calendar className="w-4 h-4" />,
-    },
-  ];
-
   return (
     <section
       ref={sectionRef}
       id="founder-story"
-      className="relative w-full py-20 sm:py-28 bg-gradient-to-b from-[#FFFDFB] via-[#FFF9F3] to-[#FFF5EC] border-t border-[#F0E4D8] overflow-hidden scroll-mt-20"
+      className="relative w-full py-8 sm:py-10 lg:py-12 overflow-hidden scroll-mt-20 border-t border-[#EFE5DC]"
+      style={{
+        background:
+          "radial-gradient(ellipse at 50% 28%, #FFFDF9 0%, #FAF2EB 38%, #F4E8DC 75%, #ECD9CC 100%)",
+      }}
     >
-      {/* Ambient lighting */}
+      {/* ── AMBIENT SILK WAVES & WARM GLOWS ── */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
-        <div className="absolute top-10 right-1/4 w-[500px] h-[500px] rounded-full bg-[#E94B1C]/[0.03] blur-[100px] animate-aurora" />
-        <div className="absolute bottom-20 left-1/6 w-[400px] h-[400px] rounded-full bg-[#FF8A3D]/[0.04] blur-[90px] animate-aurora" style={{ animationDelay: "4s" }} />
+        <div
+          className="absolute -top-32 left-1/2 -translate-x-1/2 w-[1400px] h-[650px] rounded-[100%] opacity-45 blur-3xl pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse, rgba(255, 235, 215, 0.8) 0%, rgba(244, 232, 220, 0.25) 60%, transparent 80%)",
+          }}
+        />
+        <div className="absolute top-1/4 left-1/12 w-[400px] h-[400px] rounded-full bg-[#E94B1C]/[0.035] blur-[110px]" />
+        <div className="absolute top-1/3 right-1/12 w-[440px] h-[440px] rounded-full bg-[#FF8A3D]/[0.04] blur-[110px]" />
+        <div className="absolute -bottom-24 left-1/3 w-[600px] h-[380px] rounded-full bg-[#E94B1C]/[0.025] blur-[130px]" />
       </div>
 
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
+        className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8"
       >
-        {/* Section Eyebrow & Main Heading */}
-        <motion.div variants={itemVariants} className="text-center max-w-3xl mx-auto mb-14 sm:mb-18">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#FFF0E6] to-[#FFE8D6] text-[#E94B1C] text-[11px] font-extrabold uppercase tracking-[0.14em] mb-4 border border-[#FADCCB]/80 shadow-[0_2px_8px_rgba(233,75,28,0.06)]">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>THE STORY BEHIND OUR CARE</span>
+        {/* ── TOP SECTION HEADER (Live Editable Code) ── */}
+        <motion.div variants={itemVariants} className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
+          <div className="flex items-center justify-center gap-3 sm:gap-4 mb-2.5">
+            <span className="w-8 sm:w-16 h-[1.5px] bg-gradient-to-r from-transparent to-[#E94B1C]" />
+            <span className="text-[11px] sm:text-xs font-bold tracking-[0.22em] text-[#E94B1C] uppercase font-sans">
+              THE STORY BEHIND OUR CARE
+            </span>
+            <span className="w-8 sm:w-16 h-[1.5px] bg-gradient-to-l from-transparent to-[#E94B1C]" />
           </div>
 
-          <h2 className="font-serif-heading text-3xl sm:text-4xl md:text-5xl font-bold text-[#14233C] tracking-tight leading-tight">
-            The Vision Behind{" "}
-            <span className="bg-gradient-to-r from-[#E94B1C] to-[#F26A21] bg-clip-text text-transparent">
-              Our Care
-            </span>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-bold text-[#14233C] tracking-tight leading-[1.15]">
+            A Vision{" "}
+            <span className="bg-gradient-to-r from-[#E94B1C] via-[#FF6B35] to-[#E94B1C] bg-clip-text text-transparent">
+              Beyond
+            </span>{" "}
+            Medicine.
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#4A5568] font-medium leading-relaxed max-w-2xl mx-auto">
-            Built on years of patient-care experience, a belief in compassionate medicine, and a commitment to seeing every patient as an individual.
+
+          <p className="mt-2.5 text-base sm:text-lg text-[#5A687A] font-medium tracking-normal max-w-xl mx-auto">
+            Years of experience. A deeper purpose. A healthier Anantapur.
           </p>
         </motion.div>
 
-        {/* Editorial Story Layout */}
-        <motion.div
-          variants={itemVariants}
-          className="bg-white rounded-[2rem] p-6 sm:p-10 lg:p-14 border border-[#EFE5DC] shadow-[0_16px_60px_rgba(200,90,40,0.05)] hover:shadow-[0_20px_70px_rgba(200,90,40,0.08)] transition-shadow duration-500"
-        >
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        {/* ── MAIN 3-COLUMN SHOWCASE: NO SLOPPY LOGOS, DEEP 3D PLINTH ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 xl:gap-8 items-center">
+          
+          {/* 1. LEFT COLUMN: OUR PHILOSOPHY (Clean editorial text, NO sloppy logo, NO white box) */}
+          <motion.div
+            variants={itemVariants}
+            className="lg:col-span-3 xl:col-span-3 flex flex-col justify-center order-2 lg:order-1 text-left px-2 sm:px-4"
+          >
+            {/* Eyebrow */}
+            <div className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#E94B1C] mb-2 font-sans">
+              OUR PHILOSOPHY
+            </div>
 
-            {/* Left: Founder Portrait Card */}
-            <motion.div
-              variants={itemVariants}
-              className="lg:col-span-5 flex flex-col items-center text-center p-8 sm:p-10 rounded-3xl bg-gradient-to-b from-[#FFF9F3] via-[#FFF0E6]/50 to-[#FFE8D6]/30 border border-[#F2DECE]/80 shadow-inner relative overflow-hidden"
-            >
-              {/* Decorative ring behind portrait */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-52 h-52 sm:w-64 sm:h-64 rounded-full border-2 border-dashed border-[#E94B1C]/10 pointer-events-none animate-[spin_30s_linear_infinite]" />
+            {/* Heading */}
+            <h3 className="font-serif text-2xl sm:text-[28px] font-bold text-[#14233C] leading-snug mb-4">
+              Care begins with listening.
+            </h3>
 
-              <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden border-4 border-white shadow-lg mb-6 bg-white shrink-0 ring-2 ring-[#E94B1C]/10 ring-offset-4 ring-offset-[#FFF9F3]">
+            {/* Body Quote */}
+            <p className="text-[14.5px] sm:text-[15px] text-[#4A5568] leading-[1.8] font-normal">
+              I believe in a holistic approach to healthcare — combining modern medical practices with empathy, and always keeping the individual needs and concerns of my patients at the center.
+            </p>
+          </motion.div>
+
+          {/* 2. CENTER COLUMN: 3D DOCTOR WITH THE AUTHENTIC CURVED PEDESTAL PLINTH (MATCHING IMAGE 3) */}
+          <motion.div
+            variants={itemVariants}
+            className="lg:col-span-6 xl:col-span-6 flex flex-col items-center justify-center order-1 lg:order-2"
+          >
+            <div className="relative w-full max-w-[620px] xl:max-w-[660px] mx-auto group">
+              {/* Subtle back-glow */}
+              <div className="absolute inset-0 -m-4 rounded-3xl bg-gradient-to-b from-[#E94B1C]/[0.06] via-transparent to-[#FF8A3D]/[0.04] blur-2xl pointer-events-none" />
+
+              {/* Exact Curved Pedestal Plinth Artwork with Doctor, 3D Typography & Stats (Matching Image 3) */}
+              <div className="relative z-10 transition-transform duration-500 ease-out group-hover:scale-[1.015]">
                 <img
-                  src="/images/dr-d-surya-prakash.png"
-                  alt="Dr. Surya Prakash Chowdary"
-                  className="w-full h-full object-cover object-top"
-                  loading="lazy"
+                  src="/images/founder-depth-hero.png"
+                  alt="Dr. Surya Prakash Chowdary - Founder, Surya Hospital - MBBS, MD Manipal Academy of Higher Education"
+                  className="w-full h-auto object-contain drop-shadow-[0_20px_44px_rgba(180,110,60,0.18)] select-none pointer-events-none"
+                  loading="eager"
+                  draggable={false}
                 />
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-black text-[#14233C] tracking-tight">
-                Dr. Surya Prakash Chowdary
-              </h3>
-              <p className="text-xs font-extrabold uppercase tracking-[0.12em] text-[#E94B1C] mt-1.5">
-                Founder, Surya Hospital
-              </p>
-              <p className="text-xs text-[#616B76] font-medium mt-1">
-                MBBS, MD · Manipal Academy of Higher Education
-              </p>
-
-              {/* Credibility badges */}
-              <div className="w-full grid grid-cols-2 gap-3 mt-7 pt-6 border-t border-[#E8D4C4]/60">
-                <div className="p-3.5 rounded-2xl bg-white/90 text-center border border-[#F0E2D9] shadow-xs magnetic-card">
-                  <div className="text-xl font-black text-[#14233C]">15+</div>
-                  <div className="text-[10px] font-bold text-[#616B76] uppercase tracking-wider mt-0.5">Years Experience</div>
-                </div>
-                <div className="p-3.5 rounded-2xl bg-white/90 text-center border border-[#F0E2D9] shadow-xs magnetic-card">
-                  <div className="text-xl font-black text-[#E94B1C]">~1 Lakh</div>
-                  <div className="text-[10px] font-bold text-[#616B76] uppercase tracking-wider mt-0.5">Patients Cared</div>
-                </div>
+              {/* Semantic hidden text for search engines and accessibility */}
+              <div className="sr-only">
+                <h3>Dr. Surya Prakash Chowdary</h3>
+                <p>FOUNDER · SURYA HOSPITAL</p>
+                <p>MBBS, MD – Manipal Academy of Higher Education</p>
+                <p>15+ Years OF PATIENT CARE EXPERIENCE</p>
+                <p>~ 1 Lakh PATIENTS TREATED AND CARED FOR</p>
+                <p>Est. 2024 A COMPREHENSIVE MULTI-SPECIALITY HOSPITAL</p>
               </div>
-            </motion.div>
+            </div>
+          </motion.div>
 
-            {/* Right: Narrative + Milestones */}
-            <motion.div
-              variants={itemVariants}
-              className="lg:col-span-7 flex flex-col space-y-5 text-[#3A4556] text-[14.5px] sm:text-[15.5px] leading-[1.75] text-left"
-            >
+          {/* 3. RIGHT COLUMN: THE JOURNEY (Clean editorial text, NO sloppy logo, NO white box) */}
+          <motion.div
+            variants={itemVariants}
+            className="lg:col-span-3 xl:col-span-3 flex flex-col justify-center order-3 text-left px-2 sm:px-4"
+          >
+            {/* Eyebrow */}
+            <div className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#E94B1C] mb-2 font-sans">
+              THE JOURNEY
+            </div>
+
+            {/* Heading */}
+            <h3 className="font-serif text-2xl sm:text-[28px] font-bold text-[#14233C] leading-snug mb-4">
+              From a small clinic to a complete care center.
+            </h3>
+
+            {/* 3 Story Paragraphs (100% Live Editable Text) */}
+            <div className="space-y-3.5 text-[14px] text-[#4A5568] leading-[1.72]">
               <p>
-                <span className="text-xl sm:text-2xl font-serif-heading font-black text-[#E94B1C] mr-1 inline align-baseline">
-                  Dr.
-                </span>{" "}
-                Surya Prakash Chowdary has 15 years of experience in patient care and holds an MBBS and an MD from Manipal Academy of Higher Education. Having cared for approximately one lakh patients, he believes in a holistic approach to healthcare that considers modern lifestyles, individual needs, and the concerns of every patient.
+                With over <strong className="font-bold text-[#14233C]">15 years</strong> of patient care experience and qualifications of <strong className="font-bold text-[#14233C]">MBBS, MD from Manipal Academy of Higher Education</strong>, I have treated and cared for <strong className="font-bold text-[#14233C]">approximately 1 lakh patients</strong>.
               </p>
 
               <p>
-                During the COVID-19 pandemic, he began treating patients at his clinic despite limited facilities. This commitment to caring for patients during a challenging period helped shape his vision for a more comprehensive healthcare setup.
+                <strong className="font-bold text-[#14233C]">During the COVID-19 pandemic</strong>, I was among the first to start treating patients at my clinic, despite limited facilities. That experience reinforced my belief in <strong className="font-bold text-[#14233C]">accessible and compassionate care</strong>.
               </p>
 
               <p>
-                In 2024, that vision took shape with the establishment of Surya Hospital, bringing modern clinical facilities, diagnostics, and 24/7 emergency care together under one roof, helping patients access high-quality treatment in one place.
+                <strong className="font-bold text-[#14233C]">In 2024</strong>, this vision took shape with the establishment of <strong className="font-bold text-[#14233C]">Surya Hospital</strong> — bringing multiple specialities, advanced diagnostics, and comprehensive facilities under one roof.
               </p>
+            </div>
+          </motion.div>
 
-              {/* Milestones */}
-              <div className="pt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {milestones.map((m) => (
-                  <div
-                    key={m.num}
-                    className="p-4 rounded-2xl bg-gradient-to-br from-[#FFF9F3] to-[#FFF0E6]/50 border border-[#F0E2D9] text-left magnetic-card card-shine-effect group"
-                  >
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <span className="w-7 h-7 rounded-full bg-gradient-to-br from-[#E94B1C] to-[#C63D1B] text-white text-[10px] font-black flex items-center justify-center shrink-0 shadow-sm group-hover:scale-110 transition-transform">
-                        {m.num}
-                      </span>
-                      <span className="text-base font-black text-[#14233C]">{m.title}</span>
-                    </div>
-                    <p className="text-xs text-[#616B76] leading-relaxed">
-                      {m.desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
+        </div>
 
-              {/* Navigation CTAs */}
-              <div className="pt-4 flex flex-wrap items-center gap-3">
-                <Link
-                  to="/specialities"
-                  className="group inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-[13px] sm:text-sm font-bold text-white bg-gradient-to-r from-[#E94B1C] to-[#C63D1B] hover:from-[#C63D1B] hover:to-[#A83218] transition-all shadow-[0_4px_16px_rgba(233,75,28,0.3)] hover:shadow-[0_6px_20px_rgba(233,75,28,0.4)]"
-                >
-                  <span>Explore Specialities</span>
-                  <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                </Link>
-                <Link
-                  to="/doctors"
-                  className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] sm:text-sm font-bold text-[#14233C] hover:text-[#E94B1C] bg-white hover:bg-[#FFF0E6] border border-[#E9D8CE] hover:border-[#E94B1C]/30 transition-all shadow-sm"
-                >
-                  <span>Meet Our Specialists</span>
-                  <ChevronRight className="w-4 h-4 text-[#E94B1C] group-hover:translate-x-0.5 transition-transform" />
-                </Link>
-              </div>
-            </motion.div>
+        {/* ── BOTTOM ACTION CTAS ── */}
+        <motion.div
+          variants={itemVariants}
+          className="mt-6 sm:mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-3.5"
+        >
+          <Link
+            to="/specialities"
+            className="group inline-flex items-center gap-2.5 px-6 sm:px-7 py-3 rounded-full text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-[#E94B1C] to-[#C63D1B] hover:from-[#C63D1B] hover:to-[#A83218] transition-all duration-300 shadow-[0_6px_20px_rgba(233,75,28,0.28)] hover:shadow-[0_8px_25px_rgba(233,75,28,0.38)] hover:-translate-y-0.5"
+          >
+            <span>Explore Specialities</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
 
-          </div>
+          <Link
+            to="/doctors"
+            className="group inline-flex items-center gap-2.5 px-5 sm:px-6 py-3 rounded-full text-xs sm:text-sm font-bold text-[#14233C] hover:text-[#E94B1C] bg-white/90 hover:bg-white border border-[#E9D8CE] hover:border-[#E94B1C]/40 transition-all duration-300 shadow-[0_4px_12px_rgba(0,0,0,0.04)] hover:-translate-y-0.5"
+          >
+            <span>Meet Our Specialists</span>
+            <ArrowRight className="w-4 h-4 text-[#E94B1C] group-hover:translate-x-1 transition-transform" />
+          </Link>
+
+          <button
+            onClick={() => openModal()}
+            className="group inline-flex items-center gap-2 px-5 sm:px-6 py-3 rounded-full text-xs sm:text-sm font-bold text-[#E94B1C] bg-[#FFF0E6] hover:bg-[#FFE6D6] border border-[#FADCCB] transition-all duration-300 hover:-translate-y-0.5 shadow-xs cursor-pointer"
+          >
+            <Calendar className="w-4 h-4 text-[#E94B1C]" />
+            <span>Book Consultation</span>
+          </button>
         </motion.div>
+
       </motion.div>
     </section>
   );

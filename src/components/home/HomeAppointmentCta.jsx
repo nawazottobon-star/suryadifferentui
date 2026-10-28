@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Calendar, Clock, UserCheck, CheckCircle2, ArrowRight, Sparkles } from "lucide-react";
+import { Calendar, Clock, UserCheck, CheckCircle2, ArrowRight } from "lucide-react";
 import { AnimateIn } from "../ui/AnimateIn";
 
 export function HomeAppointmentCta() {
@@ -18,7 +18,7 @@ export function HomeAppointmentCta() {
   };
 
   return (
-    <section className="relative py-20 sm:py-28 bg-[#1A1D20] text-white overflow-hidden">
+    <section className="relative py-12 sm:py-16 md:py-20 bg-[#1A1D20] text-white overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <img
@@ -53,8 +53,7 @@ export function HomeAppointmentCta() {
           {/* Left: Heading & Features */}
           <div className="lg:col-span-7 space-y-6 text-left">
             <AnimateIn animation="slide-left">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/15 text-[11px] font-bold uppercase tracking-[0.12em] text-[#FF8A3D]">
-                <Sparkles className="w-3 h-3" />
+              <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/15 text-[11px] font-bold uppercase tracking-[0.12em] text-[#FF8A3D]">
                 <span>BOOK APPOINTMENT</span>
               </div>
             </AnimateIn>

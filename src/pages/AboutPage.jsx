@@ -13,7 +13,6 @@ import {
   Activity,
   Heart,
   Clock,
-  Sparkles,
 } from "lucide-react";
 import { HOSPITAL_INFO } from "../constants/hospitalData";
 import { AnimateIn } from "../components/ui/AnimateIn";
