@@ -7,45 +7,13 @@ import {
 import { HOSPITAL_INFO } from "../../constants/hospitalData";
 import { useAppointmentModal } from "../../context/AppointmentModalContext";
 
-// Department tabs configuration
-const TABS = [
-  { id: "All", label: "All Specialists", count: 21 },
-  { id: "Cardiology", label: "Cardiology", count: 2 },
-  { id: "Gastroenterology", label: "Gastroenterology", count: 1 },
-  { id: "Nephrology", label: "Nephrology", count: 2 },
-  { id: "Orthopedic", label: "Orthopedic & Spine", count: 3 },
-  { id: "E.N.T.", label: "E.N.T.", count: 2 },
-  { id: "Pulmonology", label: "Pulmonology", count: 2 },
-  { id: "Neurology", label: "Neurology", count: 1 },
-  { id: "Urology", label: "Urology", count: 2 },
-  { id: "General Surgery", label: "General Surgery", count: 2 },
-  { id: "Oncology", label: "Oncology", count: 1 },
-  { id: "Psychiatry", label: "Psychiatry", count: 1 },
-  { id: "Anesthesia & Intensivist", label: "Critical Care", count: 1 },
-  { id: "Internal Medicine", label: "General Medicine", count: 1 },
-];
-
 export function SpecialtiesDoctorsPoster() {
   const { openModal } = useAppointmentModal();
-  const [activeTab, setActiveTab] = useState("All");
 
-  // Filter doctors based on active tab
-  const filteredDoctors = useMemo(() => {
-    if (activeTab === "All") {
-      return HOSPITAL_INFO.doctors;
-    }
-    return HOSPITAL_INFO.doctors.filter(
-      (doc) => doc.department.toLowerCase() === activeTab.toLowerCase()
-    );
-  }, [activeTab]);
-
-  // For seamless infinite auto-scroll, duplicate list when showing "All" or more than 3 doctors
+  // Seamless infinite loop duplicating 21 doctors for unbroken marquee
   const displayDoctors = useMemo(() => {
-    if (activeTab === "All" || filteredDoctors.length >= 4) {
-      return [...filteredDoctors, ...filteredDoctors];
-    }
-    return filteredDoctors;
-  }, [filteredDoctors, activeTab]);
+    return [...HOSPITAL_INFO.doctors, ...HOSPITAL_INFO.doctors];
+  }, []);
 
   const handleBookOpd = (e, deptName) => {
     e.preventDefault();
@@ -83,10 +51,10 @@ export function SpecialtiesDoctorsPoster() {
 
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 relative z-10">
 
-        {/* 1. Compact Header Block (Takes minimal vertical space) */}
-        <div className="text-center max-w-2xl mx-auto mb-4 sm:mb-5">
+        {/* 1. Compact Header Block */}
+        <div className="text-center max-w-2xl mx-auto mb-5 sm:mb-6">
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#FFF0E6] text-[#E94B1C] text-[10px] font-extrabold uppercase tracking-wider mb-2 border border-[#FADCCB]">
-            <span>Expert Medical Team</span>
+            <span>21 Verified Specialists • 12 Clinical Departments</span>
           </div>
 
           <h2 className="text-2xl sm:text-3xl font-serif-heading font-bold text-[#14233C] tracking-tight leading-tight">
@@ -97,73 +65,24 @@ export function SpecialtiesDoctorsPoster() {
           </h2>
 
           <p className="mt-1 text-xs sm:text-[13px] text-[#666] font-medium leading-relaxed max-w-lg mx-auto">
-            Experienced specialists across 12 approved departments. Continuous directory.
+            Experienced medical leadership providing compassionate consultations and 24/7 inpatient care.
           </p>
         </div>
 
-        {/* 2. Compact Department Filter Tabs */}
-        <div className="relative mb-5">
-          <div
-            className="flex items-center gap-1.5 overflow-x-auto pb-1 pt-0.5 px-1 scrollbar-none justify-start md:justify-center"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-          >
-            {TABS.map((tab) => {
-              const isActive = activeTab === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  type="button"
-                  className={`px-3 py-1.5 rounded-full text-[11px] font-bold whitespace-nowrap transition-all duration-200 shrink-0 cursor-pointer ${
-                    isActive
-                      ? "bg-gradient-to-r from-[#E94B1C] to-[#C63D1B] text-white shadow-xs"
-                      : "text-[#555] bg-white/90 hover:bg-white hover:text-[#14233C] border border-[#EFE5DC]"
-                  }`}
-                >
-                  <span>{tab.label}</span>
-                  <span
-                    className={`ml-1 text-[9.5px] px-1.5 py-0.2 rounded-full font-semibold ${
-                      isActive
-                        ? "bg-white/20 text-white"
-                        : "bg-[#FFF0E6] text-[#C63D1B]"
-                    }`}
-                  >
-                    {tab.count}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* 3. Auto-Scroll Loop Carousel Container (Shortened Card Height) */}
+        {/* 2. Auto-Scroll Loop Carousel Container (Shortened Card Height) */}
         <div
-          className="relative overflow-x-auto scrollbar-none py-1"
+          className="relative overflow-x-auto scrollbar-none py-1 mb-2"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
-          {activeTab === "All" ? (
-            /* Continuous Infinite Right-to-Left Marquee Track */
-            <div className="animate-doctor-loop">
-              {displayDoctors.map((doctor, idx) => (
-                <DoctorCard
-                  key={`${doctor.id || doctor.name}-${idx}`}
-                  doctor={doctor}
-                  onBookOpd={(e) => handleBookOpd(e, doctor.department)}
-                />
-              ))}
-            </div>
-          ) : (
-            /* Filtered Cards Grid or Row */
-            <div className="flex items-center gap-4 flex-wrap justify-center py-1">
-              {filteredDoctors.map((doctor) => (
-                <DoctorCard
-                  key={doctor.id || doctor.name}
-                  doctor={doctor}
-                  onBookOpd={(e) => handleBookOpd(e, doctor.department)}
-                />
-              ))}
-            </div>
-          )}
+          <div className="animate-doctor-loop">
+            {displayDoctors.map((doctor, idx) => (
+              <DoctorCard
+                key={`${doctor.id || doctor.name}-${idx}`}
+                doctor={doctor}
+                onBookOpd={(e) => handleBookOpd(e, doctor.department)}
+              />
+            ))}
+          </div>
         </div>
 
 

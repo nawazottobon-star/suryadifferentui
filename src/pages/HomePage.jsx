@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { HomeHero } from "../components/home/HomeHero";
 import { FounderStorySection } from "../components/home/FounderStorySection";
-import { FacilitiesCinematic } from "../components/home/FacilitiesCinematic";
+import { ClinicalServicesBento } from "../components/home/ClinicalServicesBento";
 import { SpecialtiesDoctorsPoster } from "../components/home/SpecialtiesDoctorsPoster";
 import { TestimonialCarousel } from "../components/home/TestimonialCarousel";
 import { InsuranceCashlessSection } from "../components/home/InsuranceCashlessSection";
@@ -20,8 +20,8 @@ export function HomePage() {
       {/* 1B. Dedicated Founder Story Section: "The Vision Behind Our Care" */}
       <FounderStorySection />
 
-      {/* 2. Advanced Technology & Facilities Section in Deep Clinical Teal */}
-      <FacilitiesCinematic />
+      {/* 2. Comprehensive Clinical Care Services & Diagnostics (Inline Expandable Bento) */}
+      <ClinicalServicesBento />
 
       {/* 5. Complete 12 Specialties & 19 Doctors Section matching reference poster */}
       <SpecialtiesDoctorsPoster />

@@ -190,11 +190,11 @@ export function Navbar() {
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: 6, scale: 0.98 }}
                             transition={{ duration: 0.18, ease: "easeOut" }}
-                            className="w-[720px] max-w-[92vw] bg-white rounded-3xl border border-[#E9D8CE] shadow-[0_20px_50px_rgba(0,0,0,0.12),0_4px_12px_rgba(233,75,28,0.06)] p-6 sm:p-7 text-left"
+                            className="w-[760px] max-w-[94vw] bg-white rounded-3xl border border-[#E9D8CE] shadow-[0_20px_50px_rgba(0,0,0,0.12),0_4px_12px_rgba(233,75,28,0.06)] p-6 sm:p-7 text-left"
                           >
-                          <div className="grid grid-cols-2 gap-8 divide-x divide-slate-100">
+                          <div className="grid grid-cols-2 gap-6 divide-x divide-slate-100">
                             {/* Medical Department Column (8 Specialities) */}
-                            <div className="pr-4 space-y-4">
+                            <div className="pr-4 space-y-4 min-w-0">
                               <div className="flex items-center gap-2 pb-2 border-b border-[#F0E2D9]">
                                 <div className="w-7 h-7 rounded-lg bg-[#E6F4F7] text-[#006677] flex items-center justify-center shrink-0">
                                   <Stethoscope className="w-4 h-4" />
@@ -232,7 +232,7 @@ export function Navbar() {
                             </div>
 
                             {/* Surgical Department Column (4 Specialities) */}
-                            <div className="pl-8 space-y-4 flex flex-col justify-between">
+                            <div className="pl-6 space-y-4 flex flex-col justify-between min-w-0">
                               <div className="space-y-4">
                                 <div className="flex items-center gap-2 pb-2 border-b border-[#F0E2D9]">
                                   <div className="w-7 h-7 rounded-lg bg-[#FFF0E6] text-[#E94B1C] flex items-center justify-center shrink-0">
@@ -271,12 +271,12 @@ export function Navbar() {
                               </div>
 
                               {/* Bottom Callout Banner */}
-                              <div className="mt-4 p-3.5 rounded-2xl bg-[#FFF9F3] border border-[#E9D8CE] flex items-center justify-between gap-3">
-                                <div>
-                                  <div className="text-[11px] font-bold text-[#1A1D20]">
+                              <div className="mt-4 p-3 sm:p-3.5 rounded-2xl bg-[#FFF9F3] border border-[#E9D8CE] flex items-center justify-between gap-2.5 min-w-0">
+                                <div className="min-w-0 flex-1 pr-1">
+                                  <div className="text-[11px] font-bold text-[#1A1D20] leading-tight">
                                     Need Doctor Guidance?
                                   </div>
-                                  <div className="text-[10px] text-[#756860]">
+                                  <div className="text-[10px] text-[#756860] leading-tight mt-0.5 line-clamp-1">
                                     Select any department to view full details
                                   </div>
                                 </div>
@@ -286,7 +286,7 @@ export function Navbar() {
                                     setDepartmentsDropdownOpen(false);
                                     openModal();
                                   }}
-                                  className="shrink-0 text-[11px] font-bold text-white bg-[#E94B1C] hover:bg-[#A83218] px-3.5 py-1.5 rounded-full transition-colors cursor-pointer"
+                                  className="shrink-0 text-[11px] font-bold text-white bg-[#E94B1C] hover:bg-[#A83218] px-3.5 py-1.5 rounded-full transition-all duration-150 cursor-pointer whitespace-nowrap shadow-xs active:scale-95"
                                 >
                                   Book OPD
                                 </button>

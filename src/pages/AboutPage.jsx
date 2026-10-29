@@ -100,60 +100,6 @@ export function AboutPage() {
         </Container>
       </section>
 
-      {/* Medical Leadership & Founder Section - Clean Card */}
-      <section className="py-12 sm:py-16 bg-white border-b border-[#F0E2D9]">
-        <Container>
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-[#FFF9F3] rounded-3xl border border-[#E9D8CE] p-6 sm:p-8 shadow-xs text-[#262626]">
-              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8">
-                {/* Doctor Portrait */}
-                <div className="relative w-36 h-44 sm:w-44 sm:h-52 rounded-2xl overflow-hidden bg-[#FFF0E6] shrink-0 border-2 border-[#E9D8CE] shadow-xs">
-                  <img
-                    src="/images/dr-d-surya-prakash.png"
-                    alt="Dr. D. Surya Prakash, M.D. Internal Medicine - Managing Director & Consultant Physician"
-                    className="w-full h-full object-cover object-top"
-                    loading="lazy"
-                  />
-                </div>
-
-                {/* Leadership Bio */}
-                <div className="space-y-3 text-left flex-1">
-                  <div>
-                    <span className="inline-block px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-[#FFF0E6] text-[#C63D1B] border border-[#E9D8CE] mb-1">
-                      Founder &amp; Managing Director
-                    </span>
-                    <h3 className="text-2xl sm:text-3xl font-black text-[#C63D1B] tracking-tight">
-                      Dr. D. Surya Prakash
-                    </h3>
-                    <p className="text-xs sm:text-sm font-bold text-[#E94B1C]">
-                      M.D. Internal Medicine (Manipal) • Consultant Physician
-                    </p>
-                  </div>
-
-                  <p className="text-xs sm:text-sm text-[#4A403B] leading-relaxed">
-                    With over 15 years of clinical practice, Dr. Surya Prakash oversees patient care standards, chronic metabolic care, diabetes, and inpatient treatment with a personalized, holistic approach.
-                  </p>
-
-                  <div className="pt-2 flex flex-wrap items-center justify-between gap-3 border-t border-[#F0E2D9] text-xs">
-                    <span className="text-[#756860]">
-                      <strong className="text-[#262626]">OPD Timings:</strong> Mon – Sat: 09:30 AM – 01:30 PM &amp; 05:00 PM – 08:30 PM
-                    </span>
-                    <Link to="/doctors">
-                      <Button
-                        variant="secondary"
-                        size="sm"
-                        className="text-xs font-bold border-[#E9D8CE] bg-white text-[#C63D1B] hover:bg-[#FFF0E6] rounded-full px-4 py-1.5"
-                      >
-                        View Doctor Directory
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
 
       {/* Core Values - 3 Quick Pillars */}
       <section className="py-12 sm:py-16 bg-[#FFF9F3] border-b border-[#F0E2D9]">

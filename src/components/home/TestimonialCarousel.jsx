@@ -143,17 +143,11 @@ const col3 = [realReviews[2], realReviews[3], realReviews[8], realReviews[9]];
 function TestimonialsColumn({ reviews, duration = 32, className = "" }) {
   return (
     <div className={`relative flex-1 min-w-[280px] max-w-sm ${className}`}>
-      <motion.ul
-        animate={{
-          translateY: "-50%",
+      <ul
+        style={{
+          animationDuration: `${duration}s`,
         }}
-        transition={{
-          duration: duration,
-          repeat: Infinity,
-          ease: "linear",
-          repeatType: "loop",
-        }}
-        className="flex flex-col gap-5 pb-5 list-none m-0 p-0"
+        className="testimonial-marquee-track flex flex-col gap-5 pb-5 list-none m-0 p-0 will-change-transform"
       >
         {[...new Array(2)].map((_, loopIdx) => (
           <React.Fragment key={loopIdx}>
@@ -167,7 +161,7 @@ function TestimonialsColumn({ reviews, duration = 32, className = "" }) {
                     "0 20px 40px -12px rgba(233, 75, 28, 0.16), 0 4px 12px rgba(0, 0, 0, 0.04)",
                   transition: { type: "spring", stiffness: 400, damping: 25 },
                 }}
-                className="p-6 rounded-2xl bg-white/95 backdrop-blur-md border border-[#EFE5DC] hover:border-[#E94B1C]/35 shadow-sm transition-all duration-300 text-left select-none group"
+                className="p-6 rounded-2xl bg-white/95 backdrop-blur-md border border-[#EFE5DC] hover:border-[#E94B1C]/35 shadow-sm transition-all duration-300 text-left select-none cursor-pointer group"
               >
                 {/* Top Quote Glyph & Verified Google Review Badge */}
                 <div className="flex items-center justify-between mb-3.5">
@@ -217,7 +211,7 @@ function TestimonialsColumn({ reviews, duration = 32, className = "" }) {
             ))}
           </React.Fragment>
         ))}
-      </motion.ul>
+      </ul>
     </div>
   );
 }
@@ -225,6 +219,28 @@ function TestimonialsColumn({ reviews, duration = 32, className = "" }) {
 export function TestimonialCarousel() {
   return (
     <section className="relative py-10 sm:py-14 bg-gradient-to-b from-[#FFF9F3] via-[#FAF3EC] to-[#FFF6ED] text-[#1A1D20] overflow-hidden border-t border-[#F0E4D8]/70">
+      {/* Dynamic Keyframes for butter-smooth vertical infinite marquee with pause on hover */}
+      <style>{`
+        @keyframes testimonialVerticalLoop {
+          0% {
+            transform: translateY(0);
+          }
+          100% {
+            transform: translateY(-50%);
+          }
+        }
+        .testimonial-marquee-track {
+          animation-name: testimonialVerticalLoop;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+        }
+        /* Butter-smooth pause when hovering over the review section, columns, or cards */
+        .testimonials-marquee-container:hover .testimonial-marquee-track,
+        .testimonial-marquee-track:hover {
+          animation-play-state: paused !important;
+        }
+      `}</style>
+
       {/* Ambient background glows matching Surya Hospital palette */}
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-orange-100/30 via-amber-100/20 to-transparent blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-10 w-[450px] h-[450px] rounded-full bg-amber-100/25 blur-3xl pointer-events-none" />
@@ -270,7 +286,7 @@ export function TestimonialCarousel() {
 
         {/* ── 3-COLUMN INFINITE VERTICAL SCROLLING MARQUEE (TALENT OPS ANIMATION) ── */}
         <div
-          className="flex justify-center gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] max-h-[520px] sm:max-h-[560px] overflow-hidden"
+          className="testimonials-marquee-container flex justify-center gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] max-h-[520px] sm:max-h-[560px] overflow-hidden"
           role="region"
           aria-label="Patient Testimonials"
         >
