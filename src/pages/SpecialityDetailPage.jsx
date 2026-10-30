@@ -47,7 +47,7 @@ export function SpecialityDetailPage() {
   ];
 
   return (
-    <div className="w-full bg-[#FFF9F3] text-[#262626]">
+    <div className="w-full bg-[#ECECE5] text-[#262626]">
       {/* ── 1. HERO SECTION ── */}
       <PageHero
         eyebrow={speciality.departmentType.toUpperCase()}
@@ -62,7 +62,7 @@ export function SpecialityDetailPage() {
         <button
           type="button"
           onClick={() => openModal(speciality.name)}
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-bold text-white bg-[#E94B1C] hover:bg-[#A83218] shadow-md hover:shadow-lg transition-all cursor-pointer active:scale-95 border-0"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-bold text-white bg-[#3A4F99] hover:bg-[#2A3B7A] shadow-md hover:shadow-lg transition-all cursor-pointer active:scale-95 border-0"
         >
           <Calendar className="w-4 h-4" />
           <span>Book an Appointment</span>
@@ -70,16 +70,16 @@ export function SpecialityDetailPage() {
         <a href={`tel:${HOSPITAL_INFO.phoneRaw}`}>
           <button
             type="button"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-bold text-[#C63D1B] bg-white border border-[#E9D8CE] hover:bg-[#FFF0E6] transition-all shadow-xs cursor-pointer active:scale-95"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-bold text-[#13233D] bg-white border border-[#D9E2EC] hover:bg-[#EEF2FB] transition-all shadow-xs cursor-pointer active:scale-95"
           >
-            <Phone className="w-4 h-4 text-[#E94B1C] fill-current" />
+            <Phone className="w-4 h-4 text-[#3A4F99] fill-current" />
             <span>Call 24/7: 85009 04999</span>
           </button>
         </a>
       </PageHero>
 
       {/* ── STICKY QUICK-JUMP SUB-NAVIGATION PILL ── */}
-      <div className="sticky top-20 sm:top-24 z-30 w-full py-2.5 bg-white/95 backdrop-blur-md border-b border-[#E9D8CE] shadow-2xs">
+      <div className="sticky top-20 sm:top-24 z-30 w-full py-2.5 bg-white/95 backdrop-blur-md border-b border-[#D9E2EC] shadow-2xs">
         <Container>
           <div className="flex items-center justify-between gap-3 overflow-x-auto scrollbar-none py-0.5">
             <span className="text-[11px] font-bold uppercase tracking-wider text-[#756860] shrink-0 hidden sm:inline-flex items-center">
@@ -90,7 +90,7 @@ export function SpecialityDetailPage() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="px-3 py-1.5 rounded-full text-xs font-bold text-[#262626] hover:text-[#E94B1C] hover:bg-[#FFF0E6] bg-[#FFF9F3] border border-[#E9D8CE] transition whitespace-nowrap"
+                  className="px-3 py-1.5 rounded-full text-xs font-bold text-[#262626] hover:text-[#3A4F99] hover:bg-[#EEF2FB] bg-[#ECECE5] border border-[#D9E2EC] transition whitespace-nowrap"
                 >
                   {item.label}
                 </a>
@@ -99,7 +99,7 @@ export function SpecialityDetailPage() {
             <button
               type="button"
               onClick={() => openModal(speciality.name)}
-              className="shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold text-white bg-[#E94B1C] hover:bg-[#A83218] transition shadow-xs hidden md:inline-block cursor-pointer border-0"
+              className="shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold text-white bg-[#3A4F99] hover:bg-[#2A3B7A] transition shadow-xs hidden md:inline-block cursor-pointer border-0"
             >
               Book OPD Slot
             </button>
@@ -108,17 +108,17 @@ export function SpecialityDetailPage() {
       </div>
 
       {/* ── 2. ABOUT THIS SPECIALITY & HERO PHOTOGRAPH ── */}
-      <section id="about-speciality" className="py-14 sm:py-20 bg-white border-b border-[#F0E2D9]">
+      <section id="about-speciality" className="py-14 sm:py-20 bg-white border-b border-[#E8EFF5]">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-5 text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFF0E6] border border-[#E9D8CE] text-[#C63D1B] text-xs font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EEF2FB] border border-[#D9E2EC] text-[#13233D] text-xs font-bold uppercase tracking-wider">
                 <span className="w-2 h-2 rounded-full bg-[#E94B1C]" />
                 <span>About This Speciality</span>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1A1D20] tracking-tight leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#13233D] tracking-tight leading-tight">
                 Dedicated Care for Your Health
               </h2>
 
@@ -127,20 +127,20 @@ export function SpecialityDetailPage() {
               </p>
 
               <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                <div className="p-4 rounded-2xl bg-[#FFF9F3] border border-[#E9D8CE] space-y-1">
-                  <div className="text-xs font-bold uppercase tracking-wider text-[#C63D1B]">
+                <div className="p-4 rounded-2xl bg-[#ECECE5] border border-[#D9E2EC] space-y-1">
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#13233D]">
                     Department Group
                   </div>
-                  <div className="text-sm font-bold text-[#1A1D20]">
+                  <div className="text-sm font-bold text-[#13233D]">
                     {speciality.departmentType}
                   </div>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-[#FFF9F3] border border-[#E9D8CE] space-y-1">
-                  <div className="text-xs font-bold uppercase tracking-wider text-[#C63D1B]">
+                <div className="p-4 rounded-2xl bg-[#ECECE5] border border-[#D9E2EC] space-y-1">
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#13233D]">
                     Availability & Timing
                   </div>
-                  <div className="text-sm font-bold text-[#1A1D20]">
+                  <div className="text-sm font-bold text-[#13233D]">
                     OPD: Mon – Sat | 24/7 Casualty
                   </div>
                 </div>
@@ -149,7 +149,7 @@ export function SpecialityDetailPage() {
 
             {/* Right Relevant Department Image */}
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-3xl overflow-hidden border border-[#E9D8CE] shadow-lg bg-[#FFF0E6] aspect-[4/3]">
+              <div className="relative rounded-3xl overflow-hidden border border-[#D9E2EC] shadow-lg bg-[#EEF2FB] aspect-[4/3]">
                 <img
                   src={speciality.heroImage}
                   alt={speciality.imageAlt || `${speciality.name} at Surya Hospital`}
@@ -172,16 +172,16 @@ export function SpecialityDetailPage() {
       </section>
 
       {/* ── 3. CONDITIONS WE TREAT & 4. TREATMENTS AND SERVICES ── */}
-      <section id="conditions-treated" className="py-16 sm:py-20 bg-[#FFF9F3] border-b border-[#F0E2D9]">
+      <section id="conditions-treated" className="py-16 sm:py-20 bg-[#ECECE5] border-b border-[#E8EFF5]">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12">
             {/* Conditions We Treat */}
-            <div className="bg-white rounded-3xl p-6 sm:p-9 border border-[#E9D8CE] shadow-xs text-left space-y-6">
+            <div className="bg-white rounded-3xl p-6 sm:p-9 border border-[#D9E2EC] shadow-xs text-left space-y-6">
               <div className="space-y-2">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#C63D1B] block">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#13233D] block">
                   Diagnosis &amp; Care
                 </span>
-                <h3 className="text-xl sm:text-2xl font-extrabold text-[#1A1D20]">
+                <h3 className="text-xl sm:text-2xl font-extrabold text-[#13233D]">
                   Conditions We Treat
                 </h3>
                 <p className="text-xs sm:text-sm text-[#756860] leading-relaxed">
@@ -192,7 +192,7 @@ export function SpecialityDetailPage() {
               <ul className="space-y-3.5">
                 {speciality.conditions.map((condition, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-[#FFF0E6] text-[#E94B1C] flex items-center justify-center shrink-0 mt-0.5 border border-[#E9D8CE]">
+                    <div className="w-5 h-5 rounded-full bg-[#EEF2FB] text-[#3A4F99] flex items-center justify-center shrink-0 mt-0.5 border border-[#D9E2EC]">
                       <CheckCircle2 className="w-3.5 h-3.5 stroke-[2.5]" />
                     </div>
                     <span className="text-xs sm:text-sm font-medium text-[#262626] leading-relaxed">
@@ -204,12 +204,12 @@ export function SpecialityDetailPage() {
             </div>
 
             {/* Treatments and Services */}
-            <div id="treatments-services" className="bg-white rounded-3xl p-6 sm:p-9 border border-[#E9D8CE] shadow-xs text-left space-y-6">
+            <div id="treatments-services" className="bg-white rounded-3xl p-6 sm:p-9 border border-[#D9E2EC] shadow-xs text-left space-y-6">
               <div className="space-y-2">
                 <span className="text-xs font-bold uppercase tracking-wider text-[#006677] block">
                   Clinical Services
                 </span>
-                <h3 className="text-xl sm:text-2xl font-extrabold text-[#1A1D20]">
+                <h3 className="text-xl sm:text-2xl font-extrabold text-[#13233D]">
                   Treatments and Services
                 </h3>
                 <p className="text-xs sm:text-sm text-[#756860] leading-relaxed">
@@ -235,22 +235,22 @@ export function SpecialityDetailPage() {
       </section>
 
       {/* ── 5. WHEN TO CONSULT A DOCTOR (Streamlined Warning Signs Bar) ── */}
-      <section className="py-12 sm:py-14 bg-white border-b border-[#F0E2D9]">
+      <section className="py-12 sm:py-14 bg-white border-b border-[#E8EFF5]">
         <Container>
           <div className="max-w-4xl mx-auto text-left">
-            <div className="bg-[#FFF9F3] border border-[#E9D8CE] rounded-3xl p-6 sm:p-8 space-y-5">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#F0E2D9]">
+            <div className="bg-[#ECECE5] border border-[#D9E2EC] rounded-3xl p-6 sm:p-8 space-y-5">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#E8EFF5]">
                 <div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#C63D1B] block">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#13233D] block">
                     PATIENT ADVISORY
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-black text-[#1A1D20]">
+                  <h3 className="text-xl sm:text-2xl font-black text-[#13233D]">
                     When to Consult Our {speciality.name} Specialists
                   </h3>
                 </div>
                 <a
                   href={`tel:${HOSPITAL_INFO.phoneRaw}`}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold text-white bg-[#E94B1C] hover:bg-[#A83218] transition shrink-0 self-start sm:self-auto"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold text-white bg-[#3A4F99] hover:bg-[#2A3B7A] transition shrink-0 self-start sm:self-auto"
                 >
                   <Phone className="w-3.5 h-3.5 fill-current" />
                   <span>Call {HOSPITAL_INFO.phone}</span>
@@ -262,7 +262,7 @@ export function SpecialityDetailPage() {
                 {speciality.whenToConsult.map((point, idx) => (
                   <div
                     key={idx}
-                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-[#E9D8CE] text-xs font-medium text-[#262626] shadow-2xs hover:border-[#E94B1C] transition-colors"
+                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-[#D9E2EC] text-xs font-medium text-[#262626] shadow-2xs hover:border-[#3A4F99] transition-colors"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-[#E94B1C] shrink-0" />
                     <span>{point}</span>
@@ -275,14 +275,14 @@ export function SpecialityDetailPage() {
       </section>
 
       {/* ── 8. OUR SPECIALISTS ── */}
-      <section id="consultant-doctors" className="py-16 sm:py-20 bg-[#FFF9F3] border-b border-[#F0E2D9]">
+      <section id="consultant-doctors" className="py-16 sm:py-20 bg-[#ECECE5] border-b border-[#E8EFF5]">
         <Container>
           <div className="max-w-4xl mx-auto space-y-10">
             <div className="text-center space-y-2 max-w-xl mx-auto">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#C63D1B]">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#13233D]">
                 Experienced Medical Leadership
               </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1A1D20]">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#13233D]">
                 Our {speciality.name} Specialists
               </h2>
               <p className="text-xs sm:text-sm text-[#756860]">
@@ -294,15 +294,15 @@ export function SpecialityDetailPage() {
               {speciality.doctors.map((doc, idx) => (
                 <div
                   key={idx}
-                  className="bg-white rounded-3xl border border-[#E9D8CE] p-6 text-left space-y-4 shadow-xs hover:border-[#E94B1C] transition-all flex flex-col justify-between"
+                  className="bg-white rounded-3xl border border-[#D9E2EC] p-6 text-left space-y-4 shadow-xs hover:border-[#3A4F99] transition-all flex flex-col justify-between"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center gap-3.5">
-                      <div className="w-13 h-13 rounded-2xl bg-[#FFF0E6] text-[#E94B1C] flex items-center justify-center shrink-0 border border-[#E9D8CE]">
+                      <div className="w-13 h-13 rounded-2xl bg-[#EEF2FB] text-[#3A4F99] flex items-center justify-center shrink-0 border border-[#D9E2EC]">
                         <User className="w-7 h-7" />
                       </div>
                       <div>
-                        <h3 className="text-lg sm:text-xl font-black text-[#C63D1B] leading-tight">
+                        <h3 className="text-lg sm:text-xl font-black text-[#13233D] leading-tight">
                           {doc.name}
                         </h3>
                         <div className="text-xs font-bold text-[#FF8A3D] mt-0.5">
@@ -314,12 +314,12 @@ export function SpecialityDetailPage() {
                       </div>
                     </div>
 
-                    <p className="text-xs text-[#4A403B] leading-relaxed pt-2 border-t border-[#F0E2D9]">
+                    <p className="text-xs text-[#4A403B] leading-relaxed pt-2 border-t border-[#E8EFF5]">
                       {doc.experience}
                     </p>
                   </div>
 
-                  <div className="pt-3 border-t border-[#F0E2D9] space-y-3">
+                  <div className="pt-3 border-t border-[#E8EFF5] space-y-3">
                     <div className="flex items-start gap-2 text-xs text-[#756860]">
                       <Clock className="w-3.5 h-3.5 text-[#FF8A3D] shrink-0 mt-0.5" />
                       <span className="text-[11px] leading-snug">{doc.opdTimings}</span>
@@ -328,7 +328,7 @@ export function SpecialityDetailPage() {
                     <button
                       type="button"
                       onClick={() => openModal(speciality.name)}
-                      className="w-full py-2.5 px-4 rounded-full text-xs font-bold text-white bg-[#E94B1C] hover:bg-[#A83218] transition-colors shadow-xs cursor-pointer active:scale-95 border-0"
+                      className="w-full py-2.5 px-4 rounded-full text-xs font-bold text-white bg-[#3A4F99] hover:bg-[#2A3B7A] transition-colors shadow-xs cursor-pointer active:scale-95 border-0"
                     >
                       Book Consultation
                     </button>
@@ -341,14 +341,14 @@ export function SpecialityDetailPage() {
       </section>
 
       {/* ── 7. FREQUENTLY ASKED QUESTIONS ── */}
-      <section id="speciality-faqs" className="py-16 sm:py-20 bg-[#FFF9F3] border-b border-[#F0E2D9]">
+      <section id="speciality-faqs" className="py-16 sm:py-20 bg-[#ECECE5] border-b border-[#E8EFF5]">
         <Container>
           <div className="max-w-3xl mx-auto text-left space-y-6">
             <div className="text-center space-y-2 max-w-xl mx-auto mb-8">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#C63D1B]">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#13233D]">
                 Clear Answers for Patients
               </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1A1D20]">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#13233D]">
                 Frequently Asked Questions
               </h2>
               <p className="text-xs sm:text-sm text-[#756860]">
@@ -362,19 +362,19 @@ export function SpecialityDetailPage() {
                 return (
                   <div
                     key={idx}
-                    className="bg-white rounded-2xl border border-[#E9D8CE] overflow-hidden transition-all shadow-2xs"
+                    className="bg-white rounded-2xl border border-[#D9E2EC] overflow-hidden transition-all shadow-2xs"
                   >
                     <button
                       type="button"
                       onClick={() => setActiveFaq(isOpen ? null : idx)}
-                      className="w-full p-4 sm:p-5 flex items-center justify-between gap-4 text-left cursor-pointer hover:bg-[#FFF0E6]/30 transition"
+                      className="w-full p-4 sm:p-5 flex items-center justify-between gap-4 text-left cursor-pointer hover:bg-[#EEF2FB]/30 transition"
                       aria-expanded={isOpen}
                     >
-                      <span className="text-xs sm:text-sm font-bold text-[#1A1D20] leading-snug">
+                      <span className="text-xs sm:text-sm font-bold text-[#13233D] leading-snug">
                         {faq.question}
                       </span>
                       <ChevronDown
-                        className={`w-4 h-4 text-[#C63D1B] shrink-0 transition-transform duration-300 ${
+                        className={`w-4 h-4 text-[#13233D] shrink-0 transition-transform duration-300 ${
                           isOpen ? "rotate-180" : ""
                         }`}
                       />
@@ -389,7 +389,7 @@ export function SpecialityDetailPage() {
                           transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
                           className="overflow-hidden"
                         >
-                          <div className="px-4 pb-4 sm:px-5 sm:pb-5 pt-1 text-xs sm:text-sm text-[#4A403B] leading-relaxed border-t border-[#F0E2D9] bg-[#FFF9F3]/50">
+                          <div className="px-4 pb-4 sm:px-5 sm:pb-5 pt-1 text-xs sm:text-sm text-[#4A403B] leading-relaxed border-t border-[#E8EFF5] bg-[#ECECE5]/50">
                             {faq.answer}
                           </div>
                         </motion.div>

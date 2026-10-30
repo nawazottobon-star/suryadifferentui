@@ -42,7 +42,7 @@ export function EmergencyPage() {
   return (
     <div className="w-full bg-[#FFFFFF]">
       {/* High-priority Emergency Hero Banner with Pulse Radar & Live Status */}
-      <section className="relative bg-gradient-to-br from-[#FFF0E6] via-[#FFF9F3] to-[#FFF0E6] text-[#262626] pt-36 sm:pt-40 md:pt-44 pb-14 md:pb-20 border-b border-[#F0E2D9] overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#EEF2FB] via-[#ECECE5] to-[#EEF2FB] text-[#262626] pt-36 sm:pt-40 md:pt-44 pb-14 md:pb-20 border-b border-[#E8EFF5] overflow-hidden">
         {/* Radar concentric pulse rings in background */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] pointer-events-none opacity-20">
           <motion.div
@@ -76,7 +76,7 @@ export function EmergencyPage() {
               </div>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl md:text-5xl font-serif-heading font-black text-[#C63D1B] tracking-tight leading-snug">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-sans font-black text-[#13233D] tracking-tight leading-snug">
               24/7 Emergency &amp; Casualty Care
             </h1>
 
@@ -106,16 +106,16 @@ export function EmergencyPage() {
             {/* Address & Direct Navigation */}
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 text-xs sm:text-[13px] text-[#756860]">
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-[#E94B1C] shrink-0" />
+                <MapPin className="w-4 h-4 text-[#3A4F99] shrink-0" />
                 <span>{HOSPITAL_INFO.fullAddress}</span>
               </div>
               <a
                 href={HOSPITAL_INFO.directionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white hover:bg-[#FFF0E6] text-[#C63D1B] font-bold transition border border-[#E9D8CE] shadow-2xs"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white hover:bg-[#EEF2FB] text-[#13233D] font-bold transition border border-[#D9E2EC] shadow-2xs"
               >
-                <Navigation className="w-3.5 h-3.5 text-[#E94B1C]" />
+                <Navigation className="w-3.5 h-3.5 text-[#3A4F99]" />
                 <span>Get Directions</span>
               </a>
             </div>
@@ -124,10 +124,10 @@ export function EmergencyPage() {
       </section>
 
       {/* National Emergency 112 Notice */}
-      <section className="py-8 bg-white border-b border-[#F0E2D9]">
+      <section className="py-8 bg-white border-b border-[#E8EFF5]">
         <Container>
           <div className="max-w-4xl mx-auto flex items-start gap-4 text-xs sm:text-sm text-[#262626]">
-            <AlertCircle className="w-5 h-5 text-[#C63D1B] shrink-0 mt-0.5" />
+            <AlertCircle className="w-5 h-5 text-[#13233D] shrink-0 mt-0.5" />
             <div className="space-y-1 text-left">
               <h4 className="font-bold text-[#262626] text-sm sm:text-base">
                 National All-India Emergency Helpline:
@@ -144,13 +144,13 @@ export function EmergencyPage() {
       </section>
 
       {/* Emergency Guidance: Symptoms & Care Priority */}
-      <section className="py-12 bg-[#FFF0E6]/40 border-b border-[#F0E2D9]">
+      <section className="py-12 bg-[#EEF2FB]/40 border-b border-[#E8EFF5]">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-4xl mx-auto">
             {/* When to visit casualty */}
-            <div className="p-6 rounded-2xl bg-white border border-[#E9D8CE] shadow-2xs space-y-3">
+            <div className="p-6 rounded-2xl bg-white border border-[#D9E2EC] shadow-2xs space-y-3">
               <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-xl bg-[#FFF0E6] text-[#C63D1B] flex items-center justify-center font-bold">
+                <div className="w-9 h-9 rounded-xl bg-[#EEF2FB] text-[#13233D] flex items-center justify-center font-bold">
                   <AlertTriangle className="w-4 h-4" />
                 </div>
                 <h3 className="text-base font-bold text-[#262626]">
@@ -169,10 +169,10 @@ export function EmergencyPage() {
             </div>
 
             {/* Immediate Care Protocol */}
-            <div className="p-6 rounded-2xl bg-white border border-[#E9D8CE] shadow-2xs space-y-3 flex flex-col justify-between">
+            <div className="p-6 rounded-2xl bg-white border border-[#D9E2EC] shadow-2xs space-y-3 flex flex-col justify-between">
               <div>
                 <div className="flex items-center gap-2.5 mb-2">
-                  <div className="w-9 h-9 rounded-xl bg-[#FFF0E6] text-[#C63D1B] flex items-center justify-center font-bold">
+                  <div className="w-9 h-9 rounded-xl bg-[#EEF2FB] text-[#13233D] flex items-center justify-center font-bold">
                     <FileText className="w-4 h-4" />
                   </div>
                   <h3 className="text-base font-bold text-[#262626]">
@@ -184,7 +184,7 @@ export function EmergencyPage() {
                 </p>
               </div>
 
-              <div className="p-3 rounded-xl bg-[#FFF0E6] border border-[#E9D8CE] text-[11px] text-[#C63D1B] font-bold">
+              <div className="p-3 rounded-xl bg-[#EEF2FB] border border-[#D9E2EC] text-[11px] text-[#13233D] font-bold">
                 Direct Emergency Line: 8500904999 (24/7 Casualty Desk)
               </div>
             </div>
@@ -193,9 +193,9 @@ export function EmergencyPage() {
       </section>
 
       {/* Direct Location Card */}
-      <section className="py-12 bg-[#FFF9F3] border-b border-[#F0E2D9]">
+      <section className="py-12 bg-[#ECECE5] border-b border-[#E8EFF5]">
         <Container>
-          <div className="max-w-4xl mx-auto p-6 rounded-2xl bg-white border border-[#E9D8CE] shadow-xs flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="max-w-4xl mx-auto p-6 rounded-2xl bg-white border border-[#D9E2EC] shadow-xs flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="space-y-1 text-left">
               <h4 className="text-base font-bold text-[#262626]">
                 Surya Hospital Emergency Entrance
@@ -208,9 +208,9 @@ export function EmergencyPage() {
               href={HOSPITAL_INFO.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="shrink-0 inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-bold text-white bg-[#E94B1C] hover:bg-[#A83218] transition shadow-sm"
+              className="shrink-0 inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-bold text-white bg-[#3A4F99] hover:bg-[#2A3B7A] transition shadow-sm"
             >
-              <Navigation className="w-4 h-4 text-[#FFF0E6]" />
+              <Navigation className="w-4 h-4 text-[#EEF2FB]" />
               <span>Open in Google Maps</span>
             </a>
           </div>

@@ -104,7 +104,7 @@ export function HospitalBuilding3D() {
     return (
       <div className="relative w-full h-[540px] rounded-3xl overflow-hidden border border-[#E94B1C]/15 shadow-2xl bg-gradient-to-br from-amber-50/50 to-orange-50/30">
         <img src="/images/surya-hospital-building-hero.jpg" alt="Surya Hospital Building" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#FFF9F3] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#ECECE5] via-transparent to-transparent" />
       </div>
     );
   }
@@ -113,7 +113,7 @@ export function HospitalBuilding3D() {
     <div className="relative w-full h-[480px] lg:h-[580px] select-none">
       {!isLoaded && <Loader />}
 
-      <div className="w-full h-full cursor-grab active:cursor-grabbing rounded-3xl overflow-hidden bg-gradient-to-b from-sky-100/60 via-amber-50/40 to-[#FFF9F3]/60">
+      <div className="w-full h-full cursor-grab active:cursor-grabbing rounded-3xl overflow-hidden bg-gradient-to-b from-sky-100/60 via-amber-50/40 to-[#ECECE5]/60">
         <Canvas
           shadows
           camera={{ position: [1.5, 8.5, 44], fov: 40, near: 0.5, far: 200 }}

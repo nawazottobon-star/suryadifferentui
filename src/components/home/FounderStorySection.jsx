@@ -37,10 +37,10 @@ export function FounderStorySection() {
     <section
       ref={sectionRef}
       id="founder-story"
-      className="relative w-full py-8 sm:py-10 lg:py-12 overflow-hidden scroll-mt-20 border-t border-[#EFE5DC]"
+      className="relative w-full py-8 sm:py-10 lg:py-12 overflow-hidden scroll-mt-20 border-t border-[#D9E2EC]"
       style={{
         background:
-          "radial-gradient(ellipse at 50% 28%, #FFFDF9 0%, #FAF2EB 38%, #F4E8DC 75%, #ECD9CC 100%)",
+          "radial-gradient(ellipse at 50% 28%, #FFFFFF 0%, #F0F4F8 38%, #E2ECF4 75%, #ECECE5 100%)",
       }}
     >
       {/* ── AMBIENT SILK WAVES & WARM GLOWS ── */}
@@ -49,7 +49,7 @@ export function FounderStorySection() {
           className="absolute -top-32 left-1/2 -translate-x-1/2 w-[1400px] h-[650px] rounded-[100%] opacity-45 blur-3xl pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse, rgba(255, 235, 215, 0.8) 0%, rgba(244, 232, 220, 0.25) 60%, transparent 80%)",
+              "radial-gradient(ellipse, rgba(226, 236, 244, 0.8) 0%, rgba(240, 244, 248, 0.25) 60%, transparent 80%)",
           }}
         />
         <div className="absolute top-1/4 left-1/12 w-[400px] h-[400px] rounded-full bg-[#E94B1C]/[0.035] blur-[110px]" />
@@ -66,14 +66,14 @@ export function FounderStorySection() {
         {/* ── TOP SECTION HEADER (Live Editable Code) ── */}
         <motion.div variants={itemVariants} className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
           <div className="flex items-center justify-center gap-3 sm:gap-4 mb-2.5">
-            <span className="w-8 sm:w-16 h-[1.5px] bg-gradient-to-r from-transparent to-[#E94B1C]" />
-            <span className="text-[11px] sm:text-xs font-bold tracking-[0.22em] text-[#E94B1C] uppercase font-sans">
+            <span className="w-8 sm:w-16 h-[1.5px] bg-gradient-to-r from-transparent to-[#3A4F99]" />
+            <span className="text-[11px] sm:text-xs font-bold tracking-[0.22em] text-[#3A4F99] uppercase font-sans">
               THE STORY BEHIND OUR CARE
             </span>
-            <span className="w-8 sm:w-16 h-[1.5px] bg-gradient-to-l from-transparent to-[#E94B1C]" />
+            <span className="w-8 sm:w-16 h-[1.5px] bg-gradient-to-l from-transparent to-[#3A4F99]" />
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-bold text-[#14233C] tracking-tight leading-[1.15]">
+          <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-bold text-[#13233D] tracking-tight leading-[1.15]">
             A Vision{" "}
             <span className="bg-gradient-to-r from-[#E94B1C] via-[#FF6B35] to-[#E94B1C] bg-clip-text text-transparent">
               Beyond
@@ -100,7 +100,7 @@ export function FounderStorySection() {
             </div>
 
             {/* Heading */}
-            <h3 className="font-serif text-2xl sm:text-[28px] font-bold text-[#14233C] leading-snug mb-4">
+            <h3 className="font-sans text-2xl sm:text-[28px] font-bold text-[#13233D] leading-snug mb-4">
               Care begins with listening.
             </h3>
 
@@ -153,22 +153,22 @@ export function FounderStorySection() {
             </div>
 
             {/* Heading */}
-            <h3 className="font-serif text-2xl sm:text-[28px] font-bold text-[#14233C] leading-snug mb-4">
+            <h3 className="font-sans text-2xl sm:text-[28px] font-bold text-[#13233D] leading-snug mb-4">
               From a small clinic to a complete care center.
             </h3>
 
             {/* 3 Story Paragraphs (100% Live Editable Text) */}
             <div className="space-y-3.5 text-[14px] text-[#4A5568] leading-[1.72]">
               <p>
-                With over <strong className="font-bold text-[#14233C]">15 years</strong> of patient care experience and qualifications of <strong className="font-bold text-[#14233C]">MBBS, MD from Manipal Academy of Higher Education</strong>, I have treated and cared for <strong className="font-bold text-[#14233C]">approximately 1 lakh patients</strong>.
+                With over <strong className="font-bold text-[#13233D]">15 years</strong> of patient care experience and qualifications of <strong className="font-bold text-[#13233D]">MBBS, MD from Manipal Academy of Higher Education</strong>, I have treated and cared for <strong className="font-bold text-[#13233D]">approximately 1 lakh patients</strong>.
               </p>
 
               <p>
-                <strong className="font-bold text-[#14233C]">During the COVID-19 pandemic</strong>, I was among the first to start treating patients at my clinic, despite limited facilities. That experience reinforced my belief in <strong className="font-bold text-[#14233C]">accessible and compassionate care</strong>.
+                <strong className="font-bold text-[#13233D]">During the COVID-19 pandemic</strong>, I was among the first to start treating patients at my clinic, despite limited facilities. That experience reinforced my belief in <strong className="font-bold text-[#13233D]">accessible and compassionate care</strong>.
               </p>
 
               <p>
-                <strong className="font-bold text-[#14233C]">In 2024</strong>, this vision took shape with the establishment of <strong className="font-bold text-[#14233C]">Surya Hospital</strong> — bringing multiple specialities, advanced diagnostics, and comprehensive facilities under one roof.
+                <strong className="font-bold text-[#13233D]">In 2024</strong>, this vision took shape with the establishment of <strong className="font-bold text-[#13233D]">Surya Hospital</strong> — bringing multiple specialities, advanced diagnostics, and comprehensive facilities under one roof.
               </p>
             </div>
           </motion.div>
@@ -190,7 +190,7 @@ export function FounderStorySection() {
 
           <Link
             to="/doctors"
-            className="group inline-flex items-center gap-2.5 px-5 sm:px-6 py-3 rounded-full text-xs sm:text-sm font-bold text-[#14233C] hover:text-[#E94B1C] bg-white/90 hover:bg-white border border-[#E9D8CE] hover:border-[#E94B1C]/40 transition-all duration-300 shadow-[0_4px_12px_rgba(0,0,0,0.04)] hover:-translate-y-0.5"
+            className="group inline-flex items-center gap-2.5 px-5 sm:px-6 py-3 rounded-full text-xs sm:text-sm font-bold text-[#13233D] hover:text-[#E94B1C] bg-white/90 hover:bg-white border border-[#D9E2EC] hover:border-[#E94B1C]/40 transition-all duration-300 shadow-[0_4px_12px_rgba(0,0,0,0.04)] hover:-translate-y-0.5"
           >
             <span>Meet Our Specialists</span>
             <ArrowRight className="w-4 h-4 text-[#E94B1C] group-hover:translate-x-1 transition-transform" />

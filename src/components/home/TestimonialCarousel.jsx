@@ -1,3 +1,4 @@
+import { CrowdCanvas } from "../ui/skiper39";
 import React from "react";
 import { motion } from "framer-motion";
 import { Quote, MessageSquareQuote, CheckCircle2 } from "lucide-react";
@@ -189,7 +190,7 @@ function TestimonialsColumn({ reviews, duration = 32, className = "" }) {
 
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-1.5">
-                      <cite className="font-serif font-bold not-italic text-sm text-[#14233C] leading-snug truncate block">
+                      <cite className="font-sans font-bold not-italic text-sm text-[#13233D] leading-snug truncate block">
                         {item.name}
                       </cite>
                       <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" title="Verified Review" />
@@ -197,7 +198,7 @@ function TestimonialsColumn({ reviews, duration = 32, className = "" }) {
 
                     {item.isGuide ? (
                       <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#E94B1C] mt-0.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#E94B1C]" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#3A4F99]" />
                         Local Guide
                       </span>
                     ) : (
@@ -218,7 +219,7 @@ function TestimonialsColumn({ reviews, duration = 32, className = "" }) {
 
 export function TestimonialCarousel() {
   return (
-    <section className="relative py-10 sm:py-14 bg-gradient-to-b from-[#FFF9F3] via-[#FAF3EC] to-[#FFF6ED] text-[#1A1D20] overflow-hidden border-t border-[#F0E4D8]/70">
+    <section className="relative py-10 sm:py-14 bg-gradient-to-b from-[#ECECE5] via-[#F0F4F8] to-[#ECECE5] text-[#13233D] overflow-hidden border-t border-[#D9E2EC]">
       {/* Dynamic Keyframes for butter-smooth vertical infinite marquee with pause on hover */}
       <style>{`
         @keyframes testimonialVerticalLoop {
@@ -241,27 +242,37 @@ export function TestimonialCarousel() {
         }
       `}</style>
 
+      {/* ── Skiper39 Canvas Crowd Background ── */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30 mix-blend-multiply z-0">
+        <CrowdCanvas
+          src="/images/peeps/all-peeps.png"
+          rows={15}
+          cols={7}
+          className="absolute inset-0 w-full h-full pointer-events-none"
+        />
+      </div>
+
       {/* Ambient background glows matching Surya Hospital palette */}
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-orange-100/30 via-amber-100/20 to-transparent blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-10 w-[450px] h-[450px] rounded-full bg-amber-100/25 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-[#3A4F99]/10 via-[#B2CEE2]/15 to-transparent blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-10 w-[450px] h-[450px] rounded-full bg-[#B2CEE2]/10 blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Editorial Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-6 sm:mb-8">
           <div className="space-y-3.5 text-left max-w-xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#FFF0E6] to-[#FFE8D6] border border-[#FADCCB] text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#E94B1C] shadow-xs">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EEF2FB] border border-[#B2CEE2] text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#3A4F99] shadow-xs">
               <MessageSquareQuote className="w-3.5 h-3.5" />
               <span>AUTHENTIC PATIENT VOICES</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#14233C] tracking-tight leading-[1.15]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-[#13233D] tracking-tight leading-[1.15]">
               Real People.
               <br />
               Real{" "}
-              <span className="bg-gradient-to-r from-[#E94B1C] via-[#F26A21] to-[#C93B10] bg-clip-text text-transparent">
+              <span className="text-[#3A4F99]">
                 Experiences.
               </span>
-              <span className="inline-block w-8 h-1 bg-[#E94B1C] align-middle ml-2.5 rounded-full" />
+              <span className="inline-block w-8 h-1 bg-[#3A4F99] align-middle ml-2.5 rounded-full" />
             </h2>
             <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">
               Unfiltered words from patients and families who experienced healing under Dr. Surya Prakash and our medical care team.
@@ -270,10 +281,10 @@ export function TestimonialCarousel() {
 
           {/* Right Header Editorial Callout */}
           <div className="lg:text-right max-w-sm">
-            <div className="font-serif text-2xl sm:text-3xl font-bold text-[#14233C] leading-tight">
+            <div className="font-sans text-2xl sm:text-3xl font-bold text-[#13233D] leading-tight">
               Your Health.
               <br />
-              <span className="italic font-serif bg-gradient-to-r from-[#E94B1C] to-[#C63D1B] bg-clip-text text-transparent">
+              <span className="italic font-sans text-[#3A4F99]">
                 Our Lifelong Priority.
               </span>
             </div>

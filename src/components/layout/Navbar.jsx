@@ -18,6 +18,7 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import suryaLogo from "../../../Surya Hospital Logo.png";
 import { useAppointmentModal } from "../../context/AppointmentModalContext";
+import { GenerateButton } from "../ui/generate-button";
 
 export function Navbar() {
   const { openModal } = useAppointmentModal();
@@ -96,7 +97,7 @@ export function Navbar() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed top-0 left-0 right-0 z-50 w-full bg-[#FFF9F3]/95 backdrop-blur-md border-b border-[#E9D8CE] shadow-[0_2px_12px_rgba(40,20,10,0.03)] transition-colors duration-200"
+        className="fixed top-0 left-0 right-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-[#D9E2EC] shadow-[0_2px_12px_rgba(40,20,10,0.03)] transition-colors duration-200"
       >
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-1.5 sm:py-2 flex items-center justify-between">
             {/* 1. Left: Surya Hospital Official Brand Logo */}
@@ -128,8 +129,8 @@ export function Navbar() {
                     className={({ isActive }) =>
                       `px-3 py-1.5 rounded-full text-[13px] 2xl:text-sm font-semibold transition-colors duration-150 ${
                         isActive
-                          ? "text-[#C63D1B] font-bold bg-[#FFF0E6]"
-                          : "text-[#262626]/90 hover:text-[#E94B1C] hover:bg-[#FFF0E6]/50"
+                          ? "text-white font-bold bg-[#3A4F99] shadow-xs"
+                          : "text-[#13233D]/90 hover:text-[#3A4F99] hover:bg-[#F0F6FA]"
                       }`
                     }
                   >
@@ -141,8 +142,8 @@ export function Navbar() {
                     className={({ isActive }) =>
                       `px-3 py-1.5 rounded-full text-[13px] 2xl:text-sm font-semibold transition-colors duration-150 ${
                         isActive
-                          ? "text-[#C63D1B] font-bold bg-[#FFF0E6]"
-                          : "text-[#262626]/90 hover:text-[#E94B1C] hover:bg-[#FFF0E6]/50"
+                          ? "text-white font-bold bg-[#3A4F99] shadow-xs"
+                          : "text-[#13233D]/90 hover:text-[#3A4F99] hover:bg-[#F0F6FA]"
                       }`
                     }
                   >
@@ -165,8 +166,8 @@ export function Navbar() {
                       aria-haspopup="true"
                       className={`inline-flex items-center gap-1 px-3.5 py-1.5 rounded-full text-[13px] 2xl:text-sm font-semibold transition-colors duration-150 cursor-pointer ${
                         isDepartmentsActive || departmentsDropdownOpen
-                          ? "text-[#C63D1B] font-bold bg-[#FFF0E6]"
-                          : "text-[#262626]/90 hover:text-[#E94B1C] hover:bg-[#FFF0E6]/50"
+                          ? "text-white font-bold bg-[#3A4F99] shadow-xs"
+                          : "text-[#13233D]/90 hover:text-[#3A4F99] hover:bg-[#F0F6FA]"
                       }`}
                     >
                       <span>Departments</span>
@@ -190,16 +191,16 @@ export function Navbar() {
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: 6, scale: 0.98 }}
                             transition={{ duration: 0.18, ease: "easeOut" }}
-                            className="w-[760px] max-w-[94vw] bg-white rounded-3xl border border-[#E9D8CE] shadow-[0_20px_50px_rgba(0,0,0,0.12),0_4px_12px_rgba(233,75,28,0.06)] p-6 sm:p-7 text-left"
+                            className="w-[760px] max-w-[94vw] bg-white rounded-3xl border border-[#D9E2EC] shadow-[0_20px_50px_rgba(0,0,0,0.12),0_4px_12px_rgba(233,75,28,0.06)] p-6 sm:p-7 text-left"
                           >
                           <div className="grid grid-cols-2 gap-6 divide-x divide-slate-100">
                             {/* Medical Department Column (8 Specialities) */}
                             <div className="pr-4 space-y-4 min-w-0">
-                              <div className="flex items-center gap-2 pb-2 border-b border-[#F0E2D9]">
-                                <div className="w-7 h-7 rounded-lg bg-[#E6F4F7] text-[#006677] flex items-center justify-center shrink-0">
+                              <div className="flex items-center gap-2 pb-2 border-b border-[#E8EFF5]">
+                                <div className="w-7 h-7 rounded-lg bg-[#EEF2FB] text-[#13233D] flex items-center justify-center shrink-0">
                                   <Stethoscope className="w-4 h-4" />
                                 </div>
-                                <h3 className="text-xs font-extrabold uppercase tracking-wider text-[#006677]">
+                                <h3 className="text-xs font-extrabold uppercase tracking-wider text-[#13233D]">
                                   Medical Department
                                 </h3>
                               </div>
@@ -212,19 +213,19 @@ export function Navbar() {
                                       onClick={() =>
                                         setDepartmentsDropdownOpen(false)
                                       }
-                                      className="group flex items-center justify-between py-1.5 px-2 rounded-xl hover:bg-[#E6F4F7]/60 transition-all duration-150"
+                                      className="group flex items-center justify-between py-1.5 px-2 rounded-xl hover:bg-[#EEF2FB]/60 transition-all duration-150"
                                     >
                                       <div className="flex items-center gap-2.5 min-w-0">
                                         <img
                                           src={spec.heroImage}
                                           alt={spec.name}
-                                          className="w-7 h-7 rounded-lg object-cover border border-[#BDE0E8]/70 shrink-0 group-hover:scale-105 transition-transform"
+                                          className="w-7 h-7 rounded-lg object-cover border border-[#B2CEE2]/60 shrink-0 group-hover:scale-105 transition-transform"
                                         />
-                                        <span className="text-[13px] font-semibold text-[#006677] group-hover:text-[#0D4855] group-hover:translate-x-0.5 transition-transform truncate">
+                                        <span className="text-[13px] font-semibold text-[#13233D] group-hover:text-[#3A4F99] group-hover:translate-x-0.5 transition-transform truncate">
                                           {spec.name}
                                         </span>
                                       </div>
-                                      <ArrowRight className="w-3.5 h-3.5 text-[#006677] opacity-0 group-hover:opacity-100 transition-opacity shrink-0 ml-1" />
+                                      <ArrowRight className="w-3.5 h-3.5 text-[#13233D] opacity-0 group-hover:opacity-100 transition-opacity shrink-0 ml-1" />
                                     </Link>
                                   </li>
                                 ))}
@@ -234,11 +235,11 @@ export function Navbar() {
                             {/* Surgical Department Column (4 Specialities) */}
                             <div className="pl-6 space-y-4 flex flex-col justify-between min-w-0">
                               <div className="space-y-4">
-                                <div className="flex items-center gap-2 pb-2 border-b border-[#F0E2D9]">
-                                  <div className="w-7 h-7 rounded-lg bg-[#FFF0E6] text-[#E94B1C] flex items-center justify-center shrink-0">
+                                <div className="flex items-center gap-2 pb-2 border-b border-[#E8EFF5]">
+                                  <div className="w-7 h-7 rounded-lg bg-[#EEF2FB] text-[#3A4F99] flex items-center justify-center shrink-0">
                                     <Scissors className="w-4 h-4" />
                                   </div>
-                                  <h3 className="text-xs font-extrabold uppercase tracking-wider text-[#C63D1B]">
+                                  <h3 className="text-xs font-extrabold uppercase tracking-wider text-[#13233D]">
                                     Surgical Department
                                   </h3>
                                 </div>
@@ -251,15 +252,15 @@ export function Navbar() {
                                         onClick={() =>
                                           setDepartmentsDropdownOpen(false)
                                         }
-                                        className="group flex items-center justify-between py-1.5 px-2 rounded-xl hover:bg-[#FFF0E6]/60 transition-all duration-150"
+                                        className="group flex items-center justify-between py-1.5 px-2 rounded-xl hover:bg-[#F0F6FA]/60 transition-all duration-150"
                                       >
                                         <div className="flex items-center gap-2.5 min-w-0">
                                           <img
                                             src={spec.heroImage}
                                             alt={spec.name}
-                                            className="w-7 h-7 rounded-lg object-cover border border-[#E9D8CE] shrink-0 group-hover:scale-105 transition-transform"
+                                            className="w-7 h-7 rounded-lg object-cover border border-[#D9E2EC] shrink-0 group-hover:scale-105 transition-transform"
                                           />
-                                          <span className="text-[13px] font-semibold text-[#006677] group-hover:text-[#C63D1B] group-hover:translate-x-0.5 transition-transform truncate">
+                                          <span className="text-[13px] font-semibold text-[#13233D] group-hover:text-[#13233D] group-hover:translate-x-0.5 transition-transform truncate">
                                             {spec.name}
                                           </span>
                                         </div>
@@ -271,7 +272,7 @@ export function Navbar() {
                               </div>
 
                               {/* Bottom Callout Banner */}
-                              <div className="mt-4 p-3 sm:p-3.5 rounded-2xl bg-[#FFF9F3] border border-[#E9D8CE] flex items-center justify-between gap-2.5 min-w-0">
+                              <div className="mt-4 p-3 sm:p-3.5 rounded-2xl bg-[#F8FAFC] border border-[#D9E2EC] flex items-center justify-between gap-2.5 min-w-0">
                                 <div className="min-w-0 flex-1 pr-1">
                                   <div className="text-[11px] font-bold text-[#1A1D20] leading-tight">
                                     Need Doctor Guidance?
@@ -286,7 +287,7 @@ export function Navbar() {
                                     setDepartmentsDropdownOpen(false);
                                     openModal();
                                   }}
-                                  className="shrink-0 text-[11px] font-bold text-white bg-[#E94B1C] hover:bg-[#A83218] px-3.5 py-1.5 rounded-full transition-all duration-150 cursor-pointer whitespace-nowrap shadow-xs active:scale-95"
+                                  className="shrink-0 text-[11px] font-bold text-white bg-[#3A4F99] hover:bg-[#2A3B7A] px-3.5 py-1.5 rounded-full transition-all duration-150 cursor-pointer whitespace-nowrap shadow-xs active:scale-95"
                                 >
                                   Book OPD
                                 </button>
@@ -304,8 +305,8 @@ export function Navbar() {
                     className={({ isActive }) =>
                       `px-3 py-1.5 rounded-full text-[13px] 2xl:text-sm font-semibold transition-colors duration-150 ${
                         isActive
-                          ? "text-[#C63D1B] font-bold bg-[#FFF0E6]"
-                          : "text-[#262626]/90 hover:text-[#E94B1C] hover:bg-[#FFF0E6]/50"
+                          ? "text-white font-bold bg-[#3A4F99] shadow-xs"
+                          : "text-[#13233D]/90 hover:text-[#3A4F99] hover:bg-[#F0F6FA]"
                       }`
                     }
                   >
@@ -317,8 +318,8 @@ export function Navbar() {
                     className={({ isActive }) =>
                       `px-3 py-1.5 rounded-full text-[13px] 2xl:text-sm font-semibold transition-colors duration-150 ${
                         isActive
-                          ? "text-[#C63D1B] font-bold bg-[#FFF0E6]"
-                          : "text-[#262626]/90 hover:text-[#E94B1C] hover:bg-[#FFF0E6]/50"
+                          ? "text-white font-bold bg-[#3A4F99] shadow-xs"
+                          : "text-[#13233D]/90 hover:text-[#3A4F99] hover:bg-[#F0F6FA]"
                       }`
                     }
                   >
@@ -330,8 +331,8 @@ export function Navbar() {
                     className={({ isActive }) =>
                       `px-3 py-1.5 rounded-full text-[13px] 2xl:text-sm font-semibold transition-colors duration-150 ${
                         isActive
-                          ? "text-[#C63D1B] font-bold bg-[#FFF0E6]"
-                          : "text-[#262626]/90 hover:text-[#E94B1C] hover:bg-[#FFF0E6]/50"
+                          ? "text-white font-bold bg-[#3A4F99] shadow-xs"
+                          : "text-[#13233D]/90 hover:text-[#3A4F99] hover:bg-[#F0F6FA]"
                       }`
                     }
                   >
@@ -343,8 +344,8 @@ export function Navbar() {
                     className={({ isActive }) =>
                       `px-3 py-1.5 rounded-full text-[13px] 2xl:text-sm font-semibold transition-colors duration-150 ${
                         isActive
-                          ? "text-[#C63D1B] font-bold bg-[#FFF0E6]"
-                          : "text-[#262626]/90 hover:text-[#E94B1C] hover:bg-[#FFF0E6]/50"
+                          ? "text-white font-bold bg-[#3A4F99] shadow-xs"
+                          : "text-[#13233D]/90 hover:text-[#3A4F99] hover:bg-[#F0F6FA]"
                       }`
                     }
                   >
@@ -356,21 +357,20 @@ export function Navbar() {
             <div className="flex items-center gap-2 sm:gap-3 shrink-0">
 
               {/* Book Appointment CTA Button - opens the simple appointment pop-up form */}
-              <button
-                type="button"
-                onClick={() => openModal()}
-                className="animate-cta-blink inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-[13px] font-bold text-white bg-[#E94B1C] hover:bg-[#A83218] transition-all active:scale-[0.98] cursor-pointer whitespace-nowrap shrink-0 shadow-xs"
-              >
-                <span>Book Appointment</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
+              <GenerateButton
+    onClick={() => openModal()}
+    hue={220}
+    className="py-1.5 sm:py-2 px-3.5 sm:px-5 text-xs sm:text-[13px] font-bold"
+  >
+    Book Appointment
+  </GenerateButton>
 
               {/* Mobile Hamburger Trigger inside navbar (< lg) */}
               <div className="lg:hidden flex items-center">
                 <button
                   type="button"
                   onClick={() => setMenuOpen(!menuOpen)}
-                  className="p-1.5 rounded-xl text-[#262626] hover:bg-[#FFF0E6] transition focus:outline-none cursor-pointer"
+                  className="p-1.5 rounded-xl text-[#262626] hover:bg-[#F0F6FA] transition focus:outline-none cursor-pointer"
                   aria-label="Toggle navigation menu"
                 >
                   {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -404,7 +404,7 @@ export function Navbar() {
               className="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl flex flex-col justify-between overflow-y-auto"
             >
               <div>
-                <div className="px-6 py-5 border-b border-[#E9D8CE] flex items-center justify-between bg-[#FFF0E6]/50">
+                <div className="px-6 py-5 border-b border-[#D9E2EC] flex items-center justify-between bg-[#F0F6FA]">
                   <img
                     src={suryaLogo}
                     alt="Surya Hospital"
@@ -413,7 +413,7 @@ export function Navbar() {
                   <button
                     type="button"
                     onClick={() => setMenuOpen(false)}
-                    className="p-2 rounded-full hover:bg-[#FFF0E6] text-[#262626] transition"
+                    className="p-2 rounded-full hover:bg-[#F0F6FA] text-[#262626] transition"
                   >
                     <X className="w-5 h-5" />
                   </button>
@@ -427,8 +427,8 @@ export function Navbar() {
                       className={({ isActive }) =>
                         `block px-3.5 py-2.5 rounded-xl text-sm font-bold transition ${
                           isActive
-                            ? "bg-[#FFF0E6] text-[#E94B1C]"
-                            : "text-[#262626] hover:bg-[#FFF0E6]/50"
+                            ? "bg-[#EEF2FB] text-[#3A4F99]"
+                            : "text-[#13233D] hover:bg-[#F0F6FA]"
                         }`
                       }
                     >
@@ -441,8 +441,8 @@ export function Navbar() {
                       className={({ isActive }) =>
                         `block px-3.5 py-2.5 rounded-xl text-sm font-bold transition ${
                           isActive
-                            ? "bg-[#FFF0E6] text-[#E94B1C]"
-                            : "text-[#262626] hover:bg-[#FFF0E6]/50"
+                            ? "bg-[#EEF2FB] text-[#3A4F99]"
+                            : "text-[#13233D] hover:bg-[#F0F6FA]"
                         }`
                       }
                     >
@@ -450,23 +450,23 @@ export function Navbar() {
                     </NavLink>
 
                     {/* Mobile Expandable Departments */}
-                    <div className="rounded-2xl border border-[#E9D8CE] bg-[#FFF9F3] overflow-hidden my-2">
-                      <div className="p-3 bg-[#FFF0E6]/80 flex items-center justify-between">
+                    <div className="rounded-2xl border border-[#D9E2EC] bg-[#F8FAFC] overflow-hidden my-2">
+                      <div className="p-3 bg-[#EEF2FB] flex items-center justify-between">
                         <Link
                           to="/specialities/cardiology"
                           onClick={() => setMenuOpen(false)}
-                          className="text-xs font-bold uppercase tracking-wider text-[#C63D1B]"
+                          className="text-xs font-bold uppercase tracking-wider text-[#13233D]"
                         >
                           Departments (12 Specialities)
                         </Link>
                       </div>
 
                       {/* Medical Group */}
-                      <div className="p-3 border-b border-[#E9D8CE]">
+                      <div className="p-3 border-b border-[#D9E2EC]">
                         <button
                           type="button"
                           onClick={() => setMobileMedicalOpen(!mobileMedicalOpen)}
-                          className="w-full flex items-center justify-between text-xs font-bold text-[#006677] py-1"
+                          className="w-full flex items-center justify-between text-xs font-bold text-[#13233D] py-1"
                         >
                           <span>Medical Department (8)</span>
                           <ChevronDown
@@ -482,12 +482,12 @@ export function Navbar() {
                                 key={spec.slug}
                                 to={`/specialities/${spec.slug}`}
                                 onClick={() => setMenuOpen(false)}
-                                className="flex items-center gap-2.5 py-1.5 px-2 rounded-lg text-xs font-medium text-[#006677] hover:bg-white"
+                                className="flex items-center gap-2.5 py-1.5 px-2 rounded-lg text-xs font-medium text-[#13233D] hover:bg-white"
                               >
                                 <img
                                   src={spec.heroImage}
                                   alt={spec.name}
-                                  className="w-6 h-6 rounded-md object-cover border border-[#BDE0E8]/70 shrink-0"
+                                  className="w-6 h-6 rounded-md object-cover border border-[#B2CEE2]/60 shrink-0"
                                 />
                                 <span className="truncate">{spec.name}</span>
                               </Link>
@@ -501,7 +501,7 @@ export function Navbar() {
                         <button
                           type="button"
                           onClick={() => setMobileSurgicalOpen(!mobileSurgicalOpen)}
-                          className="w-full flex items-center justify-between text-xs font-bold text-[#C63D1B] py-1"
+                          className="w-full flex items-center justify-between text-xs font-bold text-[#13233D] py-1"
                         >
                           <span>Surgical Department (4)</span>
                           <ChevronDown
@@ -517,12 +517,12 @@ export function Navbar() {
                                 key={spec.slug}
                                 to={`/specialities/${spec.slug}`}
                                 onClick={() => setMenuOpen(false)}
-                                className="flex items-center gap-2.5 py-1.5 px-2 rounded-lg text-xs font-medium text-[#006677] hover:bg-white"
+                                className="flex items-center gap-2.5 py-1.5 px-2 rounded-lg text-xs font-medium text-[#13233D] hover:bg-white"
                               >
                                 <img
                                   src={spec.heroImage}
                                   alt={spec.name}
-                                  className="w-6 h-6 rounded-md object-cover border border-[#E9D8CE] shrink-0"
+                                  className="w-6 h-6 rounded-md object-cover border border-[#D9E2EC] shrink-0"
                                 />
                                 <span className="truncate">{spec.name}</span>
                               </Link>
@@ -538,8 +538,8 @@ export function Navbar() {
                       className={({ isActive }) =>
                         `block px-3.5 py-2.5 rounded-xl text-sm font-bold transition ${
                           isActive
-                            ? "bg-[#FFF0E6] text-[#E94B1C]"
-                            : "text-[#262626] hover:bg-[#FFF0E6]/50"
+                            ? "bg-[#EEF2FB] text-[#3A4F99]"
+                            : "text-[#13233D] hover:bg-[#F0F6FA]"
                         }`
                       }
                     >
@@ -552,8 +552,8 @@ export function Navbar() {
                       className={({ isActive }) =>
                         `block px-3.5 py-2.5 rounded-xl text-sm font-bold transition ${
                           isActive
-                            ? "bg-[#FFF0E6] text-[#E94B1C]"
-                            : "text-[#262626] hover:bg-[#FFF0E6]/50"
+                            ? "bg-[#EEF2FB] text-[#3A4F99]"
+                            : "text-[#13233D] hover:bg-[#F0F6FA]"
                         }`
                       }
                     >
@@ -566,8 +566,8 @@ export function Navbar() {
                       className={({ isActive }) =>
                         `block px-3.5 py-2.5 rounded-xl text-sm font-bold transition ${
                           isActive
-                            ? "bg-[#FFF0E6] text-[#E94B1C]"
-                            : "text-[#262626] hover:bg-[#FFF0E6]/50"
+                            ? "bg-[#EEF2FB] text-[#3A4F99]"
+                            : "text-[#13233D] hover:bg-[#F0F6FA]"
                         }`
                       }
                     >
@@ -580,8 +580,8 @@ export function Navbar() {
                       className={({ isActive }) =>
                         `block px-3.5 py-2.5 rounded-xl text-sm font-bold transition ${
                           isActive
-                            ? "bg-[#FFF0E6] text-[#E94B1C]"
-                            : "text-[#262626] hover:bg-[#FFF0E6]/50"
+                            ? "bg-[#EEF2FB] text-[#3A4F99]"
+                            : "text-[#13233D] hover:bg-[#F0F6FA]"
                         }`
                       }
                     >
@@ -589,12 +589,12 @@ export function Navbar() {
                     </NavLink>
                   </div>
 
-                  <div className="pt-4 border-t border-[#E9D8CE] space-y-3">
+                  <div className="pt-4 border-t border-[#D9E2EC] space-y-3">
                     <a
                       href={`tel:${HOSPITAL_INFO.phoneRaw}`}
-                      className="flex items-center gap-3 p-3 rounded-xl bg-[#FFF9F3] border border-[#E9D8CE] text-[#262626]"
+                      className="flex items-center gap-3 p-3 rounded-xl bg-[#F8FAFC] border border-[#D9E2EC] text-[#262626]"
                     >
-                      <div className="w-9 h-9 rounded-full bg-[#FFF0E6] text-[#E94B1C] flex items-center justify-center">
+                      <div className="w-9 h-9 rounded-full bg-[#EEF2FB] text-[#3A4F99] flex items-center justify-center">
                         <Phone className="w-4 h-4 fill-current" />
                       </div>
                       <div>
@@ -611,7 +611,7 @@ export function Navbar() {
                         setMenuOpen(false);
                         openModal();
                       }}
-                      className="w-full py-3 rounded-xl text-center text-xs font-bold text-white bg-[#E94B1C] hover:bg-[#A83218] block shadow-md cursor-pointer"
+                      className="w-full py-3 rounded-xl text-center text-xs font-bold text-white bg-[#3A4F99] hover:bg-[#2A3B7A] block shadow-md cursor-pointer"
                     >
                       Book Appointment Online
                     </button>
@@ -619,7 +619,7 @@ export function Navbar() {
                 </div>
               </div>
 
-              <div className="p-5 border-t border-[#E9D8CE] bg-[#FFF9F3] text-xs text-[#756860]">
+              <div className="p-5 border-t border-[#D9E2EC] bg-[#F8FAFC] text-xs text-[#756860]">
                 Behind Ambedkar Bhavan, 9th Cross Road, Sai Nagar, Anantapur
               </div>
             </motion.div>

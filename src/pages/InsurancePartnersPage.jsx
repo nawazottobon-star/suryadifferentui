@@ -81,12 +81,12 @@ export function InsurancePartnersPage() {
   ];
 
   return (
-    <div className="w-full bg-[#FFF9F3] text-[#262626]">
+    <div className="w-full bg-[#ECECE5] text-[#262626]">
       
       {/* ======================================================== */}
       {/* SECTION 1: HERO SECTION (Compact & Professional)          */}
       {/* ======================================================== */}
-      <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 bg-gradient-to-b from-[#FFF0E6]/70 via-[#FFF9F3] to-transparent border-b border-[#F0E2D9] overflow-hidden">
+      <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 bg-gradient-to-b from-[#EEF2FB]/70 via-[#ECECE5] to-transparent border-b border-[#E8EFF5] overflow-hidden">
         {/* Subtle Decorative Dots */}
         <div className="absolute top-20 left-8 opacity-30 pointer-events-none select-none text-[#FF8A3D]">
           <div className="grid grid-cols-2 gap-2">
@@ -107,14 +107,14 @@ export function InsurancePartnersPage() {
 
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <AnimateIn animation="fade-up">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 border border-[#E9D8CE] text-[#C63D1B] text-xs font-bold uppercase tracking-widest mb-4 shadow-2xs">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 border border-[#D9E2EC] text-[#13233D] text-xs font-bold uppercase tracking-widest mb-4 shadow-2xs">
               <span className="w-2 h-2 rounded-full bg-[#E94B1C]" />
               <span>PATIENT SUPPORT</span>
             </div>
           </AnimateIn>
 
           <AnimateIn animation="fade-up" delay={100}>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#C63D1B] tracking-tight leading-snug uppercase">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#13233D] tracking-tight leading-snug uppercase">
               Our Insurance Partners
             </h1>
           </AnimateIn>
@@ -134,7 +134,7 @@ export function InsurancePartnersPage() {
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
               <a
                 href="#contact-insurance"
-                className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 rounded-full text-xs sm:text-sm font-bold text-white bg-[#E94B1C] hover:bg-[#A83218] shadow-md transition-all active:scale-95"
+                className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 rounded-full text-xs sm:text-sm font-bold text-white bg-[#3A4F99] hover:bg-[#2A3B7A] shadow-md transition-all active:scale-95"
               >
                 <span>Contact Our Team</span>
                 <PhoneCall className="w-4 h-4" />
@@ -142,7 +142,7 @@ export function InsurancePartnersPage() {
               <button
                 type="button"
                 onClick={scrollToGrid}
-                className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 rounded-full text-xs sm:text-sm font-bold text-[#C63D1B] bg-white border border-[#E9D8CE] hover:bg-[#FFF0E6] transition-all shadow-xs active:scale-95 cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 rounded-full text-xs sm:text-sm font-bold text-[#13233D] bg-white border border-[#D9E2EC] hover:bg-[#EEF2FB] transition-all shadow-xs active:scale-95 cursor-pointer"
               >
                 <span>View Insurance Partners</span>
                 <ArrowRight className="w-4 h-4" />
@@ -163,11 +163,11 @@ export function InsurancePartnersPage() {
       {/* ======================================================== */}
       {/* SECTION 2: INSURANCE PARTNER INTRODUCTION                 */}
       {/* ======================================================== */}
-      <section className="py-16 sm:py-20 bg-white border-b border-[#F0E2D9]">
+      <section className="py-16 sm:py-20 bg-white border-b border-[#E8EFF5]">
         <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14">
             <AnimateIn animation="fade-up">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#C63D1B] tracking-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#13233D] tracking-tight">
                 Insurance &amp; Cashless Healthcare Support
               </h2>
             </AnimateIn>
@@ -181,11 +181,11 @@ export function InsurancePartnersPage() {
           {/* 3 Information Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             <AnimateIn animation="fade-up" delay={150}>
-              <div className="h-full bg-[#FFF0E6]/50 border border-[#E9D8CE] rounded-2xl p-6 sm:p-7 text-left space-y-3.5 shadow-2xs hover:shadow-md transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-white text-[#E94B1C] border border-[#E9D8CE] flex items-center justify-center shrink-0 shadow-2xs">
+              <div className="h-full bg-[#EEF2FB]/50 border border-[#D9E2EC] rounded-2xl p-6 sm:p-7 text-left space-y-3.5 shadow-2xs hover:shadow-md transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-white text-[#3A4F99] border border-[#D9E2EC] flex items-center justify-center shrink-0 shadow-2xs">
                   <ShieldCheck className="w-6 h-6 stroke-[2.2]" />
                 </div>
-                <h3 className="text-lg font-bold text-[#C63D1B] leading-snug">
+                <h3 className="text-lg font-bold text-[#13233D] leading-snug">
                   Insurance Assistance
                 </h3>
                 <p className="text-xs sm:text-sm text-[#756860] leading-relaxed">
@@ -195,11 +195,11 @@ export function InsurancePartnersPage() {
             </AnimateIn>
 
             <AnimateIn animation="fade-up" delay={200}>
-              <div className="h-full bg-[#FFF0E6]/50 border border-[#E9D8CE] rounded-2xl p-6 sm:p-7 text-left space-y-3.5 shadow-2xs hover:shadow-md transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-white text-[#E94B1C] border border-[#E9D8CE] flex items-center justify-center shrink-0 shadow-2xs">
+              <div className="h-full bg-[#EEF2FB]/50 border border-[#D9E2EC] rounded-2xl p-6 sm:p-7 text-left space-y-3.5 shadow-2xs hover:shadow-md transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-white text-[#3A4F99] border border-[#D9E2EC] flex items-center justify-center shrink-0 shadow-2xs">
                   <CreditCard className="w-6 h-6 stroke-[2.2]" />
                 </div>
-                <h3 className="text-lg font-bold text-[#C63D1B] leading-snug">
+                <h3 className="text-lg font-bold text-[#13233D] leading-snug">
                   Cashless Treatment Guidance
                 </h3>
                 <p className="text-xs sm:text-sm text-[#756860] leading-relaxed">
@@ -209,11 +209,11 @@ export function InsurancePartnersPage() {
             </AnimateIn>
 
             <AnimateIn animation="fade-up" delay={250}>
-              <div className="h-full bg-[#FFF0E6]/50 border border-[#E9D8CE] rounded-2xl p-6 sm:p-7 text-left space-y-3.5 shadow-2xs hover:shadow-md transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-white text-[#E94B1C] border border-[#E9D8CE] flex items-center justify-center shrink-0 shadow-2xs">
+              <div className="h-full bg-[#EEF2FB]/50 border border-[#D9E2EC] rounded-2xl p-6 sm:p-7 text-left space-y-3.5 shadow-2xs hover:shadow-md transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-white text-[#3A4F99] border border-[#D9E2EC] flex items-center justify-center shrink-0 shadow-2xs">
                   <FileText className="w-6 h-6 stroke-[2.2]" />
                 </div>
-                <h3 className="text-lg font-bold text-[#C63D1B] leading-snug">
+                <h3 className="text-lg font-bold text-[#13233D] leading-snug">
                   Claim Documentation
                 </h3>
                 <p className="text-xs sm:text-sm text-[#756860] leading-relaxed">
@@ -228,12 +228,12 @@ export function InsurancePartnersPage() {
       {/* ======================================================== */}
       {/* SECTION 3: INSURANCE PARTNERS LOGO GRID (24 Companies)   */}
       {/* ======================================================== */}
-      <section id="insurance-partners-grid" className="py-20 sm:py-28 bg-[#FFF0E6]/50 relative overflow-hidden">
+      <section id="insurance-partners-grid" className="py-20 sm:py-28 bg-[#EEF2FB]/50 relative overflow-hidden">
         <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <AnimateIn animation="fade-up">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#C63D1B] leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#13233D] leading-tight">
                 Our Insurance Partners
               </h2>
             </AnimateIn>
@@ -252,19 +252,19 @@ export function InsurancePartnersPage() {
           {/* Live Search & Filter Bar */}
           <div className="max-w-xl mx-auto mb-10">
             <div className="relative">
-              <Search className="w-5 h-5 text-[#C63D1B] absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+              <Search className="w-5 h-5 text-[#13233D] absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
               <input
                 type="text"
                 value={tpaSearch}
                 onChange={(e) => setTpaSearch(e.target.value)}
                 placeholder="Search TPA or Insurance Provider (e.g. Star Health, Medi Assist, HDFC, Vidal)..."
-                className="w-full pl-12 pr-10 py-3.5 rounded-2xl bg-white border border-[#E9D8CE] text-sm text-[#1A1D20] placeholder-[#756860]/70 focus:outline-none focus:border-[#E94B1C] shadow-sm transition"
+                className="w-full pl-12 pr-10 py-3.5 rounded-2xl bg-white border border-[#D9E2EC] text-sm text-[#13233D] placeholder-[#756860]/70 focus:outline-none focus:border-[#3A4F99] shadow-sm transition"
               />
               {tpaSearch && (
                 <button
                   type="button"
                   onClick={() => setTpaSearch("")}
-                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#756860] hover:text-[#C63D1B] p-1 cursor-pointer"
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#756860] hover:text-[#13233D] p-1 cursor-pointer"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -278,7 +278,7 @@ export function InsurancePartnersPage() {
                 <button
                   type="button"
                   onClick={() => setTpaSearch("")}
-                  className="text-[#C63D1B] hover:underline font-semibold cursor-pointer"
+                  className="text-[#13233D] hover:underline font-semibold cursor-pointer"
                 >
                   Clear search
                 </button>
@@ -287,19 +287,19 @@ export function InsurancePartnersPage() {
           </div>
 
           {/* Clean 5-Column Borderless Grid with live search result */}
-          <div className="bg-white/80 rounded-3xl p-6 sm:p-10 md:p-14 shadow-sm border border-[#E9D8CE]/60">
+          <div className="bg-white/80 rounded-3xl p-6 sm:p-10 md:p-14 shadow-sm border border-[#D9E2EC]/60">
             {filteredPartners.length === 0 ? (
               <div className="py-12 text-center space-y-3">
-                <HelpCircle className="w-10 h-10 text-[#C63D1B] mx-auto opacity-70" />
-                <h4 className="text-base font-bold text-[#1A1D20]">No matching partner found for "{tpaSearch}"</h4>
+                <HelpCircle className="w-10 h-10 text-[#13233D] mx-auto opacity-70" />
+                <h4 className="text-base font-bold text-[#13233D]">No matching partner found for "{tpaSearch}"</h4>
                 <p className="text-xs text-[#756860] max-w-md mx-auto">
                   Don't worry! Surya Hospital handles reimbursement claims and additional TPAs. Call our 24/7 Insurance Desk at{" "}
-                  <a href="tel:8500904999" className="text-[#E94B1C] font-bold underline">8500904999</a> to verify.
+                  <a href="tel:8500904999" className="text-[#3A4F99] font-bold underline">8500904999</a> to verify.
                 </p>
                 <button
                   type="button"
                   onClick={() => setTpaSearch("")}
-                  className="mt-2 inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold text-white bg-[#E94B1C] hover:bg-[#A83218] transition shadow-xs cursor-pointer"
+                  className="mt-2 inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold text-white bg-[#3A4F99] hover:bg-[#2A3B7A] transition shadow-xs cursor-pointer"
                 >
                   Reset Search
                 </button>
@@ -326,7 +326,7 @@ export function InsurancePartnersPage() {
                         className="max-h-12 sm:max-h-14 md:max-h-16 w-auto max-w-[140px] sm:max-w-[160px] object-contain transition-transform duration-300 group-hover:scale-110 filter drop-shadow-2xs"
                         loading="lazy"
                       />
-                      <span className="text-[11px] font-semibold text-[#756860] group-hover:text-[#C63D1B] mt-1.5 text-center line-clamp-1 transition-colors">
+                      <span className="text-[11px] font-semibold text-[#756860] group-hover:text-[#13233D] mt-1.5 text-center line-clamp-1 transition-colors">
                         {partner.name}
                       </span>
                     </div>
@@ -339,8 +339,8 @@ export function InsurancePartnersPage() {
           {/* Notice pill below grid */}
           <AnimateIn animation="fade-up" delay={300}>
             <div className="mt-10 text-center">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 border border-[#E9D8CE] text-xs text-[#756860] shadow-2xs">
-                <AlertCircle className="w-3.5 h-3.5 text-[#E94B1C] shrink-0" />
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 border border-[#D9E2EC] text-xs text-[#756860] shadow-2xs">
+                <AlertCircle className="w-3.5 h-3.5 text-[#3A4F99] shrink-0" />
                 <span>Empanelment and cashless availability are subject to periodic TPA updates and policy terms.</span>
               </span>
             </div>
@@ -352,12 +352,12 @@ export function InsurancePartnersPage() {
       {/* ======================================================== */}
       {/* SECTION 4: HOW CASHLESS TREATMENT WORKS (4 Steps)        */}
       {/* ======================================================== */}
-      <section className="py-16 sm:py-24 bg-white border-y border-[#F0E2D9]">
+      <section className="py-16 sm:py-24 bg-white border-y border-[#E8EFF5]">
         <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
             <AnimateIn animation="fade-up">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#C63D1B] uppercase tracking-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#13233D] uppercase tracking-tight">
                 How Cashless Treatment Works
               </h2>
             </AnimateIn>
@@ -381,19 +381,19 @@ export function InsurancePartnersPage() {
                   animation="fade-up"
                   delay={idx * 100}
                 >
-                  <div className="relative bg-[#FFF0E6]/40 border border-[#E9D8CE] rounded-2xl p-6 sm:p-7 flex flex-col justify-between h-full shadow-2xs hover:shadow-md hover:border-[#E94B1C] transition-all duration-300 group">
+                  <div className="relative bg-[#EEF2FB]/40 border border-[#D9E2EC] rounded-2xl p-6 sm:p-7 flex flex-col justify-between h-full shadow-2xs hover:shadow-md hover:border-[#3A4F99] transition-all duration-300 group">
                     <div>
                       {/* Step Number Badge & Icon */}
                       <div className="flex items-center justify-between mb-5">
                         <span className="w-10 h-10 rounded-xl bg-[#E94B1C] text-white font-black text-sm flex items-center justify-center shadow-xs">
                           {item.step}
                         </span>
-                        <div className="w-10 h-10 rounded-xl bg-white border border-[#E9D8CE] text-[#C63D1B] flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <div className="w-10 h-10 rounded-xl bg-white border border-[#D9E2EC] text-[#13233D] flex items-center justify-center group-hover:scale-105 transition-transform">
                           <Icon className="w-5 h-5 stroke-[2]" />
                         </div>
                       </div>
 
-                      <h3 className="text-base sm:text-lg font-bold text-[#C63D1B] leading-snug mb-2.5">
+                      <h3 className="text-base sm:text-lg font-bold text-[#13233D] leading-snug mb-2.5">
                         {item.title}
                       </h3>
 
@@ -402,7 +402,7 @@ export function InsurancePartnersPage() {
                       </p>
                     </div>
 
-                    <div className="mt-5 pt-3 border-t border-[#F0E2D9] flex items-center gap-1.5 text-[11px] font-bold text-[#C63D1B]">
+                    <div className="mt-5 pt-3 border-t border-[#E8EFF5] flex items-center gap-1.5 text-[11px] font-bold text-[#13233D]">
                       <span>Step {item.step} of 04</span>
                     </div>
                   </div>
@@ -417,19 +417,19 @@ export function InsurancePartnersPage() {
       {/* ======================================================== */}
       {/* SECTION 5: IMPORTANT INFORMATION FOR PATIENTS            */}
       {/* ======================================================== */}
-      <section className="py-16 sm:py-20 bg-[#FFF9F3]">
+      <section className="py-16 sm:py-20 bg-[#ECECE5]">
         <div className="max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="bg-white rounded-3xl border border-[#E9D8CE] shadow-sm overflow-hidden p-6 sm:p-10 text-left">
+          <div className="bg-white rounded-3xl border border-[#D9E2EC] shadow-sm overflow-hidden p-6 sm:p-10 text-left">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-full bg-[#FFF0E6] text-[#E94B1C] flex items-center justify-center shrink-0 border border-[#E9D8CE]">
+              <div className="w-10 h-10 rounded-full bg-[#EEF2FB] text-[#3A4F99] flex items-center justify-center shrink-0 border border-[#D9E2EC]">
                 <AlertCircle className="w-5 h-5" />
               </div>
               <div>
                 <span className="text-[11px] font-bold uppercase tracking-wider text-[#FF8A3D] block">
                   ADVISORY FOR PATIENTS
                 </span>
-                <h3 className="text-xl sm:text-2xl font-black text-[#C63D1B]">
+                <h3 className="text-xl sm:text-2xl font-black text-[#13233D]">
                   Before Your Hospital Visit
                 </h3>
               </div>
@@ -438,15 +438,15 @@ export function InsurancePartnersPage() {
             <ul className="space-y-3.5 mb-8">
               {checklistItems.map((point, i) => (
                 <li key={i} className="flex items-start gap-3 text-xs sm:text-sm text-[#262626] leading-relaxed">
-                  <CheckCircle2 className="w-4 h-4 text-[#E94B1C] shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#3A4F99] shrink-0 mt-0.5" />
                   <span>{point}</span>
                 </li>
               ))}
             </ul>
 
             {/* Note banner */}
-            <div className="p-4 sm:p-5 rounded-2xl bg-[#FFF0E6]/70 border border-[#E9D8CE] text-xs sm:text-sm text-[#262626] leading-relaxed">
-              <strong className="text-[#C63D1B]">Important Note:</strong> Displaying an insurance company's logo does not guarantee cashless approval for every policy, procedure, or patient. Please contact Surya Hospital to confirm the latest arrangements.
+            <div className="p-4 sm:p-5 rounded-2xl bg-[#EEF2FB]/70 border border-[#D9E2EC] text-xs sm:text-sm text-[#262626] leading-relaxed">
+              <strong className="text-[#13233D]">Important Note:</strong> Displaying an insurance company's logo does not guarantee cashless approval for every policy, procedure, or patient. Please contact Surya Hospital to confirm the latest arrangements.
             </div>
           </div>
 
@@ -456,12 +456,12 @@ export function InsurancePartnersPage() {
       {/* ======================================================== */}
       {/* SECTION 6: CONTACT AND ENQUIRY SECTION                    */}
       {/* ======================================================== */}
-      <section id="contact-insurance" className="py-16 sm:py-24 bg-white border-t border-[#F0E2D9]">
+      <section id="contact-insurance" className="py-16 sm:py-24 bg-white border-t border-[#E8EFF5]">
         <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <AnimateIn animation="fade-up">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#C63D1B] uppercase tracking-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#13233D] uppercase tracking-tight">
                 Need Help With Insurance?
               </h2>
             </AnimateIn>
@@ -478,12 +478,12 @@ export function InsurancePartnersPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             
             {/* Phone Card */}
-            <div className="bg-[#FFF0E6]/50 border border-[#E9D8CE] rounded-2xl p-6 sm:p-7 text-center space-y-3.5 shadow-2xs flex flex-col justify-between">
-              <div className="w-12 h-12 rounded-xl bg-white text-[#E94B1C] border border-[#E9D8CE] flex items-center justify-center mx-auto shadow-2xs">
+            <div className="bg-[#EEF2FB]/50 border border-[#D9E2EC] rounded-2xl p-6 sm:p-7 text-center space-y-3.5 shadow-2xs flex flex-col justify-between">
+              <div className="w-12 h-12 rounded-xl bg-white text-[#3A4F99] border border-[#D9E2EC] flex items-center justify-center mx-auto shadow-2xs">
                 <Phone className="w-6 h-6 stroke-[2]" />
               </div>
               <div>
-                <h4 className="text-base font-bold text-[#C63D1B]">Telephone Helpline</h4>
+                <h4 className="text-base font-bold text-[#13233D]">Telephone Helpline</h4>
                 <p className="text-xs text-[#756860] mt-1">24 Hours / 7 Days Available</p>
                 <div className="text-lg font-black text-[#262626] mt-2">
                   8500904999
@@ -491,7 +491,7 @@ export function InsurancePartnersPage() {
               </div>
               <a
                 href="tel:8500904999"
-                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-full text-xs font-bold text-white bg-[#E94B1C] hover:bg-[#A83218] shadow-xs transition-all active:scale-95"
+                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-full text-xs font-bold text-white bg-[#3A4F99] hover:bg-[#2A3B7A] shadow-xs transition-all active:scale-95"
               >
                 <PhoneCall className="w-3.5 h-3.5" />
                 <span>Call Now</span>
@@ -499,12 +499,12 @@ export function InsurancePartnersPage() {
             </div>
 
             {/* Email Card */}
-            <div className="bg-[#FFF0E6]/50 border border-[#E9D8CE] rounded-2xl p-6 sm:p-7 text-center space-y-3.5 shadow-2xs flex flex-col justify-between">
-              <div className="w-12 h-12 rounded-xl bg-white text-[#E94B1C] border border-[#E9D8CE] flex items-center justify-center mx-auto shadow-2xs">
+            <div className="bg-[#EEF2FB]/50 border border-[#D9E2EC] rounded-2xl p-6 sm:p-7 text-center space-y-3.5 shadow-2xs flex flex-col justify-between">
+              <div className="w-12 h-12 rounded-xl bg-white text-[#3A4F99] border border-[#D9E2EC] flex items-center justify-center mx-auto shadow-2xs">
                 <Mail className="w-6 h-6 stroke-[2]" />
               </div>
               <div>
-                <h4 className="text-base font-bold text-[#C63D1B]">Email Insurance Desk</h4>
+                <h4 className="text-base font-bold text-[#13233D]">Email Insurance Desk</h4>
                 <p className="text-xs text-[#756860] mt-1">Pre-Auth &amp; Queries</p>
                 <div className="text-xs sm:text-[13px] font-bold text-[#262626] mt-2 break-all">
                   insurancedesksuryahospital@gmail.com
@@ -512,7 +512,7 @@ export function InsurancePartnersPage() {
               </div>
               <a
                 href="mailto:insurancedesksuryahospital@gmail.com"
-                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-full text-xs font-bold text-white bg-[#E94B1C] hover:bg-[#A83218] shadow-xs transition-all active:scale-95"
+                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-full text-xs font-bold text-white bg-[#3A4F99] hover:bg-[#2A3B7A] shadow-xs transition-all active:scale-95"
               >
                 <Mail className="w-3.5 h-3.5" />
                 <span>Email Us</span>
@@ -520,12 +520,12 @@ export function InsurancePartnersPage() {
             </div>
 
             {/* Address Card */}
-            <div className="bg-[#FFF0E6]/50 border border-[#E9D8CE] rounded-2xl p-6 sm:p-7 text-center space-y-3.5 shadow-2xs flex flex-col justify-between">
-              <div className="w-12 h-12 rounded-xl bg-white text-[#E94B1C] border border-[#E9D8CE] flex items-center justify-center mx-auto shadow-2xs">
+            <div className="bg-[#EEF2FB]/50 border border-[#D9E2EC] rounded-2xl p-6 sm:p-7 text-center space-y-3.5 shadow-2xs flex flex-col justify-between">
+              <div className="w-12 h-12 rounded-xl bg-white text-[#3A4F99] border border-[#D9E2EC] flex items-center justify-center mx-auto shadow-2xs">
                 <MapPin className="w-6 h-6 stroke-[2]" />
               </div>
               <div>
-                <h4 className="text-base font-bold text-[#C63D1B]">Hospital Location</h4>
+                <h4 className="text-base font-bold text-[#13233D]">Hospital Location</h4>
                 <p className="text-xs text-[#756860] mt-1">Sai Nagar Campus</p>
                 <div className="text-xs font-semibold text-[#262626] mt-2 leading-relaxed">
                   #12-3-367, 9th Cross, Sai Nagar, Ananthapuramu - 515004
@@ -535,7 +535,7 @@ export function InsurancePartnersPage() {
                 href={HOSPITAL_INFO.directionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-full text-xs font-bold text-[#C63D1B] bg-white border border-[#E9D8CE] hover:bg-[#FFF0E6] shadow-xs transition-all active:scale-95"
+                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-full text-xs font-bold text-[#13233D] bg-white border border-[#D9E2EC] hover:bg-[#EEF2FB] shadow-xs transition-all active:scale-95"
               >
                 <span>Get Directions</span>
                 <ExternalLink className="w-3.5 h-3.5" />
@@ -565,15 +565,15 @@ export function InsurancePartnersPage() {
               initial={{ opacity: 0, scale: 0.95, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 15 }}
-              className="relative w-full max-w-xl bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-[#E9D8CE] z-10 text-left overflow-hidden max-h-[90vh] overflow-y-auto"
+              className="relative w-full max-w-xl bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-[#D9E2EC] z-10 text-left overflow-hidden max-h-[90vh] overflow-y-auto"
             >
-              <div className="flex items-start justify-between gap-4 pb-4 border-b border-[#F0E2D9]">
+              <div className="flex items-start justify-between gap-4 pb-4 border-b border-[#E8EFF5]">
                 <div>
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF0E6] text-[#C63D1B] text-[11px] font-bold uppercase tracking-wider mb-2">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EEF2FB] text-[#13233D] text-[11px] font-bold uppercase tracking-wider mb-2">
                     <FileCheck2 className="w-3.5 h-3.5" />
                     <span>Patient Verification Guide</span>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-black text-[#1A1D20]">
+                  <h3 className="text-xl sm:text-2xl font-black text-[#13233D]">
                     Cashless Admission Checklist
                   </h3>
                   <p className="text-xs sm:text-sm text-[#756860] mt-0.5">
@@ -583,15 +583,15 @@ export function InsurancePartnersPage() {
                 <button
                   type="button"
                   onClick={() => setIsChecklistOpen(false)}
-                  className="w-9 h-9 rounded-full bg-[#FFF0E6] text-[#756860] hover:text-[#C63D1B] flex items-center justify-center shrink-0 transition cursor-pointer"
+                  className="w-9 h-9 rounded-full bg-[#EEF2FB] text-[#756860] hover:text-[#13233D] flex items-center justify-center shrink-0 transition cursor-pointer"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
               <div className="py-5 space-y-4">
-                <div className="p-3.5 rounded-2xl bg-[#FFF9F3] border border-[#E9D8CE] space-y-2">
-                  <span className="text-xs font-bold text-[#C63D1B] uppercase tracking-wide">
+                <div className="p-3.5 rounded-2xl bg-[#ECECE5] border border-[#D9E2EC] space-y-2">
+                  <span className="text-xs font-bold text-[#13233D] uppercase tracking-wide">
                     1. Primary Insurance Documents
                   </span>
                   <ul className="space-y-2 text-xs sm:text-sm text-[#262626]">
@@ -606,8 +606,8 @@ export function InsurancePartnersPage() {
                   </ul>
                 </div>
 
-                <div className="p-3.5 rounded-2xl bg-[#FFF9F3] border border-[#E9D8CE] space-y-2">
-                  <span className="text-xs font-bold text-[#C63D1B] uppercase tracking-wide">
+                <div className="p-3.5 rounded-2xl bg-[#ECECE5] border border-[#D9E2EC] space-y-2">
+                  <span className="text-xs font-bold text-[#13233D] uppercase tracking-wide">
                     2. Patient & Proposer Identification (KYC)
                   </span>
                   <ul className="space-y-2 text-xs sm:text-sm text-[#262626]">
@@ -622,8 +622,8 @@ export function InsurancePartnersPage() {
                   </ul>
                 </div>
 
-                <div className="p-3.5 rounded-2xl bg-[#FFF9F3] border border-[#E9D8CE] space-y-2">
-                  <span className="text-xs font-bold text-[#C63D1B] uppercase tracking-wide">
+                <div className="p-3.5 rounded-2xl bg-[#ECECE5] border border-[#D9E2EC] space-y-2">
+                  <span className="text-xs font-bold text-[#13233D] uppercase tracking-wide">
                     3. Medical Documentation
                   </span>
                   <ul className="space-y-2 text-xs sm:text-sm text-[#262626]">
@@ -639,14 +639,14 @@ export function InsurancePartnersPage() {
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-[#F0E2D9] flex flex-col sm:flex-row items-center justify-between gap-3">
+              <div className="pt-4 border-t border-[#E8EFF5] flex flex-col sm:flex-row items-center justify-between gap-3">
                 <span className="text-xs text-[#756860]">
-                  Need real-time help? Call <strong className="text-[#1A1D20]">8500904999</strong>
+                  Need real-time help? Call <strong className="text-[#13233D]">8500904999</strong>
                 </span>
                 <button
                   type="button"
                   onClick={() => setIsChecklistOpen(false)}
-                  className="w-full sm:w-auto px-6 py-2.5 rounded-full text-xs font-bold text-white bg-[#E94B1C] hover:bg-[#A83218] transition shadow-xs cursor-pointer"
+                  className="w-full sm:w-auto px-6 py-2.5 rounded-full text-xs font-bold text-white bg-[#3A4F99] hover:bg-[#2A3B7A] transition shadow-xs cursor-pointer"
                 >
                   Got It, Thanks!
                 </button>

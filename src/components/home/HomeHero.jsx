@@ -7,49 +7,39 @@ import { useAppointmentModal } from "../../context/AppointmentModalContext";
 export function HomeHero() {
   const { openModal } = useAppointmentModal();
 
-  const scrollToFounder = (e) => {
-    if (e && e.preventDefault) e.preventDefault();
-    const el = document.getElementById("founder-story");
-    if (el) {
-      const navOffset = 80;
-      const elementPosition = el.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navOffset;
-      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-    }
-  };
-
   return (
     <section
-      className="relative w-full overflow-hidden pt-28 lg:pt-32 pb-10 lg:pb-12 border-b border-amber-900/10"
+      className="relative w-full overflow-hidden pt-28 lg:pt-36 pb-8 lg:pb-10 border-b border-[#D9E2EC]"
       style={{
         background:
-          "radial-gradient(ellipse 95% 85% at 75% 45%, #EADBCA 0%, #F1E6D8 28%, #F7EFE6 58%, #FDFBF8 100%)",
+          "radial-gradient(ellipse 90% 80% at 75% 35%, #DCE6F0 0%, #E6EFF6 30%, #EEF4F9 60%, #ECECE5 100%)",
       }}
     >
-      {/* ── AMBIENT WARM ARCHITECTURAL CANVAS GLOWS ── */}
-      <div className="absolute top-0 right-1/4 w-[550px] h-[550px] rounded-full bg-gradient-to-br from-orange-200/20 via-amber-200/15 to-transparent blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-[400px] h-[400px] rounded-full bg-amber-100/25 blur-3xl pointer-events-none" />
+      {/* ── AMBIENT ARCHITECTURAL GLOWS ── */}
+      <div className="absolute top-0 right-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-[#3A4F99]/12 via-[#B2CEE2]/18 to-transparent blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-[450px] h-[450px] rounded-full bg-[#B2CEE2]/15 blur-3xl pointer-events-none" />
 
-      {/* ── MAIN HERO CONTAINER ── */}
+      {/* ── MAIN HERO LAYOUT CONTAINER ── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center min-h-[560px]">
-          {/* Left Column (5 Cols on Desktop) */}
-          <div className="lg:col-span-5 order-2 lg:order-1">
-            <HeroContent
-              onOpenAppointment={() => openModal()}
-              onScrollToFounder={scrollToFounder}
-            />
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center min-h-[500px]">
+          
+          {/* Left Column: Minimal, Bold, Pure Text (5.5 Cols) */}
+          <div className="lg:col-span-6 xl:col-span-5 order-2 lg:order-1">
+            <HeroContent onOpenAppointment={() => openModal()} />
           </div>
 
-          {/* Right Column (7 Cols on Desktop) - Seamless 3D Architectural Building Video */}
-          <div className="lg:col-span-7 order-1 lg:order-2 flex items-center justify-center">
-            <HeroBuildingVideo />
+          {/* Right Column: Clean 3D Architectural Building Video (6.5 Cols) */}
+          <div className="lg:col-span-6 xl:col-span-7 order-1 lg:order-2 flex items-center justify-center">
+            <div className="w-full relative">
+              <HeroBuildingVideo />
+            </div>
           </div>
+
         </div>
       </div>
 
       {/* ── INTEGRATED HERO TRUST STRIP ── */}
-      <div className="mt-8 relative z-20">
+      <div className="mt-6 sm:mt-8 relative z-20">
         <HeroTrustStrip />
       </div>
     </section>

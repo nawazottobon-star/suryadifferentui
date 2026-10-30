@@ -16,21 +16,27 @@ export function Badge({
   };
 
   const variantStyles = {
-    default: "bg-[#FFF0E6] text-[#C63D1B] border border-[#E9D8CE]",
-    teal: "bg-[#FFF0E6] text-[#E94B1C] border border-[#FF8A3D]/40",
-    navy: "bg-[#E94B1C] text-white border border-[#E94B1C]",
-    emergency: "bg-[#FFF0E6] text-[#C63D1B] border border-[#C63D1B]/30",
+    default: "bg-[#F0F6FA] text-[#13233D] border border-[#B2CEE2]",
+    navy: "bg-[#13233D] text-white border border-[#13233D]",
+    slate: "bg-[#EEF2FB] text-[#3A4F99] border border-[#B2CEE2]",
+    ice: "bg-[#E5EFF6] text-[#13233D] border border-[#B2CEE2]",
+    orange: "bg-[#FFF0E6] text-[#E94B1C] border border-[#FF8A3D]/30",
+    teal: "bg-[#EEF2FB] text-[#3A4F99] border border-[#B2CEE2]",
+    emergency: "bg-red-50 text-red-700 border border-red-200",
     success: "bg-emerald-50 text-emerald-800 border border-emerald-200",
-    outline: "bg-transparent text-[#756860] border border-[#E9D8CE]",
+    outline: "bg-transparent text-[#5D6D82] border border-[#D9E2EC]",
   };
 
   const dotColor = {
-    default: "bg-[#E94B1C]",
-    teal: "bg-[#FF8A3D]",
+    default: "bg-[#3A4F99]",
     navy: "bg-white",
-    emergency: "bg-[#C63D1B] animate-pulse",
+    slate: "bg-[#3A4F99]",
+    ice: "bg-[#3A4F99]",
+    orange: "bg-[#E94B1C]",
+    teal: "bg-[#3A4F99]",
+    emergency: "bg-red-600 animate-pulse",
     success: "bg-emerald-500",
-    outline: "bg-[#E94B1C]",
+    outline: "bg-[#3A4F99]",
   };
 
   return (

@@ -98,20 +98,20 @@ export function FacilitiesCinematic() {
         <svg viewBox="0 0 1440 180" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="relative block w-full h-[65px] sm:h-[95px] md:h-[130px]">
           <defs>
             <linearGradient id="facBottomRibbon1" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#FFF9F3" stopOpacity="0.30" />
+              <stop offset="0%" stopColor="#ECECE5" stopOpacity="0.30" />
               <stop offset="30%" stopColor="#F5DFD0" stopOpacity="0.50" />
-              <stop offset="70%" stopColor="#FFF9F3" stopOpacity="0.35" />
+              <stop offset="70%" stopColor="#ECECE5" stopOpacity="0.35" />
               <stop offset="100%" stopColor="#EAD2C1" stopOpacity="0.55" />
             </linearGradient>
             <linearGradient id="facBottomRibbon2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#FFF9F3" stopOpacity="0.70" />
+              <stop offset="0%" stopColor="#ECECE5" stopOpacity="0.70" />
               <stop offset="50%" stopColor="#F9ECE2" stopOpacity="0.85" />
-              <stop offset="100%" stopColor="#FFF9F3" stopOpacity="0.95" />
+              <stop offset="100%" stopColor="#ECECE5" stopOpacity="0.95" />
             </linearGradient>
           </defs>
           <path d="M0,70 C240,135 560,35 840,110 C1100,165 1280,85 1440,115 L1440,180 L0,180 Z" fill="url(#facBottomRibbon1)" />
           <path d="M0,95 C260,150 580,55 860,125 C1120,175 1300,105 1440,130 L1440,180 L0,180 Z" fill="url(#facBottomRibbon2)" />
-          <path d="M0,115 C280,165 600,75 880,135 C1140,180 1320,120 1440,140 L1440,180 L0,180 Z" fill="#FFF9F3" />
+          <path d="M0,115 C280,165 600,75 880,135 C1140,180 1320,120 1440,140 L1440,180 L0,180 Z" fill="#ECECE5" />
         </svg>
       </div>
 
@@ -128,7 +128,7 @@ export function FacilitiesCinematic() {
             </AnimateIn>
 
             <AnimateIn animation="slide-left" delay={100}>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-serif-heading font-bold text-white tracking-tight leading-[1.1]">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-sans font-bold text-white tracking-tight leading-[1.1]">
                 Modern
                 <br />
                 Facilities for
@@ -188,7 +188,7 @@ export function FacilitiesCinematic() {
                   whileHover={{ x: isSelected ? 0 : 6 }}
                   className={`flex items-center justify-between p-4 sm:p-5 rounded-2xl cursor-pointer transition-all duration-400 border card-shine-effect ${
                     isSelected
-                      ? "bg-white text-[#1A1D20] border-white shadow-[0_12px_40px_rgba(0,0,0,0.15)] scale-[1.02]"
+                      ? "bg-white text-[#13233D] border-white shadow-[0_12px_40px_rgba(0,0,0,0.15)] scale-[1.02]"
                       : "bg-white/10 backdrop-blur-md text-white border-white/15 hover:bg-white/18 hover:border-white/30"
                   }`}
                 >
@@ -201,7 +201,7 @@ export function FacilitiesCinematic() {
                       }`}
                     />
                     <div className="text-left min-w-0">
-                      <h3 className={`text-sm sm:text-base font-bold truncate ${isSelected ? "text-[#1A1D20]" : "text-white"}`}>
+                      <h3 className={`text-sm sm:text-base font-bold truncate ${isSelected ? "text-[#13233D]" : "text-white"}`}>
                         {fac.title}
                       </h3>
                       <p className={`text-xs truncate mt-0.5 ${isSelected ? "text-[#62666D]" : "text-[#E8F4F1]/70"}`}>

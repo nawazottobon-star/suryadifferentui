@@ -11,7 +11,7 @@
   z-index: 9999;
   width: 100%;
   background-color: #FFFFFF !important;
-  border-bottom: 1px solid #E9D7C7;
+  border-bottom: 1px solid #D9E2EC;
   box-shadow: 0 1px 3px rgba(41, 45, 50, 0.04);
   transition: box-shadow 0.25s ease;
 }
@@ -113,8 +113,8 @@
 }
 
 .stanford-menu-trigger:hover {
-  background-color: #FAF4EF;
-  border-color: #F0D9CB;
+  background-color: #F0F6FA;
+  border-color: #D9E2EC;
 }
 
 .stanford-menu-trigger:active {
@@ -126,7 +126,7 @@
   display: block;
   width: 100%;
   background-color: #FFFFFF;
-  border-top: 1px solid #F0D9CB;
+  border-top: 1px solid #D9E2EC;
   box-shadow: 0 16px 36px rgba(11, 19, 32, 0.12);
   animation: slideDownMenu 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   max-height: calc(100vh - 4.5rem);
@@ -165,12 +165,12 @@
 
 .ref-mob-link:hover,
 .ref-mob-link.active {
-  color: #C65332;
+  color: #3A4F99;
   padding-left: 6px;
 }
 
 .ref-mob-link.active {
-  border-left: 3px solid #C65332;
+  border-left: 3px solid #3A4F99;
   font-weight: 700;
 }
 
@@ -178,7 +178,7 @@
 .mob-cta-box {
   margin-top: 16px;
   padding-top: 16px;
-  border-top: 1px solid #F0D9CB;
+  border-top: 1px solid #D9E2EC;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -193,7 +193,7 @@
   padding: 12px 18px;
   min-height: 44px;
   border-radius: 9999px;
-  background-color: #C65332;
+  background-color: #3A4F99;
   color: #FFFFFF;
   font-weight: 700;
   font-size: 0.9rem;
@@ -203,7 +203,7 @@
 }
 
 .mob-cta-btn-primary:hover {
-  background-color: #A84328;
+  background-color: #C63D1B;
 }
 
 .mob-cta-btn-outline {
@@ -215,8 +215,8 @@
   padding: 12px 18px;
   min-height: 44px;
   border-radius: 9999px;
-  background-color: #FCECE2;
-  color: #C65332;
+  background-color: #EEF2FB;
+  color: #3A4F99;
   border: 1px solid #F0D9CB;
   font-weight: 700;
   font-size: 0.9rem;
@@ -225,5 +225,5 @@
 }
 
 .mob-cta-btn-outline:hover {
-  background-color: #F6D8C5;
+  background-color: #E0E7F5;
 }

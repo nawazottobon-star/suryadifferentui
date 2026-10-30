@@ -15,7 +15,7 @@ export function Button({
   ...props
 }) {
   const baseStyles =
-    "inline-flex items-center justify-center font-bold tracking-tight transition-all duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#E94B1C] disabled:opacity-60 disabled:cursor-not-allowed select-none cursor-pointer transform-gpu hover:-translate-y-0.5 active:translate-y-0 active:scale-97";
+    "inline-flex items-center justify-center font-bold tracking-tight transition-all duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#3A4F99] disabled:opacity-60 disabled:cursor-not-allowed select-none cursor-pointer transform-gpu hover:-translate-y-0.5 active:translate-y-0 active:scale-97";
 
   const sizeStyles = {
     sm: "px-4 py-2 text-xs rounded-full gap-1.5",
@@ -25,21 +25,23 @@ export function Button({
 
   const variantStyles = {
     primary:
-      "bg-[#E94B1C] hover:bg-[#A83218] text-white shadow-sm hover:shadow-md focus:ring-[#E94B1C] animate-cta-blink",
-    terracotta:
-      "bg-[#E94B1C] hover:bg-[#A83218] text-white shadow-sm hover:shadow-md focus:ring-[#E94B1C] animate-cta-blink",
+      "bg-[#3A4F99] hover:bg-[#2A3B7A] text-white shadow-md hover:shadow-lg focus:ring-[#3A4F99]",
     navy:
-      "bg-[#C63D1B] hover:bg-[#A83218] text-white shadow-sm hover:shadow-md focus:ring-[#C63D1B]",
-    accent:
-      "bg-[#F26A21] hover:bg-[#C63D1B] text-white shadow-sm hover:shadow-md focus:ring-[#F26A21] animate-cta-blink",
-    emergency:
-      "bg-[#C63D1B] hover:bg-[#A83218] text-white shadow-lg hover:shadow-xl focus:ring-[#C63D1B] animate-cta-blink",
+      "bg-[#13233D] hover:bg-[#0D1728] text-white shadow-md hover:shadow-lg focus:ring-[#13233D]",
+    slate:
+      "bg-[#3A4F99] hover:bg-[#2A3B7A] text-white shadow-md hover:shadow-lg focus:ring-[#3A4F99]",
+    ice:
+      "bg-[#B2CEE2] hover:bg-[#9CBED8] text-[#13233D] font-bold shadow-xs focus:ring-[#3A4F99]",
     secondary:
-      "bg-white border border-[#E9D8CE] text-[#C63D1B] hover:bg-[#FFF0E6] hover:border-[#E94B1C] shadow-xs focus:ring-[#E94B1C]",
+      "bg-white border-2 border-[#B2CEE2] text-[#13233D] hover:bg-[#EEF2FB] hover:border-[#3A4F99] shadow-xs focus:ring-[#3A4F99]",
     outline:
-      "border border-[#E9D8CE] bg-transparent text-[#C63D1B] hover:bg-[#FFF0E6] hover:border-[#E94B1C] focus:ring-[#E94B1C]",
+      "border-2 border-[#3A4F99] bg-transparent text-[#3A4F99] hover:bg-[#3A4F99] hover:text-white focus:ring-[#3A4F99]",
     ghost:
-      "text-[#C63D1B] hover:bg-[#FFF0E6] hover:text-[#A83218] focus:ring-[#E94B1C]",
+      "text-[#13233D] hover:bg-[#EEF2FB] hover:text-[#3A4F99] focus:ring-[#3A4F99]",
+    emergency:
+      "bg-[#DC2626] hover:bg-[#B91C1C] text-white shadow-lg focus:ring-[#DC2626]",
+    accent:
+      "bg-[#3A4F99] hover:bg-[#13233D] text-white shadow-md hover:shadow-lg focus:ring-[#3A4F99]",
   };
 
   const combinedClasses = `${baseStyles} ${sizeStyles[size] || sizeStyles.md} ${

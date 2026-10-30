@@ -8,7 +8,7 @@ export function FloatingActionButtons() {
   return (
     <aside
       aria-label="Quick Action Buttons"
-      className="fixed right-3 sm:right-5 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col items-center gap-2.5 py-4 px-3 rounded-full select-none transition-transform duration-300 hover:scale-105 bg-white/95 backdrop-blur-xl border border-[#E9D8CE] shadow-[0_12px_36px_rgba(233,75,28,0.14)]"
+      className="fixed right-3 sm:right-5 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col items-center gap-2.5 py-4 px-3 rounded-full select-none transition-transform duration-300 hover:scale-105 bg-white/95 backdrop-blur-xl border border-[#D9E2EC] shadow-[0_12px_36px_rgba(19,35,61,0.14)]"
     >
       {/* 1. WhatsApp */}
       <a
@@ -46,7 +46,7 @@ export function FloatingActionButtons() {
         title="Book Appointment"
         className="group flex flex-col items-center gap-1.5 p-1 rounded-full transition-transform active:scale-95 cursor-pointer bg-transparent border-0"
       >
-        <div className="w-11 h-11 rounded-full bg-[#FFF0E6] border border-[#E9D8CE] flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-xs">
+        <div className="w-11 h-11 rounded-full bg-[#EEF2FB] border border-[#D9E2EC] flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-xs">
           <Calendar className="w-5 h-5 text-[#E94B1C] stroke-[2.2]" />
         </div>
         <span className="text-[11px] font-bold tracking-tight text-[#262626] group-hover:text-[#E94B1C] text-center leading-[1.2] max-w-[68px] transition-colors">
@@ -64,7 +64,7 @@ export function FloatingActionButtons() {
         title="Call 24/7 Casualty Desk: 8500904999"
         className="group flex flex-col items-center gap-1.5 p-1 rounded-full transition-transform active:scale-95"
       >
-        <div className="w-11 h-11 rounded-full bg-[#FFF0E6] border border-[#E9D8CE] flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-xs">
+        <div className="w-11 h-11 rounded-full bg-[#EEF2FB] border border-[#D9E2EC] flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-xs">
           <Phone className="w-4 h-4 text-[#C63D1B] fill-current" />
         </div>
         <span className="text-[11px] font-bold tracking-tight text-[#262626] group-hover:text-[#C63D1B] text-center leading-[1.2] transition-colors">

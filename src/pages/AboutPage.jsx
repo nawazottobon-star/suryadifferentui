@@ -33,25 +33,25 @@ export function AboutPage() {
         badge="Sai Nagar, Anantapur"
       >
         <Link to="/doctors">
-          <Button variant="primary" size="sm" icon={Stethoscope} className="bg-[#E94B1C] hover:bg-[#A83218] text-white">
+          <Button variant="primary" size="sm" icon={Stethoscope} className="bg-[#3A4F99] hover:bg-[#2A3B7A] text-white">
             Meet Doctors
           </Button>
         </Link>
         <Link to="/specialities">
-          <Button variant="secondary" size="sm" className="bg-white border-[#E9D8CE] text-[#C63D1B] hover:bg-[#FFF0E6]">
+          <Button variant="secondary" size="sm" className="bg-white border-[#D9E2EC] text-[#13233D] hover:bg-[#EEF2FB]">
             Clinical Specialities
           </Button>
         </Link>
       </PageHero>
 
       {/* Hospital Overview */}
-      <section className="py-12 md:py-16 bg-[#FFF9F3] border-b border-[#F0E2D9]">
+      <section className="py-12 md:py-16 bg-[#ECECE5] border-b border-[#E8EFF5]">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Visual (5 cols) */}
             <div className="lg:col-span-5 relative">
-              <div className="rounded-2xl overflow-hidden border border-[#E9D8CE] shadow-md bg-white p-2.5">
-                <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-[#FFF0E6]">
+              <div className="rounded-2xl overflow-hidden border border-[#D9E2EC] shadow-md bg-white p-2.5">
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-[#EEF2FB]">
                   <img
                     src="/images/surya-reception.jpg"
                     alt="Surya Hospital Lobby and Reception in Sai Nagar Anantapur"
@@ -67,10 +67,10 @@ export function AboutPage() {
 
             {/* Content (7 cols) */}
             <div className="lg:col-span-7 space-y-4 text-left">
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-md text-[11px] font-bold uppercase tracking-widest bg-[#FFF0E6] text-[#C63D1B] border border-[#E9D8CE]">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-md text-[11px] font-bold uppercase tracking-widest bg-[#EEF2FB] text-[#13233D] border border-[#D9E2EC]">
                 ABOUT SURYA HOSPITAL
               </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase text-[#C63D1B] tracking-tight leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase text-[#13233D] tracking-tight leading-tight">
                 Quality Healthcare Under One Roof
               </h2>
               <p className="text-sm sm:text-base text-[#262626] leading-relaxed">
@@ -78,20 +78,20 @@ export function AboutPage() {
               </p>
 
               <div className="grid grid-cols-2 gap-3 pt-2 text-xs sm:text-[13px] text-[#262626] font-semibold">
-                <div className="flex items-center gap-2 bg-white p-3 rounded-xl border border-[#E9D8CE] shadow-2xs">
-                  <CheckCircle2 className="w-4 h-4 text-[#E94B1C] shrink-0" />
+                <div className="flex items-center gap-2 bg-white p-3 rounded-xl border border-[#D9E2EC] shadow-2xs">
+                  <CheckCircle2 className="w-4 h-4 text-[#3A4F99] shrink-0" />
                   <span>24/7 Emergency Casualty</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white p-3 rounded-xl border border-[#E9D8CE] shadow-2xs">
-                  <CheckCircle2 className="w-4 h-4 text-[#E94B1C] shrink-0" />
+                <div className="flex items-center gap-2 bg-white p-3 rounded-xl border border-[#D9E2EC] shadow-2xs">
+                  <CheckCircle2 className="w-4 h-4 text-[#3A4F99] shrink-0" />
                   <span>Modern Modular OTs</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white p-3 rounded-xl border border-[#E9D8CE] shadow-2xs">
-                  <CheckCircle2 className="w-4 h-4 text-[#E94B1C] shrink-0" />
+                <div className="flex items-center gap-2 bg-white p-3 rounded-xl border border-[#D9E2EC] shadow-2xs">
+                  <CheckCircle2 className="w-4 h-4 text-[#3A4F99] shrink-0" />
                   <span>Monitored Recovery Beds</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white p-3 rounded-xl border border-[#E9D8CE] shadow-2xs">
-                  <CheckCircle2 className="w-4 h-4 text-[#E94B1C] shrink-0" />
+                <div className="flex items-center gap-2 bg-white p-3 rounded-xl border border-[#D9E2EC] shadow-2xs">
+                  <CheckCircle2 className="w-4 h-4 text-[#3A4F99] shrink-0" />
                   <span>24/7 In-House Pharmacy</span>
                 </div>
               </div>
@@ -102,14 +102,14 @@ export function AboutPage() {
 
 
       {/* Core Values - 3 Quick Pillars */}
-      <section className="py-12 sm:py-16 bg-[#FFF9F3] border-b border-[#F0E2D9]">
+      <section className="py-12 sm:py-16 bg-[#ECECE5] border-b border-[#E8EFF5]">
         <Container>
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="text-center space-y-2 max-w-xl mx-auto">
-              <span className="inline-flex items-center gap-2 px-3 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-widest bg-[#FFF0E6] text-[#C63D1B] border border-[#E9D8CE]">
+              <span className="inline-flex items-center gap-2 px-3 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-widest bg-[#EEF2FB] text-[#13233D] border border-[#D9E2EC]">
                 OUR CORE VALUES
               </span>
-              <h2 className="text-2xl sm:text-3xl font-black text-[#C63D1B] tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-black text-[#13233D] tracking-tight">
                 Patient-First Clinical Care
               </h2>
             </div>
@@ -118,12 +118,12 @@ export function AboutPage() {
               {HOSPITAL_INFO.values.map((val) => (
                 <div
                   key={val.title}
-                  className="bg-white p-5 rounded-2xl border border-[#E9D8CE] shadow-2xs text-left space-y-2 hover:border-[#E94B1C] transition-colors"
+                  className="bg-white p-5 rounded-2xl border border-[#D9E2EC] shadow-2xs text-left space-y-2 hover:border-[#3A4F99] transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#FFF0E6] text-[#E94B1C] flex items-center justify-center border border-[#E9D8CE]">
+                  <div className="w-10 h-10 rounded-xl bg-[#EEF2FB] text-[#3A4F99] flex items-center justify-center border border-[#D9E2EC]">
                     <CheckCircle2 className="w-5 h-5 stroke-[2.2]" />
                   </div>
-                  <h3 className="text-sm sm:text-base font-bold text-[#C63D1B]">{val.title}</h3>
+                  <h3 className="text-sm sm:text-base font-bold text-[#13233D]">{val.title}</h3>
                   <p className="text-xs text-[#756860] leading-relaxed">{val.desc}</p>
                 </div>
               ))}
@@ -133,11 +133,11 @@ export function AboutPage() {
       </section>
 
       {/* Cross-page Navigation CTA */}
-      <section className="py-14 bg-white border-b border-[#F0E2D9]">
+      <section className="py-14 bg-white border-b border-[#E8EFF5]">
         <Container>
-          <AnimateIn animation="pop" delay={100} className="p-8 sm:p-12 rounded-3xl bg-[#FFF0E6] border border-[#E9D8CE] text-[#262626] flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left shadow-sm">
+          <AnimateIn animation="pop" delay={100} className="p-8 sm:p-12 rounded-3xl bg-[#EEF2FB] border border-[#D9E2EC] text-[#262626] flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left shadow-sm">
             <div className="space-y-1.5">
-              <h3 className="text-xl sm:text-2xl font-black text-[#C63D1B]">
+              <h3 className="text-xl sm:text-2xl font-black text-[#13233D]">
                 Have questions about our doctors or departments?
               </h3>
               <p className="text-xs sm:text-sm text-[#756860] font-normal">
@@ -146,12 +146,12 @@ export function AboutPage() {
             </div>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full md:w-auto">
               <Link to="/doctors" className="w-full sm:w-auto">
-                <Button variant="primary" size="md" className="w-full sm:w-auto font-bold text-xs bg-[#E94B1C] hover:bg-[#A83218] text-white rounded-full">
+                <Button variant="primary" size="md" className="w-full sm:w-auto font-bold text-xs bg-[#3A4F99] hover:bg-[#2A3B7A] text-white rounded-full">
                   View Doctor Directory
                 </Button>
               </Link>
               <Link to="/contact" className="w-full sm:w-auto">
-                <Button variant="outline" size="md" className="w-full sm:w-auto font-bold text-xs text-[#C63D1B] border-[#E9D8CE] hover:bg-[#FFF0E6] rounded-full">
+                <Button variant="outline" size="md" className="w-full sm:w-auto font-bold text-xs text-[#13233D] border-[#D9E2EC] hover:bg-[#EEF2FB] rounded-full">
                   Contact Us
                 </Button>
               </Link>

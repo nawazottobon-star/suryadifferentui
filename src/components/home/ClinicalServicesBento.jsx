@@ -4,11 +4,11 @@ import { useAppointmentModal } from '../../context/AppointmentModalContext';
 import { Link } from 'react-router-dom';
 
 const ACCENTS = [
-  { bar: 'bg-[#E94B1C]', text: 'text-[#E94B1C]', bgChip: 'bg-[#FFF1EB]' },
+  { bar: 'bg-[#E94B1C]', text: 'text-[#E94B1C]', bgChip: 'bg-[#EEF2FB]' },
   { bar: 'bg-[#0A6B6B]', text: 'text-[#0A6B6B]', bgChip: 'bg-[#EEF8F8]' },
   { bar: 'bg-[#B45309]', text: 'text-[#B45309]', bgChip: 'bg-[#FFFBEB]' },
   { bar: 'bg-[#4338CA]', text: 'text-[#4338CA]', bgChip: 'bg-[#EEF2FF]' },
-  { bar: 'bg-[#14233C]', text: 'text-[#14233C]', bgChip: 'bg-[#F1F5F9]' },
+  { bar: 'bg-[#14233C]', text: 'text-[#13233D]', bgChip: 'bg-[#F1F5F9]' },
 ];
 
 const services = [
@@ -164,7 +164,7 @@ function ParallaxDeckCard({ svc, index, total, scrollYProgress }) {
           <div className="lg:col-span-5 space-y-3">
             <div className="flex items-baseline justify-between sm:justify-start sm:gap-4">
               <span
-                className={`font-serif font-black leading-none select-none ${accent.text}`}
+                className={`font-sans font-black leading-none select-none ${accent.text}`}
                 style={{ fontSize: 'clamp(2.8rem, 4.5vw, 3.8rem)' }}
               >
                 {svc.num}
@@ -180,7 +180,7 @@ function ParallaxDeckCard({ svc, index, total, scrollYProgress }) {
             </div>
 
             <h3
-              className="font-serif font-bold text-[#14233C] leading-snug"
+              className="font-sans font-bold text-[#13233D] leading-snug"
               style={{ fontSize: 'clamp(1.25rem, 2.2vw, 1.7rem)' }}
             >
               {svc.title}
@@ -239,7 +239,7 @@ function ParallaxDeckCard({ svc, index, total, scrollYProgress }) {
                 <div key={i} className="flex items-start gap-2">
                   <span className={`w-1.5 h-1.5 rounded-full shrink-0 mt-1.5 ${accent.bar}`} />
                   <div>
-                    <span className="block text-[12px] sm:text-[13px] font-bold text-[#14233C] leading-tight">
+                    <span className="block text-[12px] sm:text-[13px] font-bold text-[#13233D] leading-tight">
                       {name}
                     </span>
                     <span className="block text-[10px] sm:text-[11px] text-[#7E6F68] font-medium">
@@ -263,7 +263,7 @@ function ParallaxDeckCard({ svc, index, total, scrollYProgress }) {
 
       <div className="px-5 sm:px-8 py-2.5 bg-[#FAF3EC] border-t border-[#EFE5DB] flex items-center justify-between text-[11px] text-[#8C7E77] font-medium">
         <span>Surya Hospital · Sai Nagar 9th Cross</span>
-        <span className="font-semibold text-[#14233C]">Card 0{index + 1} / 0{total}</span>
+        <span className="font-semibold text-[#13233D]">Card 0{index + 1} / 0{total}</span>
       </div>
     </motion.div>
   );
@@ -290,7 +290,7 @@ export function ClinicalServicesBento() {
       className="relative w-full"
       style={{
         height: '380vh',
-        background: 'radial-gradient(ellipse at 50% 10%, #FFF9F3 0%, #FAF2EA 40%, #F5E8DC 80%, #EDE0D2 100%)',
+        background: 'radial-gradient(ellipse at 50% 10%, #ECECE5 0%, #F0F4F8 40%, #E2ECF4 80%, #D4E2ED 100%)',
       }}
     >
       {/* ── BACKGROUND AMBIENT GLOWS & WARM ARCHITECTURAL MISTS ── */}
@@ -334,7 +334,7 @@ export function ClinicalServicesBento() {
 
         {/* ── IMMERSIVE ARCHITECTURAL LAYER 2: GIANT WATERMARK TYPOGRAPHY ── */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1400px] pointer-events-none select-none z-0 text-center">
-          <span className="font-serif font-black text-[clamp(4.5rem,11vw,9.5rem)] text-[#14233C]/[0.035] tracking-tight uppercase whitespace-nowrap block drop-shadow-xs">
+          <span className="font-sans font-black text-[clamp(4.5rem,11vw,9.5rem)] text-[#13233D]/[0.035] tracking-tight uppercase whitespace-nowrap block drop-shadow-xs">
             SURYA HOSPITAL
           </span>
         </div>
@@ -350,7 +350,7 @@ export function ClinicalServicesBento() {
           </span>
           <div className="p-2.5 rounded-2xl bg-white/75 backdrop-blur-md border border-[#E8DDD2] shadow-sm text-center space-y-0.5">
             <div className="text-[9.5px] font-mono font-bold text-[#E94B1C]">14.68° N</div>
-            <div className="text-[9.5px] font-mono font-bold text-[#14233C]">77.60° E</div>
+            <div className="text-[9.5px] font-mono font-bold text-[#13233D]">77.60° E</div>
             <div className="text-[8px] font-extrabold text-[#8C7A70] uppercase tracking-wider pt-0.5 border-t border-[#EFE5DB]">
               ANANTAPUR
             </div>
@@ -366,7 +366,7 @@ export function ClinicalServicesBento() {
                 24/7 ACTIVE
               </span>
             </div>
-            <div className="text-[11px] font-bold text-[#14233C] leading-snug">
+            <div className="text-[11px] font-bold text-[#13233D] leading-snug">
               Casualty &amp; Modular OTs
             </div>
             <div className="text-[9px] text-[#7E6F68] leading-tight">
@@ -388,7 +388,7 @@ export function ClinicalServicesBento() {
               <div className="text-[10px] font-extrabold uppercase tracking-[0.25em] text-[#E94B1C] mb-1">
                 Clinical Services & Infrastructure
               </div>
-              <h2 className="font-serif font-black text-2xl sm:text-3xl lg:text-4xl text-[#14233C] tracking-tight">
+              <h2 className="font-sans font-black text-2xl sm:text-3xl lg:text-4xl text-[#13233D] tracking-tight">
                 What We Provide.
               </h2>
             </div>
@@ -399,7 +399,7 @@ export function ClinicalServicesBento() {
               <button
                 type="button"
                 onClick={() => openModal()}
-                className="px-4 py-1.5 rounded-full border border-[#14233C] text-[#14233C] hover:bg-[#14233C] hover:text-white transition-colors text-xs font-bold cursor-pointer"
+                className="px-4 py-1.5 rounded-full border border-[#14233C] text-[#13233D] hover:bg-[#14233C] hover:text-white transition-colors text-xs font-bold cursor-pointer"
               >
                 Book Appointment
               </button>

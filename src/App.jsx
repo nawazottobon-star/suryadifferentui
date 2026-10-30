@@ -21,7 +21,7 @@ const SpecialityDetailPage = lazy(() => import("./pages/SpecialityDetailPage").t
 
 function RouteFallback() {
   return (
-    <div className="min-h-[60vh] flex items-center justify-center bg-[#FFF9F3]">
+    <div className="min-h-[60vh] flex items-center justify-center bg-[#ECECE5]">
       <div className="w-9 h-9 rounded-full border-3 border-[#E9D8CE] border-t-[#E94B1C] animate-spin" />
     </div>
   );
@@ -31,7 +31,7 @@ export function App() {
   return (
     <BrowserRouter>
       <AppointmentModalProvider>
-        <div className="w-full min-h-screen flex flex-col bg-[#FFF9F3] text-[#62666D] antialiased font-sans overflow-x-clip selection:bg-[#F8E6DC] selection:text-[#A84328]">
+        <div className="w-full min-h-screen flex flex-col bg-[#ECECE5] text-[#62666D] antialiased font-sans overflow-x-clip selection:bg-[#B2CEE2]/40 selection:text-[#13233D]">
           <ScrollToTop />
 
           {/* 4. Reusable Navbar that appears consistently on every page */}

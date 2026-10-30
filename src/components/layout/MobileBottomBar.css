@@ -38,23 +38,23 @@
 
 .call-btn {
   background-color: #FFFFFF;
-  color: #262626;
-  border: 1.5px solid #E9D8CE;
+  color: #13233D;
+  border: 1.5px solid #B2CEE2;
 }
 
 .call-btn:hover {
-  background-color: #FFF0E6;
-  border-color: #E94B1C;
+  background-color: #F0F6FA;
+  border-color: #3A4F99;
 }
 
 .book-btn {
-  background-color: #E94B1C;
+  background-color: #3A4F99;
   color: #FFFFFF;
-  box-shadow: 0 4px 14px rgba(233, 75, 28, 0.28);
+  box-shadow: 0 4px 14px rgba(58, 79, 153, 0.35);
 }
 
 .book-btn:hover {
-  background-color: #A83218;
+  background-color: #2A3B7A;
 }
 
 @media (min-width: 992px) {

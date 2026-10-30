@@ -13,7 +13,7 @@ export function HomePage() {
   }, []);
 
   return (
-    <div className="w-full bg-[#FFF9F3]">
+    <div className="w-full bg-[#ECECE5]">
       {/* 1. Hero Section with Concise Founder Introduction & Building Video */}
       <HomeHero />
 

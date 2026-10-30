@@ -49,10 +49,10 @@
   background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(24px) saturate(150%);
   -webkit-backdrop-filter: blur(24px) saturate(150%);
-  border: 1px solid rgba(255, 255, 255, 0.85);
+  border: 1px solid #D9E2EC;
   padding: 0.85rem 2.25rem;
   border-radius: 999px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 12px 35px rgba(19, 35, 61, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
   animation: ribbonReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   pointer-events: auto; /* Re-enables hover & click on the pill itself */
   transition: all 0.3s ease;
@@ -99,7 +99,7 @@
 .trust-item-title {
   font-size: 0.85rem;
   font-weight: 800;
-  color: #14233C;
+  color: #13233D;
   line-height: 1.2;
   letter-spacing: -0.01em;
 }
@@ -107,7 +107,7 @@
 .trust-item-detail {
   font-size: 0.7rem;
   font-weight: 600;
-  color: #64748B;
+  color: #5D6D82;
   margin-top: 0.1rem;
 }
 

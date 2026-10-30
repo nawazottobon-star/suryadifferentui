@@ -71,7 +71,7 @@ export function HeroBuildingVideo() {
   return (
     <div className="relative w-full flex items-center justify-center select-none py-2">
       {/* ── Soft Warm Under-Glow for 3D Architectural Grounding (expanded for 35% larger scale) ── */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] h-[85%] rounded-full bg-gradient-to-br from-[#E94B1C]/[0.09] via-amber-300/[0.07] to-transparent blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] h-[85%] rounded-full bg-gradient-to-br from-[#3A4F99]/[0.08] via-[#B2CEE2]/[0.12] to-transparent blur-3xl pointer-events-none" />
 
       {/* 
         ── True Transparent 3D Architectural Canvas (Expanded ~35% from 580px to 800px) ──

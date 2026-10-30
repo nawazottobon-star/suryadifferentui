@@ -78,7 +78,7 @@ export function AppointmentModal({ isOpen, onClose, defaultDepartment = "" }) {
       onClick={onClose}
     >
       <div
-        className="bg-white w-full max-w-lg rounded-3xl shadow-2xl border border-[#E9D8CE] overflow-hidden relative animate-in zoom-in-95 duration-200 max-h-[92vh] flex flex-col"
+        className="bg-white w-full max-w-lg rounded-3xl shadow-2xl border border-[#D9E2EC] overflow-hidden relative animate-in zoom-in-95 duration-200 max-h-[92vh] flex flex-col"
         role="dialog"
         aria-modal="true"
         onClick={(e) => e.stopPropagation()}
@@ -129,7 +129,7 @@ export function AppointmentModal({ isOpen, onClose, defaultDepartment = "" }) {
                 <CheckCircle2 className="w-9 h-9" />
               </div>
               <div>
-                <h4 className="text-2xl font-black text-[#14233C] tracking-tight">
+                <h4 className="text-2xl font-black text-[#13233D] tracking-tight">
                   Appointment Request Sent!
                 </h4>
                 <p className="text-xs font-bold text-[#E94B1C] mt-1 uppercase tracking-wider">
@@ -137,22 +137,22 @@ export function AppointmentModal({ isOpen, onClose, defaultDepartment = "" }) {
                 </p>
               </div>
 
-              <div className="bg-[#FFF9F3] border border-[#F0E2D9] rounded-2xl p-4 text-left space-y-2 max-w-sm mx-auto text-xs text-[#5A5049]">
+              <div className="bg-[#ECECE5] border border-[#E8EFF5] rounded-2xl p-4 text-left space-y-2 max-w-sm mx-auto text-xs text-[#5A5049]">
                 <div className="flex justify-between">
                   <span className="text-[#8C7A70]">Patient:</span>
-                  <span className="font-bold text-[#14233C]">{formData.name}</span>
+                  <span className="font-bold text-[#13233D]">{formData.name}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-[#8C7A70]">Phone:</span>
-                  <span className="font-bold text-[#14233C]">{formData.phone}</span>
+                  <span className="font-bold text-[#13233D]">{formData.phone}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-[#8C7A70]">Department:</span>
-                  <span className="font-bold text-[#14233C]">{formData.department}</span>
+                  <span className="font-bold text-[#13233D]">{formData.department}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-[#8C7A70]">Preferred Slot:</span>
-                  <span className="font-bold text-[#14233C]">
+                  <span className="font-bold text-[#13233D]">
                     {formData.date ? `${formData.date} • ` : ""}
                     {formData.timeSlot.split(" ")[0]}
                   </span>
@@ -177,7 +177,7 @@ export function AppointmentModal({ isOpen, onClose, defaultDepartment = "" }) {
                 <button
                   type="button"
                   onClick={handleReset}
-                  className="w-full sm:w-auto px-6 py-3 rounded-full text-xs font-bold text-[#14233C] bg-[#FFF0E6] hover:bg-[#FFE0D0] transition-colors cursor-pointer"
+                  className="w-full sm:w-auto px-6 py-3 rounded-full text-xs font-bold text-[#13233D] bg-[#EEF2FB] hover:bg-[#FFE0D0] transition-colors cursor-pointer"
                 >
                   Close Window
                 </button>
@@ -187,7 +187,7 @@ export function AppointmentModal({ isOpen, onClose, defaultDepartment = "" }) {
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Patient Name */}
               <div>
-                <label className="block text-xs font-bold text-[#14233C] mb-1.5 flex items-center gap-1.5">
+                <label className="block text-xs font-bold text-[#13233D] mb-1.5 flex items-center gap-1.5">
                   <User className="w-3.5 h-3.5 text-[#E94B1C]" />
                   <span>Patient Full Name <span className="text-red-500">*</span></span>
                 </label>
@@ -197,13 +197,13 @@ export function AppointmentModal({ isOpen, onClose, defaultDepartment = "" }) {
                   placeholder="e.g. Ramesh Kumar"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 text-sm rounded-xl border border-[#E9D8CE] bg-[#FFFDFC] text-[#14233C] placeholder:text-[#A0938A] focus:border-[#E94B1C] focus:ring-2 focus:ring-[#E94B1C]/20 outline-none transition font-medium"
+                  className="w-full px-4 py-3 text-sm rounded-xl border border-[#D9E2EC] bg-[#FFFDFC] text-[#13233D] placeholder:text-[#A0938A] focus:border-[#E94B1C] focus:ring-2 focus:ring-[#E94B1C]/20 outline-none transition font-medium"
                 />
               </div>
 
               {/* Mobile Number */}
               <div>
-                <label className="block text-xs font-bold text-[#14233C] mb-1.5 flex items-center gap-1.5">
+                <label className="block text-xs font-bold text-[#13233D] mb-1.5 flex items-center gap-1.5">
                   <Phone className="w-3.5 h-3.5 text-[#E94B1C]" />
                   <span>Phone Number <span className="text-red-500">*</span></span>
                 </label>
@@ -221,7 +221,7 @@ export function AppointmentModal({ isOpen, onClose, defaultDepartment = "" }) {
                       const val = e.target.value.replace(/\D/g, "");
                       setFormData({ ...formData, phone: val });
                     }}
-                    className="w-full pl-12 pr-4 py-3 text-sm rounded-xl border border-[#E9D8CE] bg-[#FFFDFC] text-[#14233C] placeholder:text-[#A0938A] focus:border-[#E94B1C] focus:ring-2 focus:ring-[#E94B1C]/20 outline-none transition font-medium tracking-wide"
+                    className="w-full pl-12 pr-4 py-3 text-sm rounded-xl border border-[#D9E2EC] bg-[#FFFDFC] text-[#13233D] placeholder:text-[#A0938A] focus:border-[#E94B1C] focus:ring-2 focus:ring-[#E94B1C]/20 outline-none transition font-medium tracking-wide"
                   />
                 </div>
               </div>
@@ -229,14 +229,14 @@ export function AppointmentModal({ isOpen, onClose, defaultDepartment = "" }) {
               {/* Department & Date Row */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
-                  <label className="block text-xs font-bold text-[#14233C] mb-1.5 flex items-center gap-1.5">
+                  <label className="block text-xs font-bold text-[#13233D] mb-1.5 flex items-center gap-1.5">
                     <Stethoscope className="w-3.5 h-3.5 text-[#E94B1C]" />
                     <span>Department</span>
                   </label>
                   <select
                     value={formData.department}
                     onChange={(e) => setFormData({ ...formData, department: e.target.value })}
-                    className="w-full px-3.5 py-3 text-xs sm:text-sm rounded-xl border border-[#E9D8CE] bg-[#FFFDFC] text-[#14233C] focus:border-[#E94B1C] focus:ring-2 focus:ring-[#E94B1C]/20 outline-none transition font-medium"
+                    className="w-full px-3.5 py-3 text-xs sm:text-sm rounded-xl border border-[#D9E2EC] bg-[#FFFDFC] text-[#13233D] focus:border-[#E94B1C] focus:ring-2 focus:ring-[#E94B1C]/20 outline-none transition font-medium"
                   >
                     <option value="General Medicine (Physician)">General Medicine (Physician)</option>
                     <option value="Cardiology">Cardiology</option>
@@ -264,7 +264,7 @@ export function AppointmentModal({ isOpen, onClose, defaultDepartment = "" }) {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#14233C] mb-1.5 flex items-center gap-1.5">
+                  <label className="block text-xs font-bold text-[#13233D] mb-1.5 flex items-center gap-1.5">
                     <Calendar className="w-3.5 h-3.5 text-[#E94B1C]" />
                     <span>Preferred Date</span>
                   </label>
@@ -273,14 +273,14 @@ export function AppointmentModal({ isOpen, onClose, defaultDepartment = "" }) {
                     min={new Date().toISOString().split("T")[0]}
                     value={formData.date}
                     onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                    className="w-full px-3.5 py-3 text-xs sm:text-sm rounded-xl border border-[#E9D8CE] bg-[#FFFDFC] text-[#14233C] focus:border-[#E94B1C] focus:ring-2 focus:ring-[#E94B1C]/20 outline-none transition font-medium"
+                    className="w-full px-3.5 py-3 text-xs sm:text-sm rounded-xl border border-[#D9E2EC] bg-[#FFFDFC] text-[#13233D] focus:border-[#E94B1C] focus:ring-2 focus:ring-[#E94B1C]/20 outline-none transition font-medium"
                   />
                 </div>
               </div>
 
               {/* Preferred Slot */}
               <div>
-                <label className="block text-xs font-bold text-[#14233C] mb-1.5 flex items-center gap-1.5">
+                <label className="block text-xs font-bold text-[#13233D] mb-1.5 flex items-center gap-1.5">
                   <Clock className="w-3.5 h-3.5 text-[#E94B1C]" />
                   <span>Preferred Visiting Slot</span>
                 </label>
@@ -297,8 +297,8 @@ export function AppointmentModal({ isOpen, onClose, defaultDepartment = "" }) {
                         onClick={() => setFormData({ ...formData, timeSlot: slot })}
                         className={`px-3 py-2.5 rounded-xl border text-xs font-bold transition-all text-left cursor-pointer ${
                           isSelected
-                            ? "border-[#E94B1C] bg-[#FFF0E6] text-[#E94B1C] shadow-2xs"
-                            : "border-[#E9D8CE] bg-white text-[#5A5049] hover:bg-[#FFF9F3]"
+                            ? "border-[#E94B1C] bg-[#EEF2FB] text-[#E94B1C] shadow-2xs"
+                            : "border-[#D9E2EC] bg-white text-[#5A5049] hover:bg-[#ECECE5]"
                         }`}
                       >
                         <div className="leading-tight">{slot.split(" ")[0]}</div>
@@ -313,7 +313,7 @@ export function AppointmentModal({ isOpen, onClose, defaultDepartment = "" }) {
 
               {/* Brief Health Concern (Optional) */}
               <div>
-                <label className="block text-xs font-bold text-[#14233C] mb-1.5 flex items-center gap-1.5">
+                <label className="block text-xs font-bold text-[#13233D] mb-1.5 flex items-center gap-1.5">
                   <FileText className="w-3.5 h-3.5 text-[#E94B1C]" />
                   <span>Brief Health Issue / Symptoms <span className="text-[#8C7A70] font-normal">(Optional)</span></span>
                 </label>
@@ -322,16 +322,16 @@ export function AppointmentModal({ isOpen, onClose, defaultDepartment = "" }) {
                   placeholder="e.g. Fever for 2 days, knee pain, routine consultation..."
                   value={formData.note}
                   onChange={(e) => setFormData({ ...formData, note: e.target.value })}
-                  className="w-full px-4 py-2.5 text-xs sm:text-sm rounded-xl border border-[#E9D8CE] bg-[#FFFDFC] text-[#14233C] placeholder:text-[#A0938A] focus:border-[#E94B1C] focus:ring-2 focus:ring-[#E94B1C]/20 outline-none transition resize-none font-medium"
+                  className="w-full px-4 py-2.5 text-xs sm:text-sm rounded-xl border border-[#D9E2EC] bg-[#FFFDFC] text-[#13233D] placeholder:text-[#A0938A] focus:border-[#E94B1C] focus:ring-2 focus:ring-[#E94B1C]/20 outline-none transition resize-none font-medium"
                 />
               </div>
 
               {/* Bottom Submit Action */}
-              <div className="pt-2 flex items-center justify-between gap-3 border-t border-[#F0E2D9]">
+              <div className="pt-2 flex items-center justify-between gap-3 border-t border-[#E8EFF5]">
                 <button
                   type="button"
                   onClick={onClose}
-                  className="px-5 py-3 rounded-full text-xs font-bold text-[#5A5049] hover:text-[#14233C] hover:bg-[#FFF0E6]/50 transition-colors cursor-pointer"
+                  className="px-5 py-3 rounded-full text-xs font-bold text-[#5A5049] hover:text-[#13233D] hover:bg-[#EEF2FB]/50 transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>

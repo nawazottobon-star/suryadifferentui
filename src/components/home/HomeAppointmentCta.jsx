@@ -1,3 +1,4 @@
+import { GenerateButton } from "../ui/generate-button";
 import React, { useState } from "react";
 import { Calendar, Clock, UserCheck, CheckCircle2, ArrowRight } from "lucide-react";
 import { AnimateIn } from "../ui/AnimateIn";
@@ -18,7 +19,7 @@ export function HomeAppointmentCta() {
   };
 
   return (
-    <section className="relative py-12 sm:py-16 md:py-20 bg-[#1A1D20] text-white overflow-hidden">
+    <section className="relative py-12 sm:py-16 md:py-20 bg-[#13233D] text-white overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <img
@@ -26,7 +27,7 @@ export function HomeAppointmentCta() {
           alt="Surya Hospital"
           className="w-full h-full object-cover object-center filter brightness-[0.18] contrast-[1.1]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1A1D20]/95 via-[#1A1D20]/90 to-[#1A1D20]/75" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#13233D]/95 via-[#13233D]/90 to-[#13233D]/80" />
       </div>
 
       {/* Aurora ambient */}
@@ -36,14 +37,14 @@ export function HomeAppointmentCta() {
       {/* Top Wave */}
       <div className="organic-divider-top">
         <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-          <path d="M0,0 L1440,0 L1440,32 C1280,24 1060,52 820,78 C580,105 320,100 0,70 Z" fill="#FFF0E6" />
+          <path d="M0,0 L1440,0 L1440,32 C1280,24 1060,52 820,78 C580,105 320,100 0,70 Z" fill="#ECECE5" />
         </svg>
       </div>
 
       {/* Bottom Wave */}
       <div className="organic-divider-bottom">
         <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-          <path d="M0,70 C320,100 580,105 820,78 C1060,52 1280,24 1440,32 L1440,120 L0,120 Z" fill="#FFF9F3" />
+          <path d="M0,70 C320,100 580,105 820,78 C1060,52 1280,24 1440,32 L1440,120 L0,120 Z" fill="#ECECE5" />
         </svg>
       </div>
 
@@ -53,13 +54,13 @@ export function HomeAppointmentCta() {
           {/* Left: Heading & Features */}
           <div className="lg:col-span-7 space-y-6 text-left">
             <AnimateIn animation="slide-left">
-              <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/15 text-[11px] font-bold uppercase tracking-[0.12em] text-[#FF8A3D]">
+              <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/15 text-[11px] font-bold uppercase tracking-[0.12em] text-[#B2CEE2]">
                 <span>BOOK APPOINTMENT</span>
               </div>
             </AnimateIn>
 
             <AnimateIn animation="slide-left" delay={100}>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-serif-heading font-bold text-white tracking-tight leading-[1.1]">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-sans font-bold text-white tracking-tight leading-[1.1]">
                 Take the First Step
                 <br />
                 Towards a{" "}
@@ -87,7 +88,7 @@ export function HomeAppointmentCta() {
                     key={label}
                     className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/8 backdrop-blur-md border border-white/12 text-xs text-white/90 font-medium hover:bg-white/15 hover:border-white/25 transition-all cursor-default"
                   >
-                    <Icon className="w-3.5 h-3.5 text-[#FF8A3D]" />
+                    <Icon className="w-3.5 h-3.5 text-[#B2CEE2]" />
                     <span>{label}</span>
                   </div>
                 ))}
@@ -104,7 +105,7 @@ export function HomeAppointmentCta() {
                     <div className="w-16 h-16 bg-gradient-to-br from-[#FFF0E6] to-[#FFE3D0] text-[#E94B1C] rounded-2xl flex items-center justify-center mx-auto shadow-sm">
                       <CheckCircle2 className="w-8 h-8" />
                     </div>
-                    <h3 className="text-xl font-bold text-[#14233C]">
+                    <h3 className="text-xl font-bold text-[#13233D]">
                       Appointment Request Received!
                     </h3>
                     <p className="text-xs sm:text-sm text-[#756860] max-w-xs mx-auto">
@@ -122,33 +123,33 @@ export function HomeAppointmentCta() {
                   <form onSubmit={handleSubmit} className="space-y-4 text-left">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-semibold text-[#14233C] mb-1.5">Your Name</label>
+                        <label className="block text-xs font-semibold text-[#13233D] mb-1.5">Your Name</label>
                         <input
                           type="text"
                           required
                           placeholder="Enter your name"
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl bg-[#FFF9F3] border border-[#EFE5DC] text-sm text-[#262626] placeholder-[#756860]/40 focus:outline-none focus:border-[#E94B1C] focus:ring-2 focus:ring-[#E94B1C]/20 transition-all"
+                          className="w-full px-4 py-3 rounded-xl bg-[#ECECE5] border border-[#B2CEE2] text-sm text-[#262626] placeholder-[#756860]/40 focus:outline-none focus:border-[#E94B1C] focus:ring-2 focus:ring-[#E94B1C]/20 transition-all"
                         />
                       </div>
                       <div>
-                        <label className="block text-xs font-semibold text-[#14233C] mb-1.5">Phone Number</label>
+                        <label className="block text-xs font-semibold text-[#13233D] mb-1.5">Phone Number</label>
                         <input
                           type="tel"
                           required
                           placeholder="Enter your phone number"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl bg-[#FFF9F3] border border-[#EFE5DC] text-sm text-[#262626] placeholder-[#756860]/40 focus:outline-none focus:border-[#E94B1C] focus:ring-2 focus:ring-[#E94B1C]/20 transition-all"
+                          className="w-full px-4 py-3 rounded-xl bg-[#ECECE5] border border-[#B2CEE2] text-sm text-[#262626] placeholder-[#756860]/40 focus:outline-none focus:border-[#E94B1C] focus:ring-2 focus:ring-[#E94B1C]/20 transition-all"
                         />
                       </div>
                       <div>
-                        <label className="block text-xs font-semibold text-[#14233C] mb-1.5">Select Department</label>
+                        <label className="block text-xs font-semibold text-[#13233D] mb-1.5">Select Department</label>
                         <select
                           value={formData.department}
                           onChange={(e) => setFormData({ ...formData, department: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl bg-[#FFF9F3] border border-[#EFE5DC] text-sm text-[#262626] focus:outline-none focus:border-[#E94B1C] focus:ring-2 focus:ring-[#E94B1C]/20 transition-all"
+                          className="w-full px-4 py-3 rounded-xl bg-[#ECECE5] border border-[#B2CEE2] text-sm text-[#262626] focus:outline-none focus:border-[#E94B1C] focus:ring-2 focus:ring-[#E94B1C]/20 transition-all"
                         >
                           <option value="">Choose department</option>
                           <option value="general-medicine">General Medicine (Physician)</option>
@@ -158,12 +159,12 @@ export function HomeAppointmentCta() {
                         </select>
                       </div>
                       <div>
-                        <label className="block text-xs font-semibold text-[#14233C] mb-1.5">Preferred Date</label>
+                        <label className="block text-xs font-semibold text-[#13233D] mb-1.5">Preferred Date</label>
                         <input
                           type="date"
                           value={formData.date}
                           onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl bg-[#FFF9F3] border border-[#EFE5DC] text-sm text-[#262626] focus:outline-none focus:border-[#E94B1C] focus:ring-2 focus:ring-[#E94B1C]/20 transition-all"
+                          className="w-full px-4 py-3 rounded-xl bg-[#ECECE5] border border-[#B2CEE2] text-sm text-[#262626] focus:outline-none focus:border-[#E94B1C] focus:ring-2 focus:ring-[#E94B1C]/20 transition-all"
                         />
                       </div>
                     </div>
